@@ -23,7 +23,7 @@ Isolement : Salle de repos, Bureau
 
 système de code de salle à voir
 
-
+Map JSON :
 
 {
     "morgue": {
