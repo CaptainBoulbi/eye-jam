@@ -11,7 +11,7 @@ let grid = new Array(grid_cap);
 let onchange_callback = () => {};
 
 function grid_index(coord: Coord) {
-    return parseInt(coord.y) * grid_size.x + parseInt(coord.x);
+    return coord.y * grid_size.x + coord.x;
 }
 
 function grid_check(coord: Coord) {

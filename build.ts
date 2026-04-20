@@ -2,7 +2,7 @@ const build_msg = "\033[0;32m[BUILD]\033[0m"
 const info_msg = "\033[0;36m[INFO]\033[0m"
 
 const result = await Bun.build({
-    entrypoints: ["./src/index.ts"],
+    entrypoints: ["./src/game.ts"],
     outdir: "./output",
     target: "browser",
     format: "esm",

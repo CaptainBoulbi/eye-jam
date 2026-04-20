@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- /!\ ATTENTION /!\ NE PAS TOUCHER, ou je débranche tes serveurs -->
-    <script src="./index.js"></script>
+    <!-- <script src="./game.js"></script> -->
     <!-- fin du warning -->
 
     <title>Eye Jam</title>
@@ -127,13 +127,18 @@
             <li>enlever un objet de l'inventaire (consommé)</li>
         </ul>
 
-        <script>
+        <script type="module">
+            import { Game } from "./game.js"
+
+            let game = new Game()
+            let inventaire = game.getInventaire()
+
             inventaire.onchange(() => {
-                var inv_html = '';
-                for (var y = 0; y < inventaire.grid_size.y; y++) {
+                let inv_html = '';
+                for (let y = 0; y < inventaire.grid_size.y; y++) {
                     inv_html += '<tr>';
-                    for (var x = 0; x < inventaire.grid_size.x; x++) {
-                        var item = inventaire.get({x, y});
+                    for (let x = 0; x < inventaire.grid_size.x; x++) {
+                        let item = inventaire.get({x, y});
                         if (!item) item = "";
 
                         inv_html += `<td x="${x}" y="${y}">${item}</td>`;
@@ -142,29 +147,29 @@
                 }
                 pocket.innerHTML = inv_html;
 
-                var cells = document.getElementsByTagName('td');
-                for (var i = 0; i < cells.length; i++) {
+                let cells = document.getElementsByTagName('td');
+                for (let i = 0; i < cells.length; i++) {
                     cells[i].addEventListener("mousedown", (e) => {
                         window.grab_from = {
-                            x: e.target.getAttribute('x'),
-                            y: e.target.getAttribute('y')
+                            x: parseInt(e.target.getAttribute('x')),
+                            y: parseInt(e.target.getAttribute('y'))
                         };
                     })
                     cells[i].addEventListener("mouseup", (e) => {
-                        var coord_to = {
-                            x: e.target.getAttribute('x'),
-                            y: e.target.getAttribute('y')
+                        let coord_to = {
+                            x: parseInt(e.target.getAttribute('x')),
+                            y: parseInt(e.target.getAttribute('y'))
                         };
 
                         inventaire.move(window.grab_from, coord_to);
                     })
                     cells[i].onclick = (e) => {
-                        var coord = {
-                            x: e.target.getAttribute('x'),
-                            y: e.target.getAttribute('y')
+                        let coord = {
+                            x: parseInt(e.target.getAttribute('x')),
+                            y: parseInt(e.target.getAttribute('y'))
                         };
 
-                        var item = inventaire.get(coord);
+                        let item = inventaire.get(coord);
                         if (!item) return;
 
                         alert('item: ' + item);
