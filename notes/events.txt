@@ -1,0 +1,16 @@
+Map :
+
+Morgue : Salle de repos, Labo
+	Docs : doc autopsie, log d150
+
+Salle de repos : Morgue, Bureau
+	Docs : Journal Rodriguez, log d45
+
+Labo : Morgue, Isolement
+	Docs : Vaccin TLD v1, log d120
+
+Bureau : Salle de repos, Isolement
+	Docs : Final report, Patient Zero
+
+Isolement : Labo, Bureau
+	Docs : log d1
