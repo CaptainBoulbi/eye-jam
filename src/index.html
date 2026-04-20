@@ -7,6 +7,57 @@
     <!-- fin du warning -->
     <title>Eye Jam</title>
 
+    <script type="module">
+            import { Game } from "./game.js"
+
+            let game = new Game()
+            window.inventaire = game.getInventaire()
+
+            inventaire.onchange(() => {
+                let inv_html = '';
+                for (let y = 0; y < inventaire.grid_size.y; y++) {
+                    inv_html += '<tr>';
+                    for (let x = 0; x < inventaire.grid_size.x; x++) {
+                        let item = inventaire.get({x, y});
+                        if (!item) item = "";
+
+                        inv_html += `<td x="${x}" y="${y}">${item}</td>`;
+                    }
+                    inv_html += '</tr>';
+                }
+                pocket.innerHTML = inv_html;
+
+                let cells = document.getElementsByTagName('td');
+                for (let i = 0; i < cells.length; i++) {
+                    cells[i].addEventListener("mousedown", (e) => {
+                        window.grab_from = {
+                            x: parseInt(e.target.getAttribute('x')),
+                            y: parseInt(e.target.getAttribute('y'))
+                        };
+                    })
+                    cells[i].addEventListener("mouseup", (e) => {
+                        let coord_to = {
+                            x: parseInt(e.target.getAttribute('x')),
+                            y: parseInt(e.target.getAttribute('y'))
+                        };
+
+                        inventaire.move(window.grab_from, coord_to);
+                    })
+                    cells[i].onclick = (e) => {
+                        let coord = {
+                            x: parseInt(e.target.getAttribute('x')),
+                            y: parseInt(e.target.getAttribute('y'))
+                        };
+
+                        let item = inventaire.get(coord);
+                        if (!item) return;
+
+                        alert('item: ' + item);
+                    }
+                }
+            });
+        </script>
+
     <style>
 
         @keyframes fadeIn {
@@ -136,57 +187,6 @@
             <li>verifier si un objet est dans l'inventaire</li>
             <li>enlever un objet de l'inventaire (consommé)</li>
         </ul>
-
-        <script type="module">
-            import { Game } from "./game.js"
-
-            let game = new Game()
-            let inventaire = game.getInventaire()
-
-            inventaire.onchange(() => {
-                let inv_html = '';
-                for (let y = 0; y < inventaire.grid_size.y; y++) {
-                    inv_html += '<tr>';
-                    for (let x = 0; x < inventaire.grid_size.x; x++) {
-                        let item = inventaire.get({x, y});
-                        if (!item) item = "";
-
-                        inv_html += `<td x="${x}" y="${y}">${item}</td>`;
-                    }
-                    inv_html += '</tr>';
-                }
-                pocket.innerHTML = inv_html;
-
-                let cells = document.getElementsByTagName('td');
-                for (let i = 0; i < cells.length; i++) {
-                    cells[i].addEventListener("mousedown", (e) => {
-                        window.grab_from = {
-                            x: parseInt(e.target.getAttribute('x')),
-                            y: parseInt(e.target.getAttribute('y'))
-                        };
-                    })
-                    cells[i].addEventListener("mouseup", (e) => {
-                        let coord_to = {
-                            x: parseInt(e.target.getAttribute('x')),
-                            y: parseInt(e.target.getAttribute('y'))
-                        };
-
-                        inventaire.move(window.grab_from, coord_to);
-                    })
-                    cells[i].onclick = (e) => {
-                        let coord = {
-                            x: parseInt(e.target.getAttribute('x')),
-                            y: parseInt(e.target.getAttribute('y'))
-                        };
-
-                        let item = inventaire.get(coord);
-                        if (!item) return;
-
-                        alert('item: ' + item);
-                    }
-                }
-            });
-        </script>
     </div>
 
     <script>
