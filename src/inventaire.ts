@@ -1,15 +1,20 @@
-const grid_size = {x: 3, y: 10};
+type Coord = {
+    x: number,
+    y:number,
+}
+type Item = string
+const grid_size: Coord = {x: 3, y: 10};
 
 var grid_cap = grid_size.x * grid_size.y;
 var grid = new Array(grid_cap);
 
 var onchange_callback = () => {};
 
-function grid_index(coord) {
-    return parseInt(coord.y) * grid_size.x + parseInt(coord.x);
+function grid_index(coord: Coord) {
+    return coord.y * grid_size.x + coord.x;
 }
 
-function grid_check(coord) {
+function grid_check(coord: Coord) {
     if (coord.x < 0) return false;
     if (coord.y < 0) return false;
     if (coord.x >= grid_size.x) return false;
@@ -18,18 +23,18 @@ function grid_check(coord) {
     return true;
 }
 
-function get_item(coord) {
+function get_item(coord: Coord) {
     if (!grid_check(coord)) return null;
 
     return grid[grid_index(coord)];
 }
 
-function set_item(coord, item) {
+function set_item(coord: Coord, item: Item) {
     if (!grid_check(coord)) return null;
     return grid[grid_index(coord)] = item;
 }
 
-function move_item(from, to) {
+function move_item(from: Coord, to: Coord) {
     if (from.x == to.x && from.y == to.y) return;
 
     var from_item = get_item(from);
@@ -49,7 +54,7 @@ function move_item(from, to) {
 //       pour l'instant c'est un strings donc ça passe, en fonction de comment on decide de structurer les items on 
 //       devra passer en argument l'item json ou l'id de l'item
 
-function add_item(item) {
+function add_item(item: Item) {
     for (var i = 0; i < grid_cap; i++) {
         if (!grid[i]) {
             grid[i] = item;
@@ -60,7 +65,7 @@ function add_item(item) {
     onchange_callback();
 }
 
-function remove_item(item) {
+function remove_item(item: Item) {
     for (var i = 0; i < grid_cap; i++) {
         if (!grid[i]) continue;
         if (grid[i] == item) {
@@ -72,7 +77,7 @@ function remove_item(item) {
     onchange_callback();
 }
 
-function find_item(item) {
+function find_item(item: Item) {
     if (!item) return false;
 
     for (var i = 0; i < grid_cap; i++) {
@@ -85,7 +90,7 @@ function find_item(item) {
     return false;
 }
 
-function set_onchange_callback(cb) {
+function set_onchange_callback(cb: (() => void)) {
     onchange_callback = cb;
 
     test_data();
@@ -101,8 +106,8 @@ function test_data() {
         var coord = null;
         do {
             coord = {
-                x: parseInt(Math.random() * grid_size.x),
-                y: parseInt(Math.random() * grid_size.y),
+                x: Math.random() * grid_size.x,
+                y: Math.random() * grid_size.y,
             };
         } while (get_item(coord));
 
