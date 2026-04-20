@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- /!\ ATTENTION /!\ NE PAS TOUCHER, ou je débranche tes serveurs -->
+    <script src="./index.js"></script>
+    <!-- fin du warning -->
+
     <title>Eye Jam</title>
 
     <style>
@@ -28,6 +33,13 @@
             font-family: 'Georgia', serif; 
            
         
+        }
+
+        table, td {
+            border: 1px solid black;
+            min-width: 100px;
+            height: 50px;
+            text-align: center;
         }
     </style>    
 </head>
@@ -90,6 +102,79 @@
         <h1>Je suis le jeu</h1>
     </div>
 
+    <div scene="test-inventaire">
+        <h1>Inventaire</h1>
+        <table id="pocket">
+            <tr>
+                <td>Empty, waiting to be initialised</td>
+            </tr>
+        </table>
+
+        <input id="input_item" placeholder="clé" style="margin-top: 1rem"></input>
+        <button onclick="inventaire.add(input_item.value)">Ajouter item</button>
+        <br>
+        <input id="delete_item" placeholder="pomme" style="margin-top: 1rem"></input>
+        <button onclick="inventaire.remove(delete_item.value)">Enlever item</button>
+        <br>
+        <input onchange="search_item.innerText = `l\'objet '${this.value}' ` + (inventaire.find(this.value) ? 'existe' : 'n\'existe pas')" placeholder="antidote" style="margin-top: 1rem"></input>
+        <span id="search_item" >Entrez le nom d'un item</span>
+        <p>Action de l'inventaire :</p>
+        <ul>
+            <li>deplacer objet (drag & drop)</li>
+            <li>afficher objet (cliquer sur la case)</li>
+            <li>ajouter objet</li>
+            <li>verifier si un objet est dans l'inventaire</li>
+            <li>enlever un objet de l'inventaire (consommé)</li>
+        </ul>
+
+        <script>
+            inventaire.onchange(() => {
+                var inv_html = '';
+                for (var y = 0; y < inventaire.grid_size.y; y++) {
+                    inv_html += '<tr>';
+                    for (var x = 0; x < inventaire.grid_size.x; x++) {
+                        var item = inventaire.get({x, y});
+                        if (!item) item = "";
+
+                        inv_html += `<td x="${x}" y="${y}">${item}</td>`;
+                    }
+                    inv_html += '</tr>';
+                }
+                pocket.innerHTML = inv_html;
+
+                var cells = document.getElementsByTagName('td');
+                for (var i = 0; i < cells.length; i++) {
+                    cells[i].addEventListener("mousedown", (e) => {
+                        window.grab_from = {
+                            x: e.target.getAttribute('x'),
+                            y: e.target.getAttribute('y')
+                        };
+                    })
+                    cells[i].addEventListener("mouseup", (e) => {
+                        var coord_to = {
+                            x: e.target.getAttribute('x'),
+                            y: e.target.getAttribute('y')
+                        };
+
+                        inventaire.move(window.grab_from, coord_to);
+                    })
+                    cells[i].onclick = (e) => {
+                        var coord = {
+                            x: e.target.getAttribute('x'),
+                            y: e.target.getAttribute('y')
+                        };
+
+                        var item = inventaire.get(coord);
+                        if (!item) return;
+
+                        alert('item: ' + item);
+                    }
+                }
+            });
+        </script>
+    </div>
+
+
 
     <script>
         function scene_show(name) {
@@ -98,10 +183,8 @@
             })
         }
 
-        scene_show('presentation')
+        scene_show('test-inventaire')
     </script>
-
-    <script type="module" src="./index.ts"></script>
 
 </body>
 </html>
