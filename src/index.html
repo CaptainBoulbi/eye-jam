@@ -143,6 +143,17 @@
             >
                 Test Inventaire
             </button> 
+            <button
+                onclick="scene_show('test-salle')"
+                style="padding: 40px;
+                font-size: 24px;
+                background: #1a1a1a;
+                color: #7a2f2f;
+                border: 1px solid #333;
+                cursor: pointer;"
+            >
+                Test Salle
+            </button>
 
             <!-- Bouton Enter : toujours colle en bas grace a la classe btn-enter -->
             <button 
@@ -245,6 +256,29 @@
                     }
                 }
             });
+        </script>
+    </div>
+
+    <div scene="test-salle">
+        <h1>Salle</h1>
+        <p>Salle actuel: <span id="salle_actuel"></span></p>
+        <p>Salle liées:</p>
+        <button onclick="salle.go(0)" id="salle_1"></button>
+        <button onclick="salle.go(1)" id="salle_2"></button>
+        <p>ID des item debloquable dans cet salle:</p>
+        <ul id="salle_item"></ul>
+        <script>
+            function update_salle() {
+                salle_actuel.innerText = salle.current().name;
+                salle_1.innerText = 'Aller à ' + salle.link(0).name;
+                salle_2.innerText = 'Aller à ' + salle.link(1).name;
+                salle_item.innerHTML = "";
+                salle.current().items.forEach((item) => {
+                    salle_item.innerHTML += "<li>"+item+"</li>"
+                })
+            }
+            salle.onchange(update_salle);
+            update_salle();
         </script>
     </div>
 

@@ -1,0 +1,27 @@
+{
+    "morgue": {
+        "name": "Morgue",
+        "links": ["salle_repos", "labo"],
+        "items": ["doc_autopsie", "log_d150"]
+    },
+    "salle_repos": {
+        "name": "Salle de repos",
+        "links": ["morgue", "bureau"],
+        "items": ["journal_rodriguez", "log_d45"]
+    },
+    "labo": {
+        "name": "Labo",
+        "links": ["morgue", "isolement"],
+        "items": ["vaccin_tld_v1", "log_d120"]
+    },
+    "bureau": {
+        "name": "Bureau",
+        "links": ["salle_repos", "isolement"],
+        "items": ["final_report", "patient_zero"]
+    },
+    "isolement": {
+        "name": "Isolement",
+        "links": ["labo", "bureau"],
+        "items": ["log_d1"]
+    }
+}
