@@ -1,17 +1,17 @@
 type Coord = {
     x: number,
-    y:number,
+    y: number,
 }
 type Item = string
+
 const grid_size: Coord = {x: 3, y: 10};
+let grid_cap = grid_size.x * grid_size.y;
+let grid = new Array(grid_cap);
 
-var grid_cap = grid_size.x * grid_size.y;
-var grid = new Array(grid_cap);
-
-var onchange_callback = () => {};
+let onchange_callback = () => {};
 
 function grid_index(coord: Coord) {
-    return coord.y * grid_size.x + coord.x;
+    return parseInt(coord.y) * grid_size.x + parseInt(coord.x);
 }
 
 function grid_check(coord: Coord) {
@@ -37,10 +37,10 @@ function set_item(coord: Coord, item: Item) {
 function move_item(from: Coord, to: Coord) {
     if (from.x == to.x && from.y == to.y) return;
 
-    var from_item = get_item(from);
+    let from_item = get_item(from);
     if (!from_item) return false;
 
-    var to_item = get_item(to);
+    let to_item = get_item(to);
 
     set_item(to, from_item);
     set_item(from, to_item);
@@ -55,7 +55,7 @@ function move_item(from: Coord, to: Coord) {
 //       devra passer en argument l'item json ou l'id de l'item
 
 function add_item(item: Item) {
-    for (var i = 0; i < grid_cap; i++) {
+    for (let i = 0; i < grid_cap; i++) {
         if (!grid[i]) {
             grid[i] = item;
             break;
@@ -66,7 +66,7 @@ function add_item(item: Item) {
 }
 
 function remove_item(item: Item) {
-    for (var i = 0; i < grid_cap; i++) {
+    for (let i = 0; i < grid_cap; i++) {
         if (!grid[i]) continue;
         if (grid[i] == item) {
             grid[i] = undefined;
@@ -80,7 +80,7 @@ function remove_item(item: Item) {
 function find_item(item: Item) {
     if (!item) return false;
 
-    for (var i = 0; i < grid_cap; i++) {
+    for (let i = 0; i < grid_cap; i++) {
         // TODO: changer le ==, ça marche pour l'instant car les items sont des strings
         //       normallement c'est du json donc surement faire une fonction item_equal()
         //       a faire une fois qu'on ce sera mis d'accord sur la structure d'un item
@@ -98,19 +98,17 @@ function set_onchange_callback(cb: (() => void)) {
 
 function test_data() {
     // check if grid empty
-    for (var i = 0; i < grid_cap; i++) {
+    for (let i = 0; i < grid_cap; i++) {
         if (grid[i]) return;
     }
 
     ["carte", "pomme", "rat mort", "antidote"].forEach((item) => {
-        var coord = null;
+        let coord = null;
         do {
             coord = {
                 x: Math.floor(Math.random() * grid_size.x),
                 y: Math.floor(Math.random() * grid_size.y),
             };
-
-            console.log(coord)
         } while (get_item(coord));
 
         set_item(coord, item);
