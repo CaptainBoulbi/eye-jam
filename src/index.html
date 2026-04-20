@@ -16,18 +16,53 @@
         [scene] {
             animation: fadeIn 1s ease-in;
         }
-    </style>
+
+         /*tentative de faire un background qui fait peur dans la scene de presentation*/
+        [scene="presentation"] { 
+           
+           
+            background : radial-gradient(circle, #1c1c1c 0%, #0a0a0a 50%, #000000 100%);
+            min-height: 100vh;
+            margin: 0;
+            color: #cccccc;        
+            font-family: 'Georgia', serif; 
+           
+        
+        }
+    </style>    
 </head>
 <body>
 
     <div scene="presentation">
-        <h1>EYE JAM</h1>
+
+        
+        <!--change le logo (taille et emplacement principalement) -->
         <img 
             src="assets/jam-logo.png" 
             alt="Jam Logo"
-            onclick="scene_show('intro')"
-            style="cursor: pointer;"
+            style="
+            height: 200px; 
+            width: 1380px;
+            cursor: pointer;"
         >
+
+        <button 
+            onclick="scene_show('intro')"
+            style="
+                margin-top: 50px;
+                margin-left: 600px;
+                padding: 40px 40px;
+                font-size: 24px;
+                background: #1a1a1a;
+                color: #cccccc;
+                border: 1px solid #333;
+                cursor: pointer;
+            "
+        >
+        Entrer
+        
+        </button>
+
     </div>
 
     <div scene="intro">
