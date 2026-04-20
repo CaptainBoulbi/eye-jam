@@ -219,9 +219,8 @@
                     inv_html += '<tr>';
                     for (let x = 0; x < inventaire.grid_size.x; x++) {
                         let item = inventaire.get({x, y});
-                        if (!item) item = "";
 
-                        inv_html += `<td x="${x}" y="${y}">${item}</td>`;
+                        inv_html += `<td x="${x}" y="${y}">${item.name}</td>`;
                     }
                     inv_html += '</tr>';
                 }
@@ -250,9 +249,9 @@
                         };
 
                         let item = inventaire.get(coord);
-                        if (!item) return;
+                        if (!item.id) return;
 
-                        alert('item: ' + item);
+                        alert(item.description);
                     }
                 }
             });
@@ -273,8 +272,8 @@
                 salle_1.innerText = 'Aller à ' + salle.link(0).name;
                 salle_2.innerText = 'Aller à ' + salle.link(1).name;
                 salle_item.innerHTML = "";
-                salle.current().items.forEach((item) => {
-                    salle_item.innerHTML += "<li>"+item+"</li>"
+                salle.current().items.forEach((item_id) => {
+                    salle_item.innerHTML += "<li>"+item.get(item_id).name+"</li>"
                 })
             }
             salle.onchange(update_salle);

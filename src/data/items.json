@@ -1,0 +1,23 @@
+{
+    "research_journal": {
+        "id": "research_journal",
+        "name": "RESEARCH JOURNAL",
+        "description": "Dr. Elena Vasquez\nGeneTech Corp - Project Lazarus\n\nDay 1 of the project.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "research_journal_d45": {
+        "id": "research_journal_d45",
+        "name": "RESEARCH JOURNAL - DAY 45",
+        "description": "Dr. Elena Vasquez\n\nThe rats in Group B are exhibiting\nabnormal behavior.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "research_journal_d120": {
+        "id": "research_journal_d120",
+        "name": "RESEARCH JOURNAL - DAY 120",
+        "description": "CLASSIFIED - LEVEL 5\n\nI was forced to proceed with human trials.\nThe ethics committee was... bypassed.\nPrisoners. Sentenced to death.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    }
+}

@@ -1,3 +1,5 @@
+import item from "./item.ts"
+
 type Coord = {
     x: number,
     y: number,
@@ -26,38 +28,39 @@ function grid_check(coord: Coord) {
 function get_item(coord: Coord) {
     if (!grid_check(coord)) return null;
 
-    return grid[grid_index(coord)];
+    let id = grid[grid_index(coord)];
+
+    return item.get(id);
 }
 
-function set_item(coord: Coord, item: Item) {
+function set_item(coord: Coord, id: Item) {
     if (!grid_check(coord)) return null;
-    return grid[grid_index(coord)] = item;
+    if (!item.exist(id) && id != "") return null;
+    return grid[grid_index(coord)] = id;
 }
 
 function move_item(from: Coord, to: Coord) {
     if (from.x == to.x && from.y == to.y) return;
 
     let from_item = get_item(from);
-    if (!from_item) return false;
+    if (!from_item.id) return false;
 
     let to_item = get_item(to);
 
-    set_item(to, from_item);
-    set_item(from, to_item);
+    set_item(to, from_item.id);
+    set_item(from, to_item.id);
 
     onchange_callback();
 
     return true;
 }
 
-// NOTE: pour les fonctions get_item, add_item, find_item, remove_item il faudra peut etre changer leur parametre item
-//       pour l'instant c'est un strings donc ça passe, en fonction de comment on decide de structurer les items on 
-//       devra passer en argument l'item json ou l'id de l'item
+function add_item(id: Item) {
+    if (!item.exist(id)) return false;
 
-function add_item(item: Item) {
     for (let i = 0; i < grid_cap; i++) {
         if (!grid[i]) {
-            grid[i] = item;
+            grid[i] = id;
             break;
         }
     }
@@ -65,10 +68,10 @@ function add_item(item: Item) {
     onchange_callback();
 }
 
-function remove_item(item: Item) {
+function remove_item(id: Item) {
     for (let i = 0; i < grid_cap; i++) {
         if (!grid[i]) continue;
-        if (grid[i] == item) {
+        if (grid[i] == id) {
             grid[i] = undefined;
             break;
         }
@@ -77,14 +80,11 @@ function remove_item(item: Item) {
     onchange_callback();
 }
 
-function find_item(item: Item) {
-    if (!item) return false;
+function find_item(id: Item) {
+    if (!id) return false;
 
     for (let i = 0; i < grid_cap; i++) {
-        // TODO: changer le ==, ça marche pour l'instant car les items sont des strings
-        //       normallement c'est du json donc surement faire une fonction item_equal()
-        //       a faire une fois qu'on ce sera mis d'accord sur la structure d'un item
-        if (grid[i] == item) return true;
+        if (grid[i] == id) return true;
     }
 
     return false;
@@ -102,17 +102,20 @@ function test_data() {
         if (grid[i]) return;
     }
 
-    ["carte", "pomme", "rat mort", "antidote"].forEach((item) => {
+    for (let i = 0; i < 3; i++) {
+        let items_idx = parseInt(Math.random() * item.keys().length);
         let coord = null;
+        let max = 50;
         do {
             coord = {
                 x: Math.floor(Math.random() * grid_size.x),
                 y: Math.floor(Math.random() * grid_size.y),
             };
-        } while (get_item(coord));
+            max--
+        } while (get_item(coord) && max > 0);
 
-        set_item(coord, item);
-    });
+        let ret = set_item(coord, item.keys()[items_idx]);
+    };
 
     onchange_callback();
 }

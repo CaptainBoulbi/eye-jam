@@ -1,27 +1,32 @@
 {
     "morgue": {
+        "id": "morgue",
         "name": "Morgue",
         "links": ["lab", "rest_room"],
-        "items": ["autopsy_doc", "log_d150"],
+        "items": ["autopsy_doc", "log_d150"]
     },
     "rest_room": {
+        "id": "rest_room",
         "name": "Rest Room",
         "links": ["morgue", "isolation"],
-        "items": ["rodriguez_journal", "log_d45"],
+        "items": ["rodriguez_journal", "log_d45"]
     },
     "lab": {
+        "id": "lab",
         "name": "Lab",
         "links": ["morgue", "office"],
-        "items": ["vaccine_tld_v1", "log_d120", "catalyst"],
+        "items": ["vaccine_tld_v1", "log_d120", "catalyst"]
     },
     "office": {
+        "id": "office",
         "name": "Office",
         "links": ["lab", "isolation"],
-        "items": ["final_report", "patient_zero", "elevator_code"],
+        "items": ["final_report", "patient_zero", "elevator_code"]
     },
     "isolation": {
+        "id": "isolation",
         "name": "Isolation",
         "links": ["office", "rest_room", "syringe"],
-        "items": ["log_d1"],
-    },
-};
+        "items": ["log_d1"]
+    }
+}
