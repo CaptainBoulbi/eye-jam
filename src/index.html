@@ -1,3 +1,36 @@
-<h1 style="color: red">EYE JAME</h1>
-<img src="assets/jam-logo.png"></img>
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+div {
+    animation: fadeIn 1s ease-in;
+}
+</style>
+
+<div scene="test">
+    <h1 style="color: red">EYE JAME</h1>
+    <img onclick="scene_show('intro')" src="assets/jam-logo.png"></img>
+</div>
+
+<div scene="intro">
+    <h1>Je suis l'intro</h1>
+    <button onclick="scene_show('game')">Jouer</button>
+</div>
+
+<div scene="game">
+    <h1>Je suis le jeu</h1>
+</div>
+
+<script>
+    function scene_show(name) {
+        var scenes = document.querySelectorAll('[scene]')
+        scenes.forEach((scene) => {
+            scene.hidden = scene.attributes.scene.value != name
+        })
+    }
+
+    scene_show('test')
+</script>
+
 <script src="index.js"></script>
