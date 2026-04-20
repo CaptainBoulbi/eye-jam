@@ -1,36 +1,57 @@
-<style>
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-div {
-    animation: fadeIn 1s ease-in;
-}
-</style>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eye Jam</title>
 
-<div scene="test">
-    <h1 style="color: red">EYE JAME</h1>
-    <img onclick="scene_show('intro')" src="assets/jam-logo.png"></img>
-</div>
+    <style>
 
-<div scene="intro">
-    <h1>Je suis l'intro</h1>
-    <button onclick="scene_show('game')">Jouer</button>
-</div>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
 
-<div scene="game">
-    <h1>Je suis le jeu</h1>
-</div>
 
-<script>
-    function scene_show(name) {
-        var scenes = document.querySelectorAll('[scene]')
-        scenes.forEach((scene) => {
-            scene.hidden = scene.attributes.scene.value != name
-        })
-    }
+        [scene] {
+            animation: fadeIn 1s ease-in;
+        }
+    </style>
+</head>
+<body>
 
-    scene_show('test')
-</script>
+    <div scene="presentation">
+        <h1>EYE JAM</h1>
+        <img 
+            src="assets/jam-logo.png" 
+            alt="Jam Logo"
+            onclick="scene_show('intro')"
+            style="cursor: pointer;"
+        >
+    </div>
 
-<script src="index.js"></script>
+    <div scene="intro">
+        <h1>Je suis l'intro</h1>
+        <button onclick="scene_show('game')">Jouer</button>
+    </div>
+
+   
+    <div scene="game">
+        <h1>Je suis le jeu</h1>
+    </div>
+
+
+    <script>
+        function scene_show(name) {
+            document.querySelectorAll('[scene]').forEach((scene) => {
+                scene.hidden = scene.getAttribute('scene') !== name
+            })
+        }
+
+        scene_show('presentation')
+    </script>
+
+    <script type="module" src="./index.ts"></script>
+
+</body>
+</html>
