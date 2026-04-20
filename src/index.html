@@ -41,28 +41,43 @@
             src="assets/jam-logo.png" 
             alt="Jam Logo"
             style="
-            height: 200px; 
-            width: 1380px;
-            cursor: pointer;"
+            height: 10vw; 
+            width: 95vw;"
         >
 
-        <button 
-            onclick="scene_show('intro')"
-            style="
-                margin-top: 50px;
-                margin-left: 600px;
-                padding: 40px 40px;
-                font-size: 24px;
-                background: #1a1a1a;
-                color: #cccccc;
-                border: 1px solid #333;
-                cursor: pointer;
-            "
-        >
-        Entrer
+        <style>
+            .container {
+                width: 80vw;          /* largeur adaptif a l'ecran */
+                height: 90vh;         /* hauteur adaptif a l'ecran */
+                border: 1px solid white; /* contour blanc */
+                margin: 0 auto;        /* centrage horizontal */
+                padding: 20px;         /* espace intérieur */
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                .container button {
+                   text-align: center;
+                   margin-top: 200px; /* pour pousser le bouton vers le bas */
+                }
+            }
+
+        </style> 
         
-        </button>
-
+        <div class="container">
+            <button 
+                onclick="scene_show('intro')"
+                style="
+                    padding : 40px 40px;
+                    font-size: 24px;
+                    background: #1a1a1a;
+                    color: #7a2f2f;
+                    border: 1px solid #333;
+                    cursor: pointer;
+                "
+                > Enter
+            
+            </button>
+        </div>
     </div>
 
     <div scene="intro">
