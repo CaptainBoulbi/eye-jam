@@ -1,27 +1,27 @@
 {
     "morgue": {
         "name": "Morgue",
-        "links": ["salle_repos", "labo"],
-        "items": ["doc_autopsie", "log_d150"]
+        "links": ["lab", "rest_room"],
+        "items": ["autopsy_doc", "log_d150"],
     },
-    "salle_repos": {
-        "name": "Salle de repos",
-        "links": ["morgue", "bureau"],
-        "items": ["journal_rodriguez", "log_d45"]
+    "rest_room": {
+        "name": "Rest Room",
+        "links": ["morgue", "isolation"],
+        "items": ["rodriguez_journal", "log_d45"],
     },
-    "labo": {
-        "name": "Labo",
-        "links": ["morgue", "isolement"],
-        "items": ["vaccin_tld_v1", "log_d120"]
+    "lab": {
+        "name": "Lab",
+        "links": ["morgue", "office"],
+        "items": ["vaccine_tld_v1", "log_d120", "catalyst"],
     },
-    "bureau": {
-        "name": "Bureau",
-        "links": ["salle_repos", "isolement"],
-        "items": ["final_report", "patient_zero"]
+    "office": {
+        "name": "Office",
+        "links": ["lab", "isolation"],
+        "items": ["final_report", "patient_zero", "elevator_code"],
     },
-    "isolement": {
-        "name": "Isolement",
-        "links": ["labo", "bureau"],
-        "items": ["log_d1"]
-    }
-}
+    "isolation": {
+        "name": "Isolation",
+        "links": ["office", "rest_room", "syringe"],
+        "items": ["log_d1"],
+    },
+};

@@ -20,7 +20,7 @@ Promising.
 
 - E.V.
 
----
+------------------------------------------------------------------------------------
 
 RESEARCH JOURNAL - DAY 45
 Dr. Elena Vasquez
@@ -46,10 +46,10 @@ That's ridiculous. Rats don't smile.
 
 - E.V.
 
----
+------------------------------------------------------------------------------------
 
 RESEARCH JOURNAL - DAY 120
-CLASSIFIED - LEVEL 5
+CLASSIFIED - ■■■■■■■■■■
 
 I was forced to proceed with human trials.
 The ethics committee was... bypassed.
@@ -58,7 +58,7 @@ Prisoners. Sentenced to death.
 “They're already dead anyway.”
 That's what they told me.
 
-Subjects #1 through #6: Partial success.
+Subjects #1 through #■■: Partial success.
 Functional regeneration.
 But the behavioral changes persist.
 They’re becoming… different.
@@ -72,10 +72,10 @@ I should have stopped.
 
 —E.V.
 
----
+------------------------------------------------------------------------------------
 
 RESEARCH LOG - DAY 150
-MAXIMUM ALERT
+■■■■■■■■■■■■■■■
 
 Marcus has escaped.
 
@@ -101,7 +101,7 @@ I’m sorry.
 
 - E.V.
 
----
+------------------------------------------------------------------------------------
 
 FINAL REPORT
 Dr. Elena Vasquez
@@ -135,7 +135,7 @@ Dr. Elena Vasquez
 
 [Rest of document stained with blood]
 
----
+------------------------------------------------------------------------------------
 
 AUTOPSY REPORT #■■■
 Medical Examiner: Dr. Thomas Chen
@@ -169,7 +169,7 @@ Farewell, David.
 
 - Dr. Chen
 
----
+------------------------------------------------------------------------------------
 
 Personal Journal
 Mike Rodriguez, Lab Technician
@@ -201,7 +201,7 @@ Slow footsteps. Deliberate.
 He knows where I am.
 He’s just waiting for the right moment.
 
----
+------------------------------------------------------------------------------------
 
 EXPERIMENTAL VACCINE TLD-V1
 INCOMPLETE - DO NOT USE
@@ -228,7 +228,7 @@ Searches impossible.
 
 STATUS: ABANDONED
 
----
+------------------------------------------------------------------------------------
 
 FILE: PATIENT ZERO
 CLASSIFICATION: ABOVE TOP SECRET
