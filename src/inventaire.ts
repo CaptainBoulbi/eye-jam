@@ -106,9 +106,11 @@ function test_data() {
         var coord = null;
         do {
             coord = {
-                x: Math.random() * grid_size.x,
-                y: Math.random() * grid_size.y,
+                x: Math.floor(Math.random() * grid_size.x),
+                y: Math.floor(Math.random() * grid_size.y),
             };
+
+            console.log(coord)
         } while (get_item(coord));
 
         set_item(coord, item);
