@@ -288,6 +288,12 @@
             >
                 Test Salle
             </button>
+            <button
+                class="btn"
+                onclick="scene_show('test-carte')"
+            >
+                Test Carte
+            </button>
             <button onclick="setShake(0)">Stop</button>
             <button onclick="setShake(1)">Shake</button>
 
@@ -317,45 +323,20 @@
     <div scene="game">
         <div id="game">
             <div id="stats">
-                <img class="stat-img" id="sante" src="./assets/stats/Sante/Sante_15.PNG">
-                <img class="stat-img" id="lucid" src="./assets/stats/Lucidite/Lucidite_15.PNG">
-                <img class="stat-img" id="stress" src="./assets/stats/Stress/Stress_0.PNG">
-                <button onclick="changeStat('sante', +1)">Heal</button>
-                <button onclick="changeStat('sante', -1)">Hit</button>
+                <img class="stat-img" id="sante" src="./assets/stats/sante/sante_15.PNG">
+                <img class="stat-img" id="lucide" src="./assets/stats/lucide/lucide_15.PNG">
+                <img class="stat-img" id="stress" src="./assets/stats/stress/Asset_Stress.PNG">
+                <button onclick="stat.add('sante', +1)">Heal</button>
+                <button onclick="stat.add('sante', -1)">Hit</button>
             </div>
 
             <script>
-                const stats = {
-                    sante: 15,
-                    lucid: 15,
-                    stress: 0
-                };
-
-                const MAX = 15;
-                const MIN = 0;
-
-                function getAsset(type, value) {
-                    return `./assets/stats/${type}/${type}_${value}.PNG`;
+                function draw_stat(type) {
+                    const img = document.getElementById(type);
+                    img.src = `./assets/stats/${type}/${type}_${stat.get(type)}.PNG`;
                 }
-
-                function changeStat(statName, delta) {
-                    let value = stats[statName];
-
-                    value = Math.max(MIN, Math.min(MAX, value + delta));
-
-                    stats[statName] = value;
-
-                    updateUI(statName);
-                }
-
-                function updateUI(statName) {
-                    const img = document.getElementById(statName);
-                    img.src = getAsset(capitalize(statName), stats[statName]);
-                }
-
-                function capitalize(str) {
-                    return str.charAt(0).toUpperCase() + str.slice(1);
-                }
+                stat.onchange(draw_stat);
+                stat.ondeath(() => { scene_show('game-over') });
             </script>
 
             <div id="inventory">
@@ -365,6 +346,7 @@
                     </tr>
                 </table>
                 <button onclick="scene_show('test-inventaire')" style="margin-top: 1rem">Editer l'inventaire</button>
+                <button onclick="scene_show('test-carte')" style="margin-top: 1rem">Editer carte</button>
                 <script>
                 inventaire.onchange(() => {
                     let inv_html = '';
@@ -429,6 +411,10 @@
                 CARDS
             </div>
         </div>
+    </div>
+
+    <div scene="game-over">
+        <h1>Tu est mort</h1>
     </div>
 
     <div scene="test-inventaire">
@@ -496,6 +482,24 @@
         </script>
     </div>
 
+    <div scene="test-carte">
+        <h1>Carte</h1>
+        <p>Carte actuel:</p>
+        <pre id="show_carte"></pre>
+        <button onclick="carte.next(0)">choix gauche</button>
+        <button onclick="carte.next(1)">choix droite</button>
+        <br>
+        <button onclick="scene_show('game')">voir stats</button>
+
+        <script>
+            function update_carte() {
+                show_carte.innerText = JSON.stringify(carte.current(), null, 4);
+            }
+            carte.onchange(update_carte);
+            update_carte();
+        </script>
+    </div>
+
     <script>
         // Affiche la scene demandee et cache toutes les autres
         function scene_show(name) {
@@ -507,11 +511,11 @@
 
          // Active ou desactive le tremblement de la scene game
         function setShake(niveau) {
-        document.getElementById('game')?.classList.toggle('shake', niveau === 1);
-}
+            document.getElementById('game')?.classList.toggle('shake', niveau === 1);
+        }
 
         // Au demarrage, on affiche la scene de presentation
-        scene_show('presentation');
+        scene_show('test-carte');
         //scene_show('game'); //pour faire des aller retours plus simplement
     </script>
 

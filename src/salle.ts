@@ -1,6 +1,6 @@
 import salles from "./data/salles.json"
 
-let salle_in = "morgue";
+let salle_in = Object.keys(salles)[0];
 
 let onchange_callback = () => {};
 

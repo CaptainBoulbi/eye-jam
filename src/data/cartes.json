@@ -1,0 +1,56 @@
+{
+    "rat_attack": {
+        "id": "rat_attack",
+        "name": "Rat Attack",
+        "content": "un rat t'attaque",
+        "reference": null,
+        "salle": "morgue",
+        "stats": {
+            "sante": 5,
+            "lucide": 1,
+            "stress": 2
+        },
+        "deal": [
+            {
+                "sante": -2,
+                "lucide": 0,
+                "stress": -1
+            },
+            {
+                "sante": 0,
+                "lucide": -2,
+                "stress": -1
+            }
+        ],
+        "ingredients": [],
+        "craft": null,
+        "image": "assets/innexistant.png"
+    },
+    "rat_attack2": {
+        "id": "rat_attack2",
+        "name": "Rat & Friend Attack",
+        "content": "2 rat t'attaque",
+        "reference": "rat_attack",
+        "salle": "morgue",
+        "stats": {
+            "sante": 7,
+            "lucide": 1,
+            "stress": 2
+        },
+        "deal": [
+            {
+                "sante": -5,
+                "lucide": 0,
+                "stress": -2
+            },
+            {
+                "sante": 0,
+                "lucide": -5,
+                "stress": -2
+            }
+        ],
+        "ingredients": ["log_d1"],
+        "craft": "empty_syringe",
+        "image": "assets/innexistant.png"
+    }
+}
