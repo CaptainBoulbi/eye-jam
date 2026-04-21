@@ -15,7 +15,7 @@
         "id": "lab",
         "name": "Lab",
         "links": ["morgue", "office"],
-        "items": ["vaccine_tld_v1", "log_d120", "catalyst"]
+        "items": ["vaccine_tld_v1", "log_d120", "enzymatic_catalyst"]
     },
     "office": {
         "id": "office",
@@ -26,7 +26,7 @@
     "isolation": {
         "id": "isolation",
         "name": "Isolation",
-        "links": ["office", "rest_room", "syringe"],
-        "items": ["log_d1"]
+        "links": ["office", "rest_room"],
+        "items": ["log_d1", "empty_syringe"]
     }
 }
