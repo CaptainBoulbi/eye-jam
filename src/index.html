@@ -178,7 +178,6 @@
             flex-direction: row;
             gap: 10px;
             text-align: center;
-            border: 2px green solid;
         }
         #inventory{
             text-align: center;
@@ -233,6 +232,10 @@
         }
         #pocket *{
             border: 1px white solid;
+        }
+        .stat-img {
+            height: 75px;
+            width: 75px;
         }
 
 
@@ -314,10 +317,47 @@
     <div scene="game">
         <div id="game">
             <div id="stats">
-                <label>Physical</label>
-                <label>Stress</label>
-                <label>Lucidity</label>
+                <img class="stat-img" id="sante" src="./assets/stats/Sante/Sante_15.PNG">
+                <img class="stat-img" id="lucid" src="./assets/stats/Lucidite/Lucidite_15.PNG">
+                <img class="stat-img" id="stress" src="./assets/stats/Stress/Stress_0.PNG">
+                <button onclick="changeStat('sante', +1)">Heal</button>
+                <button onclick="changeStat('sante', -1)">Hit</button>
             </div>
+
+            <script>
+                const stats = {
+                    sante: 15,
+                    lucid: 15,
+                    stress: 0
+                };
+
+                const MAX = 15;
+                const MIN = 0;
+
+                function getAsset(type, value) {
+                    return `./assets/stats/${type}/${type}_${value}.PNG`;
+                }
+
+                function changeStat(statName, delta) {
+                    let value = stats[statName];
+
+                    value = Math.max(MIN, Math.min(MAX, value + delta));
+
+                    stats[statName] = value;
+
+                    updateUI(statName);
+                }
+
+                function updateUI(statName) {
+                    const img = document.getElementById(statName);
+                    img.src = getAsset(capitalize(statName), stats[statName]);
+                }
+
+                function capitalize(str) {
+                    return str.charAt(0).toUpperCase() + str.slice(1);
+                }
+            </script>
+
             <div id="inventory">
                 <table id="pocket">
                     <tr>
