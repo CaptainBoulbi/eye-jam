@@ -23,6 +23,19 @@
             from { opacity: 0; }
             to   { opacity: 1; }
         }
+        @keyframes breathing {
+                50% { filter: brightness(1.2); }
+            }
+        @keyframes horizontal-shaking {
+                0%   { transform: translate(0, 0); }
+                25%  { transform: translate(-2px, 1px); }
+                50%  { transform: translate(2px, -1px); }
+                75%  { transform: translate(-1px, 2px); }
+                100% { transform: translate(0, 0); }
+            }
+
+            .shake { animation: horizontal-shaking 0.5s infinite; }
+
 
         [scene] {
             animation: fadeIn 1s ease-in;
@@ -58,9 +71,10 @@
             min-height: 100vh;
             margin: 0;
             color: #cccccc;        
-            font-family: 'Georgia', serif; 
+            font-family: 'Georgia', serif;
 
         }
+
 
         [scene="intro"] { 
         background: 
@@ -73,10 +87,7 @@
         animation: breathing 5s ease-in-out infinite;
 
         }
-
-            @keyframes breathing {
-                50% { filter: brightness(1.2); }
-            }
+             
 
             /* Titre de l'intro */
             [scene="intro"] h1 {
@@ -165,6 +176,8 @@
             >
                 Test Salle
             </button>
+            <button onclick="setShake(0)">Stop</button>
+            <button onclick="setShake(1)">Shake</button>
 
             <!-- Bouton Enter : toujours colle en bas grace a la classe btn-enter -->
             <button 
@@ -415,6 +428,14 @@
                 scene.hidden = scene.getAttribute('scene') !== name
             })
         }
+        
+
+         // Active ou desactive le tremblement de la scene game
+        function setShake(niveau) {
+        document.getElementById('game')?.classList.toggle('shake', niveau === 1);
+}
+
+
 
         // Au demarrage, on affiche la scene de presentation
         scene_show('presentation');
