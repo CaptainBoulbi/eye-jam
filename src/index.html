@@ -52,11 +52,21 @@
         .container {
             width: 80vw;
             height: 90vh;
-            border: 1px solid white;
             margin: 0 auto;
             padding: 20px;
             text-align: center;
             position: relative;
+            box-shadow: 0 2px 8px rgba(122, 221, 33, 0.5);
+        }
+
+        .btn {
+            margin: 20px 10px 20px;
+            padding: 40px;
+            font-size: 24px;
+            background: #1a1a1a;
+            color: rgb(85, 153, 23);
+            border: 1px solid #333;
+            cursor: pointer;
         }
 
         .btn-enter {
@@ -87,45 +97,133 @@
         animation: breathing 5s ease-in-out infinite;
 
         }
-             
 
-            /* Titre de l'intro */
-            [scene="intro"] h1 {
-                text-align: center;
-                font-size: 48px;
-                letter-spacing: 5px;
-                color: #8a0000;
-                padding-top: 80px;
-                margin: 0;
-            }
+        @keyframes breathing {
+            50% { filter: brightness(1.2); }
+        }
 
-            /* Menu vertical avec 3 boutons */
-            .menu {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-                margin-top: 50px;
-            }
+        /* Titre de l'intro */
+        [scene="intro"] h1 {
+            text-align: center;
+            font-size: 48px;
+            letter-spacing: 5px;
+            color: #8a0000;
+            padding-top: 80px;
+            margin: 0;
+        }
 
-            .menu button {
-                width: 240px;
-                padding: 12px;
-                background: transparent;
-                color: #aaaaaa;
-                border: 1px solid #444;
-                font-family: 'Georgia', serif;
-                font-size: 18px;
-                letter-spacing: 3px;
-                cursor: pointer;
-                transition: all 0.4s;
-            }
+        /* Menu vertical avec 3 boutons */
+        .menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 50px;
+        }
 
-            .menu button:hover {
-                color: #ff2222;
-                border-color: #7a0000;
-                letter-spacing: 6px;
-            }
+        .menu button {
+            width: 240px;
+            padding: 12px;
+            background: transparent;
+            color: #aaaaaa;
+            border: 1px solid #444;
+            font-family: 'Georgia', serif;
+            font-size: 18px;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: all 0.4s;
+        }
+
+        .menu button:hover {
+            color: #ff2222;
+            border-color: #7a0000;
+            letter-spacing: 6px;
+        }
+
+        #logo {
+            height: 100%;
+            width: 100%;
+        }
+
+        .title {
+            background-image: linear-gradient(180deg, rgba(42, 195, 34, 1) 0%, rgba(20, 30, 15, 1) 100%);
+            color: transparent;
+            background-clip: text;
+            font-size: 48px;
+        }
+
+        /*Style de la scène Game*/
+        #game{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+            grid-auto-rows: minmax(100px, auto);
+        }
+        #stats{
+            grid-column: 1/4;
+            grid-row: 1;
+            height: 15vh;
+            width: 25vh;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            text-align: center;
+            border: 2px green solid;
+        }
+        #inventory{
+            text-align: center;
+            grid-column: 4/4;
+            grid-row: 1;
+            height: 90vh;
+            user-select: none;
+        }
+        #map{
+            grid-column: 1/4;
+            grid-row: 2;
+            height: 25vh;
+            width: 25vh;
+            text-align: center;
+            border: 2px white solid;
+        }
+        #full-card{
+            grid-column: 2/4;
+            grid-row: 1;
+            height: 60vh;
+            align-items: center;
+            text-align: center;
+            padding: 10px 10px 10px;
+        }
+        #background{
+            height: 80%;
+            width: 100%;
+            border: 2px blue solid;
+            margin-bottom: 10px;
+        }
+        #background img{
+            background-size: cover;   
+        }
+        #description{
+            height: 15%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-style: italic;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #cards{
+            text-align: center;
+            grid-column: 2/4;
+            grid-row: 2;
+            border: 2px purple solid;
+        }
+        #pocket{
+            border: 1px black solid;
+        }
+        #pocket *{
+            border: 1px white solid;
+        }
 
 
         /* Style du tableau d'inventaire */
@@ -143,36 +241,37 @@
 
         <!-- Logo affiche en haut de la page -->
         <img 
+            id="logo" 
             src="assets/jam-logo.png" 
             alt="Jam Logo"
-            style="
-            height: 10vw; 
-            width: 95vw;"
         >
-
 
         <div class="container">
 
+            <div class="presentation-jeu">
+                <h1 class="title">The Lazarus Project</h1>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+            <br>
+            <div class="credits">
+                <h2>Crédits</h2>
+                <label>Graphismes : la madame</label><br>
+                <label>Code : nemocouille, ltuffery</label><br>
+                <label>Scénario : le raccoon sdf</label><br>
+                <label>Ceux qui pètent tout : SARI Ebral, ltuffery</label><br>
+                <label>Le mec chiant qui veut sa photo : <img src="feur" alt="le chiant"> </label><br>
+            </div>
+
             <!-- Les autres elements se suivent normalement en partant du haut -->
             <button 
+                class="btn"
                 onclick="scene_show('test-inventaire')"
-                style="padding: 40px;
-                font-size: 24px;
-                background: #1a1a1a;
-                color: #7a2f2f;
-                border: 1px solid #333;
-                cursor: pointer;"
             >
                 Test Inventaire
             </button> 
             <button
+                class="btn"
                 onclick="scene_show('test-salle')"
-                style="padding: 40px;
-                font-size: 24px;
-                background: #1a1a1a;
-                color: #7a2f2f;
-                border: 1px solid #333;
-                cursor: pointer;"
             >
                 Test Salle
             </button>
@@ -181,14 +280,8 @@
 
             <!-- Bouton Enter : toujours colle en bas grace a la classe btn-enter -->
             <button 
-                class="btn-enter"
+                class="btn-enter btn"
                 onclick="scene_show('intro')"
-                style="padding: 40px;
-                font-size: 24px;
-                background: #1a1a1a;
-                color: #7a2f2f;
-                border: 1px solid #333;
-                cursor: pointer;"
             >
                 Enter
             </button>
@@ -198,7 +291,7 @@
     </div>
 
     <div scene="intro">
-        <h1>Descartes</h1>
+        <h1 class="title">The Lazarus Project</h1>
 
         <div class="menu">   
             <button onclick="scene_show('game')">Jouer</button>
@@ -206,81 +299,6 @@
             <button onclick="scene_show('presentation')">Quitter</button>
         </div>
     </div>
-
-<!-- Style de la scène Game -->
-<style>
-    #game{
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: 10px;
-        grid-auto-rows: minmax(100px, auto);
-    }
-    #stats{
-        grid-column: 1/4;
-        grid-row: 1;
-        height: 15vh;
-        width: 25vh;
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        text-align: center;
-        border: 2px green solid;
-    }
-    #inventory{
-        text-align: center;
-        grid-column: 4/4;
-        grid-row: 1;
-        height: 90vh;
-        user-select: none;
-    }
-    #map{
-        grid-column: 1/4;
-        grid-row: 2;
-        height: 25vh;
-        width: 25vh;
-        text-align: center;
-        border: 2px white solid;
-    }
-    #full-card{
-        grid-column: 2/4;
-        grid-row: 1;
-        height: 60vh;
-        align-items: center;
-        text-align: center;
-        padding: 10px 10px 10px;
-    }
-    #background{
-        height: 80%;
-        width: 100%;
-        border: 2px blue solid;
-        margin-bottom: 10px;
-    }
-    #background img{
-        background-size: cover;   
-    }
-    #description{
-        height: 15%;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.3);
-        color: white;
-        font-style: italic;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    #cards{
-        text-align: center;
-        grid-column: 2/4;
-        grid-row: 2;
-        border: 2px purple solid;
-    }
-    #pocket{
-        border: 1px black solid;
-    }
-    #pocket *{
-        border: 1px white solid;
-    }
-</style>
 
     <div scene="game">
         <div id="game">
