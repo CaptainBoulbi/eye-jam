@@ -20,6 +20,8 @@ Isolement : Salle de repos, Bureau
 	Docs : log d1
 	Items : Seringue
 
+Code ascenseur : 5924
+
 
 système de code de salle à voir
 

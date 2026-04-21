@@ -1,22 +1,85 @@
 {
-    "research_journal": {
-        "id": "research_journal",
+    "log_d1": {
+        "id": "log_d1",
         "name": "RESEARCH JOURNAL",
-        "description": "Dr. Elena Vasquez\nGeneTech Corp - Project Lazarus\n\nDay 1 of the project.",
+        "description": "RESEARCH JOURNAL\nDr. Elena Vasquez\nGeneTech Corp - Project Lazarus\n\nDay 1 of the project.\n\nI have been entrusted with something extraordinary.\nThe Lazarus serum could revolutionize medicine.\nReal-time cell regeneration.\nNo more cancer. No more permanent injuries.\nImmortality within reach.\n\nI cannot fail.\nThe government is counting on me.\nHumanity is counting on me.\n\nNote: Initial cell tests\nshow a 300% faster division rate.\nPromising.\n\n- E.V.",
         "icon": "assets/innexistant.png",
         "image": "assets/innexistant.png"
     },
-    "research_journal_d45": {
-        "id": "research_journal_d45",
+    "log_d45": {
+        "id": "log_d45",
         "name": "RESEARCH JOURNAL - DAY 45",
-        "description": "Dr. Elena Vasquez\n\nThe rats in Group B are exhibiting\nabnormal behavior.",
+        "description": "Dr. Elena Vasquez\n\nThe rats in Group B are exhibiting\nabnormal behavior.\nAggression toward other subjects.\nInsensitivity to pain.\nA... disturbing appetite.\n\nI reported these anomalies to the committee.\nThey told me to continue.\n“The benefits outweigh the risks.”\n\nI'm not sure I agree.\n\nPersonal note: I had nightmares last night. The rats were staring at me.\nThey were smiling.\n\nThat's ridiculous. Rats don't smile.\n\n- E.V.",
         "icon": "assets/innexistant.png",
         "image": "assets/innexistant.png"
     },
-    "research_journal_d120": {
-        "id": "research_journal_d120",
+    "log_d120": {
+        "id": "log_d120",
         "name": "RESEARCH JOURNAL - DAY 120",
-        "description": "CLASSIFIED - LEVEL 5\n\nI was forced to proceed with human trials.\nThe ethics committee was... bypassed.\nPrisoners. Sentenced to death.",
+        "description": "CLASSIFIED - ■■■■■■■■■■\n\nI was forced to proceed with human trials.\nThe ethics committee was... bypassed.\nPrisoners. Sentenced to death.\n\n“They're already dead anyway.”\nThat's what they told me.\n\nSubjects #1 through #■■: Partial success.\nFunctional regeneration.\nBut the behavioral changes persist.\nThey’re becoming… different.\n\nSubject #7—Marcus Cole.\nSpecial case.\nPerfect regeneration.\nBut something’s wrong with his eyes.\n\nI should have stopped.\n\n—E.V.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "log_d150": {
+        "id": "log_d150",
+        "name": "RESEARCH LOG - DAY 150",
+        "description": "■■■■■■■■■■■■■■■\n\nMarcus has escaped.\n\nHow? The cells were reinforced.\nThe guards... they're dead.\nTorn to pieces.\n\nHe infected three employees before fleeing.\nThe virus... it spreads through bites.\nThrough blood.\nThrough saliva.\n\nWhat have I done?\nWhat have WE done?\n\nContainment protocol activated.\nBut I know it’s too late.\n\nMarcus is out there.\nAnd he’s not Marcus anymore.\n\nI’m sorry.\n\n- E.V.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "final_report": {
+        "id": "final_report",
+        "name": "FINAL REPORT",
+        "description": "Dr. Elena Vasquez\nDate: ■■■■■■■■■■\n\nTo whoever finds this:\n\nThere is no cure.\nI tried. For weeks.\nThe virus mutates too quickly.\n\nBut I found something.\nThe antibodies from Patient Zero.\nMarcus Cole.\n\nIf you can find him...\nIf you can extract his blood...\nThere may still be hope.\n\nHe is out there somewhere.\nMore human than the others.\nBut infinitely more dangerous.\n\nI won’t be here when you read this.\nThe infection is spreading.\nI refuse to become one of them.\n\nI’m sorry.\n\nDr. Elena Vasquez\n\n[Rest of document stained with blood]",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "autopsy_doc": {
+        "id": "autopsy_doc",
+        "name": "AUTOPSY REPORT #■■■",
+        "description": "Medical Examiner: Dr. Thomas Chen\nSubject: Dr. David Foster, male, 33 years old\nCause of death: Multiple bite wounds\n\nOBSERVATIONS:\n- Bite marks on arms and neck\n- Visible infection: blackened veins\n- Eyes: discolored irises (gray)\n- Body temperature: abnormally high\n- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n- ■■■■■■■■■■■■■■■■■■■■■■\n- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n\nPOST-MORTEM:\nThe subject rose to his feet after 4 hours.\nNo vital signs but motor activity.\nImmediate aggressive behavior.\nSubject neutralized.\n\nCONCLUSION:\nThis is not a normal disease.\nThe dead do not stay dead.\n\nRecommendation: BURN THE BODIES.\n\nNote: I am stopping the autopsies.\nIt is too dangerous.\nFarewell, David.\n\n- Dr. Chen",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "rodriguez_journal": {
+        "id": "rodriguez_journal",
+        "name": "Personal Journal ",
+        "description": "Mike Rodriguez, Lab Technician\n\nI knew something was wrong.\nThe scientists were scared.\nEven Dr. Vasquez.\n\nThe day Marcus escaped, I was there.\nI saw him.\nHe wasn’t running.\nHe was walking. Calmly.\nAs if he knew exactly where to go.\n\nThe guards fired.\nThe bullets didn’t stop him.\nHe looked at them. And he smiled.\n\nNot a human smile.\nSomething… satisfied.\n\nI hid.\nThat’s why I’m still alive.\n\nBut sometimes, at night, I swear\nI hear footsteps outside.\nSlow footsteps. Deliberate.\n\nHe knows where I am.\nHe’s just waiting for the right moment.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "vaccine_tld_v1": {
+        "id": "vaccine_tld_v1",
+        "name": "EXPERIMENTAL VACCINE TLD-V1",
+        "description": "INCOMPLETE - DO NOT USE\n\nIdentified components:\n- Patient Zero Antibody [REQUIRED]\n- Neural Extract [OBTAINED]\n- Stabilizer [OBTAINED]\n- Catalyst [MISSING]\n- ■■■■■■■■■■■■■■■ [OBTAINED]\n- ■■■■■■■■■■■■■■■■■■■■ [MISSING]\n- ■■■■■■■■■ [MISSING]\n\nPROCEDURE:\n1. Obtain fresh blood from Patient Zero\n2. Isolate specific antibodies\n3. Combine with stabilizer\n4. Add unknown catalyst\n5. Administer intravenously\n\nPROBLEM:\nPatient Zero missing.\nSearches impossible.\n\nSTATUS: ABANDONED",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "patient_zero": {
+        "id": "patient_zero",
+        "name": "FILE: PATIENT ZERO",
+        "description": "CLASSIFICATION: ABOVE TOP SECRET\n\nNAME: Marcus Cole\nAGE: 34\nPRE-INFECTION STATUS: Prisoner\nCRIME: Murder (double homicide)\nPROFILE: Diagnosed psychopath\n\nSELECTION FOR PROJECT LAZARUS:\n“Ideal subject. No family.\nNo one will look for him.”\n\nTREATMENT RESULTS:\n- Regeneration: PERFECT\n- Side Effects: AMPLIFIED\n- Intelligence: PRESERVED (abnormal)\n- Aggression: EXTREME\n\nNOTE FROM Dr. VASQUEZ:\n“Marcus is different from the others.\nHe thinks. He plans.\nIt’s as if the virus had...\nperfected him rather than destroyed him.”\n\nCURRENT STATUS: ON THE RUN\nLAST KNOWN LOCATION: ■■■■■■■■■■\n\nDANGER: MAXIMUM\nAPPROACH: NOT RECOMMENDED\n\nNote : ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "elevator_code": {
+        "id": "elevator_code",
+        "name":"Post-it",
+        "description": "A bloodstained Post-it note with the elevator code: 5924",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "empty_syringe": {
+        "id": "empty_syringe",
+        "name":"Empty Syringe",
+        "description": "An empty syringe",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "enzymatic_catalyst": {
+        "id": "enzymatic_catalyst",
+        "name":"Enzymatic Catalyst",
+        "description": "An enzymatic catalyst for the production of the experimental TLD-V1 vaccine",
         "icon": "assets/innexistant.png",
         "image": "assets/innexistant.png"
     }
