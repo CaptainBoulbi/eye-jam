@@ -15,6 +15,7 @@
     <style>
 
         body {
+            color: white;
             background-color: black;
         }
 
@@ -52,7 +53,7 @@
             transform: translateX(-50%);
         }
 
-        [scene="main-game"] { 
+        [scene="game"] { 
             background : radial-gradient(circle, #1c1c1c 0%, #0a0a0a 50%, #000000 100%);
             min-height: 100vh;
             margin: 0;
@@ -187,7 +188,7 @@
         <h1>Descartes</h1>
 
         <div class="menu">   
-            <button onclick="scene_show('main-game')">Jouer</button>
+            <button onclick="scene_show('game')">Jouer</button>
             <button onclick="scene_show('test-inventaire')">Options</button>
             <button onclick="scene_show('presentation')">Quitter</button>
         </div>
@@ -196,7 +197,6 @@
 <!-- Style de la scène Game -->
 <style>
     #game{
-        color: white;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 10px;
@@ -297,6 +297,7 @@
                         <td>Empty, waiting to be initialised</td>
                     </tr>
                 </table>
+                <button onclick="scene_show('test-inventaire')" style="margin-top: 1rem">Editer l'inventaire</button>
                 <script>
                 inventaire.onchange(() => {
                     let inv_html = '';
@@ -341,6 +342,7 @@
                     }
                 });
             </script>
+
             </div>
             <div id="map">
                 <!-- en attente des assets -->
@@ -363,7 +365,6 @@
     </div>
 
     <div scene="test-inventaire">
-        <button onclick="scene_show('game')" style="margin-top: 1rem">Voir l'inventaire</button>
         <input id="input_item" placeholder="clé" style="margin-top: 1rem"></input>
         <button onclick="inventaire.add(input_item.value)">Ajouter item</button>
         <br>
@@ -372,8 +373,12 @@
         <br>
         <input onchange="search_item.innerText = `l\'objet '${this.value}' ` + (inventaire.find(this.value) ? 'existe' : 'n\'existe pas')" placeholder="antidote" style="margin-top: 1rem"></input>
         <span id="search_item" >Entrez le nom d'un item</span>
+        <br>
+        <button onclick="scene_show('game')" style="margin-top: 1rem">Voir l'inventaire</button>
         <p>Action de l'inventaire :</p>
         <ul>
+            <li>deplacer objet (drag & drop)</li>
+            <li>afficher objet (cliquer sur la case)</li>
             <li>ajouter objet</li>
             <li>verifier si un objet est dans l'inventaire</li>
             <li>enlever un objet de l'inventaire (consommé)</li>
@@ -412,8 +417,8 @@
         }
 
         // Au demarrage, on affiche la scene de presentation
-        //scene_show('presentation');
         scene_show('presentation');
+        //scene_show('game'); //pour faire des aller retours plus simplement
     </script>
 
 </body>
