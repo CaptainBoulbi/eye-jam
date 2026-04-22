@@ -728,20 +728,28 @@ function update_vignette() {
     // Réinitialise l'intervalle des hallucinations
     clearInterval(eyeInterval);
 
-    // Hallucinations d'yeux si lucidité faible (lucide=6 → lent, lucide=0 → rapide)
+    // Hallucinations d'yeux si lucidité faible (lucide=6 → lent/peu, lucide=0 → rapide/beaucoup)
     eyeInterval = lucide < 7 ? setInterval(() => {
-        const eye = Object.assign(document.createElement('img'), { src: './assets/eye.png' });
-        const taille = 40 + Math.random() * 80;
-        eye.classList.add('eye-hallucination');
-        Object.assign(eye.style, {
-            width: taille + 'px', height: taille + 'px',
-            left: Math.random() * (window.innerWidth - taille) + 'px',
-            top: Math.random() * (window.innerHeight - taille) + 'px'
-        });
-        document.body.appendChild(eye);
-        setTimeout(() => eye.remove(), 1000);
+
+        // Plus lucide est bas, plus il y a d'yeux (1 à 4)
+        const nbYeux = Math.ceil((7 - lucide) / 2);
+
+        for (let i = 0; i < nbYeux; i++) {
+            const eye = Object.assign(document.createElement('img'), { src: './assets/eye.png' });
+            const taille = 40 + Math.random() * 80;
+            eye.classList.add('eye-hallucination');
+            Object.assign(eye.style, {
+                width: taille + 'px', height: taille + 'px',
+                left: Math.random() * (window.innerWidth - taille) + 'px',
+                top: Math.random() * (window.innerHeight - taille) + 'px'
+            });
+            document.body.appendChild(eye);
+            setTimeout(() => eye.remove(), 1000);
+        }
+
     }, 500 + (lucide / 6) * 3000) : null;
 }
+
 
 
 
