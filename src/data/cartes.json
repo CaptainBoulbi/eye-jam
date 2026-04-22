@@ -14,12 +14,14 @@
             {
                 "sante": -1,
                 "lucide": 1,
-                "stress": 0
+                "stress": 0,
+                "description": "Follow it"
             },
             {
                 "sante": -1,
                 "lucide": 0,
-                "stress": -1
+                "stress": -1,
+                "description": "Ignore it"
             }
         ],
         "ingredients": [],
@@ -42,12 +44,14 @@
             {
                 "sante": -1,
                 "lucide": 0,
-                "stress": -1
+                "stress": -1,
+                "description": "Follow it"
             },
             {
                 "sante": -1,
                 "lucide": 0,
-                "stress": 0
+                "stress": 0,
+                "description": "Follow it"
             }
         ],
         "ingredients": [],
@@ -70,12 +74,14 @@
             {
                 "sante": -1,
                 "lucide": 0,
-                "stress": -1
+                "stress": -1,
+                "description": "Follow it"
             },
             {
                 "sante": -1,
                 "lucide": 0,
-                "stress": 0
+                "stress": 0,
+                "description": "Follow it"
             }
         ],
         "ingredients": [],
@@ -98,12 +104,14 @@
             {
                 "sante": -2,
                 "lucide": 0,
-                "stress": -1
+                "stress": -1,
+                "description": "Follow it"
             },
             {
                 "sante": -1,
                 "lucide": 0,
-                "stress": 0
+                "stress": 0,
+                "description": "Follow it"
             }
         ],
         "ingredients": [],
@@ -126,12 +134,14 @@
             {
                 "sante": 0,
                 "lucide": -1,
-                "stress": -1
+                "stress": -1,
+                "description": "Follow it"
             },
             {
                 "sante": -1,
                 "lucide": 1,
-                "stress": 0
+                "stress": 0,
+                "description": "Follow it"
             }
         ],
         "ingredients": [],
@@ -154,12 +164,14 @@
             {
                 "sante": 0,
                 "lucide": 0,
-                "stress": -1
+                "stress": -1,
+                "description": "Follow it"
             },
             {
                 "sante": -1,
                 "lucide": 1,
-                "stress": 0
+                "stress": 0,
+                "description": "Follow it"
             }
         ],
         "ingredients": [],
@@ -182,12 +194,14 @@
             {
                 "sante": 0,
                 "lucide": 1,
-                "stress": 1
+                "stress": 1,
+                "description": "Follow it"
             },
             {
                 "sante": 0,
                 "lucide": 0,
-                "stress": -1
+                "stress": -1,
+                "description": "Follow it"
             }
         ],
         "ingredients": ["log_d1"],
@@ -210,12 +224,14 @@
             {
                 "sante": 0,
                 "lucide": 0,
-                "stress": -1
+                "stress": -1,
+                "description": "Follow it"
             },
             {
                 "sante": -1,
                 "lucide": 1,
-                "stress": 0
+                "stress": 0,
+                "description": "Follow it"
             }
         ],
         "ingredients": [],
@@ -238,12 +254,14 @@
             {
                 "sante": 0,
                 "lucide": 1,
-                "stress": 1
+                "stress": 1,
+                "description": "Follow it"
             },
             {
                 "sante": 0,
                 "lucide": 0,
-                "stress": -1
+                "stress": -1,
+                "description": "Follow it"
             }
         ],
         "ingredients": ["chlorhexidine_bottle"],
