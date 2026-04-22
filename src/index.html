@@ -78,7 +78,22 @@
         }
         #game.vignette-active {
             animation: vignette-pulse 1.5s infinite; 
-}   
+    }   
+
+
+        .eye-hallucination {
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+        animation: eye-fade 1s forwards;
+        }
+
+        @keyframes eye-fade {
+            0% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
 
         [scene] {
             animation: fadeIn 1s ease-in;
@@ -434,8 +449,8 @@
                 <img class="stat-img" id="sante" src="./assets/stats/sante/sante_15.PNG">
                 <img class="stat-img" id="lucide" src="./assets/stats/lucide/lucide_15.PNG">
                 <img class="stat-img" id="stress" src="./assets/stats/stress/stress_15.PNG">
-                <button onclick="stat.add('sante', +1)">soin</button>
-                <button onclick="stat.add('sante', -1)">dégats</button>
+                <button onclick="stat.add('lucide', +1)">soin</button>
+                <button onclick="stat.add('lucide', -1)">dégats</button>
 
             </div>
 
@@ -699,17 +714,36 @@
         }
 
 
-        function update_vignette() {
-            const sante = stat.get('sante');
-            const cible = document.getElementById('game');
-            if (!cible) return;
+        let eyeInterval = null;
 
-            if (sante <= 5) {
-                cible.classList.add('vignette-active');
-            } else {
-                cible.classList.remove('vignette-active');
-            }
-        }
+function update_vignette() {
+    const sante = stat.get('sante');
+    const lucide = stat.get('lucide');
+    const cible = document.getElementById('game');
+    if (!cible) return;
+
+    // Vignette rouge si santé critique
+    cible.classList.toggle('vignette-active', sante <= 5);
+
+    // Réinitialise l'intervalle des hallucinations
+    clearInterval(eyeInterval);
+
+    // Hallucinations d'yeux si lucidité faible (lucide=6 → lent, lucide=0 → rapide)
+    eyeInterval = lucide < 7 ? setInterval(() => {
+        const eye = Object.assign(document.createElement('img'), { src: './assets/eye.png' });
+        const taille = 40 + Math.random() * 80;
+        eye.classList.add('eye-hallucination');
+        Object.assign(eye.style, {
+            width: taille + 'px', height: taille + 'px',
+            left: Math.random() * (window.innerWidth - taille) + 'px',
+            top: Math.random() * (window.innerHeight - taille) + 'px'
+        });
+        document.body.appendChild(eye);
+        setTimeout(() => eye.remove(), 1000);
+    }, 500 + (lucide / 6) * 3000) : null;
+}
+
+
 
 
 
