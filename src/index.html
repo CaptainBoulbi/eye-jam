@@ -450,6 +450,7 @@
 
                 <script>
                     const card = document.getElementById('card');
+                    const show_carte = document.getElementById("show_carte");
                     
                     let startX = 0;
                     let currentX = 0;
@@ -470,10 +471,8 @@
                         card.style.transition = "transform 0.3s ease";
 
                         if (currentX > 50) {
-                            console.log("droite");
                             carte.next(1);
                         } else if (currentX < -50) {
-                            console.log("gauche");
                             carte.next(0);
                         }
 
@@ -577,7 +576,7 @@
         <button onclick="carte.next(1)">choix droite</button>
         <br>
         <button onclick="scene_show('game')">voir stats</button>
-
+<!--
         <script>
             function update_carte() {
                 show_carte.innerText = JSON.stringify(carte.current(), null, 4);
@@ -585,6 +584,7 @@
             carte.onchange(update_carte);
             update_carte();
         </script>
+        --->
     </div>
 
     <script>
