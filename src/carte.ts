@@ -11,6 +11,7 @@ let no_carte_left_loser = {
     content: "You can't do much, exept staring at the ceiling, and swallow that candy",
     reference: null,
     salle: ["morgue", "rest_room", "lab", "office", "isolation"],
+    go: false,
     stats: {
         sante: 0,
         lucide: 0,
@@ -40,6 +41,7 @@ let first_carte = {
     content: "Welcome to the lab",
     reference: null,
     salle: ["morgue", "rest_room", "lab", "office", "isolation"],
+    go: false,
     stats: {
         sante: 0,
         lucide: 0,
@@ -88,6 +90,8 @@ function next_carte(choice) {
     })
     inventaire.add(carte_actuel.craft[choice]);
     inventaire.remove(carte_actuel.consume[choice]);
+
+    if (carte_actuel.go) salle.go(choice);
 
     if (carte_counter % carte_event_at) {
         let access = get_accessible_carte(cartes, used_carte);
@@ -140,7 +144,7 @@ function get_accessible_carte(cartes_from, used_carte_from) {
         })
         if (nb_stat_satisfied != stat.types().length) return;
 
-        if (carte.reference && used_carte.indexOf(carte.reference) < 0) return 0;
+        if (carte.reference && used_carte_from.indexOf(carte.reference) < 0) return 0;
 
         let nb_item_found = 0;
         carte.ingredients.forEach((item_id) => {
