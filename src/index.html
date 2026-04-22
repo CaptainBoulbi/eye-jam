@@ -71,6 +71,14 @@
         .shake-3 { animation: horizontal-shaking-3 1s; }
         .shake-4 { animation: horizontal-shaking-4 1s; }
 
+    
+        @keyframes vignette-pulse {
+            0%, 100% { box-shadow: inset 0 0 100px rgba(139, 0, 0, 0.3); }
+            50%       { box-shadow: inset 0 0 200px rgba(139, 0, 0, 0.9); }
+        }
+        [scene="game"].vignette-active {
+            animation: vignette-pulse 1.5s infinite; 
+}   
 
         [scene] {
             animation: fadeIn 1s ease-in;
@@ -426,16 +434,22 @@
                 <img class="stat-img" id="sante" src="./assets/stats/sante/sante_15.PNG">
                 <img class="stat-img" id="lucide" src="./assets/stats/lucide/lucide_15.PNG">
                 <img class="stat-img" id="stress" src="./assets/stats/stress/stress_15.PNG">
-                <button onclick="stat.add('stress', +1)">Heal</button>
-                <button onclick="stat.add('stress', -1)">Hit</button>
+                <button onclick="stat.add('stress', +1)">destress</button>
+                <button onclick="stat.add('stress', -1)">stress</button>
+                <button onclick="stat.add('sante', +1)">soin</button>
+                <button onclick="stat.add('sante', -1)">dégats</button>
+
             </div>
+
+            
 
             <script>
                 function draw_stat(type) {
                     const img = document.getElementById(type);
                     img.src = `./assets/stats/${type}/${type}_${stat.get(type)}.PNG`;
 
-                     if (type === 'stress') update_shake(); //me tape pas dorian stp j'apelle ma fonction ici.
+                    if (type === 'stress') update_shake(); //me tape pas dorian stp j'apelle ma fonction ici.
+                    if (type === 'sante' || type === 'lucide') update_vignette(); //pareil pour la vignette
                 }
                 stat.onchange(draw_stat);
                 stat.ondeath(() => { scene_show('game-over') });
@@ -687,8 +701,19 @@
         }
 
 
+       function update_vignette() {
+    const sante = stat.get('sante');
+    const cible = document.querySelector('[scene="game"]');
+    if (!cible) return;
 
-            
+    if (sante <= 5) {
+        cible.classList.add('vignette-active');
+    } else {
+        cible.classList.remove('vignette-active');
+    }
+}
+
+
 
 
 
