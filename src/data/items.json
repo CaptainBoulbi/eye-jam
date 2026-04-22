@@ -82,5 +82,12 @@
         "description": "An enzymatic catalyst for the production of the experimental TLD-V1 vaccine",
         "icon": "assets/innexistant.png",
         "image": "assets/innexistant.png"
+    },
+    "chlorhexidine_bottle": {
+        "id": "chlorhexidine_bottle",
+        "name":"A bottle of chlorhexidine",
+        "description": "A bottle of chlorhexidine for disinfecting a wound",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
     }
 }

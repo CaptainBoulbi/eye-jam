@@ -1,24 +1,24 @@
 {
     "rat_attack": {
         "id": "rat_attack",
-        "name": "Rat Attack",
-        "content": "un rat t'attaque",
+        "name": "Rat staring at you",
+        "content": "A rat stares at you from the shadows. It doesn’t run away.",
         "reference": null,
         "salle": "morgue",
         "stats": {
-            "sante": 5,
-            "lucide": 1,
-            "stress": 2
+            "sante": 0,
+            "lucide": 0,
+            "stress": 0
         },
         "deal": [
             {
-                "sante": -2,
-                "lucide": 0,
-                "stress": -1
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0
             },
             {
-                "sante": 0,
-                "lucide": -2,
+                "sante": -1,
+                "lucide": 0,
                 "stress": -1
             }
         ],
@@ -28,29 +28,218 @@
     },
     "rat_attack2": {
         "id": "rat_attack2",
-        "name": "Rat & Friend Attack",
-        "content": "2 rat t'attaque",
+        "name": "Rat calling friends",
+        "content": "The rat lets out a shrill squeak. More are coming.",
         "reference": "rat_attack",
         "salle": "morgue",
         "stats": {
-            "sante": 7,
-            "lucide": 1,
-            "stress": 2
+            "sante": 0,
+            "lucide": 0,
+            "stress": 0
         },
         "deal": [
             {
-                "sante": -5,
+                "sante": -1,
                 "lucide": 0,
-                "stress": -2
+                "stress": -1
+            },
+            {
+                "sante": -1,
+                "lucide": 0,
+                "stress": 0
+            }
+        ],
+        "ingredients": [],
+        "craft": null,
+        "image": "assets/innexistant.png"
+    }, 
+    "rat_attack3": {
+        "id": "rat_attack3",
+        "name": "Rat & friends around",
+        "content": "They circle around you. Too close.",
+        "reference": "rat_attack2",
+        "salle": "morgue",
+        "stats": {
+            "sante": 0,
+            "lucide": 0,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 0,
+                "stress": -1
+            },
+            {
+                "sante": -1,
+                "lucide": 0,
+                "stress": 0
+            }
+        ],
+        "ingredients": [],
+        "craft": null,
+        "image": "assets/innexistant.png"
+    }, 
+    "rat_attack4": {
+        "id": "rat_attack4",
+        "name": "Rat & friends attack",
+        "content": "A bite. Blood is flowing. The rats leave.",
+        "reference": "rat_attack3",
+        "salle": "morgue",
+        "stats": {
+            "sante": 0,
+            "lucide": 0,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": -2,
+                "lucide": 0,
+                "stress": -1
+            },
+            {
+                "sante": -1,
+                "lucide": 0,
+                "stress": 0
+            }
+        ],
+        "ingredients": [],
+        "craft": null,
+        "image": "assets/innexistant.png"
+    }, 
+    "rat_attack5": {
+        "id": "rat_attack5",
+        "name": "Rat nest",
+        "content": "You find a nest. Dozens of rats.",
+        "reference": "rat_attack4",
+        "salle": "morgue",
+        "stats": {
+            "sante": 0,
+            "lucide": 0,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": -1,
+                "stress": -1
+            },
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0
+            }
+        ],
+        "ingredients": [],
+        "craft": null,
+        "image": "assets/innexistant.png"
+    },
+    "searching_shelf": {
+        "id": "searching_shelf",
+        "name": "Search on shelf",
+        "content": "You look on a shelf",
+        "reference": null,
+        "salle": "morgue",
+        "stats": {
+            "sante": 0,
+            "lucide": 5,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": -1
+            },
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0
+            }
+        ],
+        "ingredients": [],
+        "craft": null,
+        "image": "assets/innexistant.png"
+    },
+    "find_map": {
+        "id": "find_map",
+        "name": "Find a map",
+        "content": "You find a old map.",
+        "reference": "searching_shelf",
+        "salle": "morgue",
+        "stats": {
+            "sante": 0,
+            "lucide": 0,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 1
             },
             {
                 "sante": 0,
-                "lucide": -5,
-                "stress": -2
+                "lucide": 0,
+                "stress": -1
             }
         ],
-        "ingredients": ["log_d1"],
-        "craft": "empty_syringe",
+        "ingredients": ["lab_map"],
+        "craft": null,
+        "image": "assets/innexistant.png"
+    },
+    "searching_desk": {
+        "id": "searching_desk",
+        "name": "Search on a desk",
+        "content": "You search on the desk",
+        "reference": null,
+        "salle": "morgue",
+        "stats": {
+            "sante": -3,
+            "lucide": 7,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": -1
+            },
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0
+            }
+        ],
+        "ingredients": [],
+        "craft": null,
+        "image": "assets/innexistant.png"
+    },
+    "find_medicine": {
+        "id": "find_medicine",
+        "name": "Find a bottle of chlorhexidine",
+        "content": "You find a bottle of chlorhexidine",
+        "reference": "searching_desk",
+        "salle": "morgue",
+        "stats": {
+            "sante": 0,
+            "lucide": 0,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 1
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": -1
+            }
+        ],
+        "ingredients": ["chlorhexidine_bottle"],
+        "craft": null,
         "image": "assets/innexistant.png"
     }
 }
