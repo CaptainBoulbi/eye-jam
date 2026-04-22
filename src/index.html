@@ -239,8 +239,13 @@
             height: 100%;
             cursor: grab;
 
+            --x: 0px;
+            --x-num: 0;
 
             /* animation pilotée par variable */
+            transform: translateX(var(--x)) rotate(calc(var(--x-num) * 0.05deg));
+            transition: transform 0.2s ease;
+            position: relative;
         }
         #card:active {
             cursor: grabbing;
@@ -472,6 +477,8 @@
                             carte.next(0);
                         }
 
+                        card.style.setProperty("--x", "0px");
+                        card.style.setProperty("--x-num", 0);
                     });
 
                     document.addEventListener("mousemove", (e) => {
@@ -479,6 +486,8 @@
 
                         currentX = e.clientX - startX;
 
+                        card.style.setProperty("--x", currentX + "px");
+                        card.style.setProperty("--x-num", currentX);
                     });
 
                     function update_carte() {
