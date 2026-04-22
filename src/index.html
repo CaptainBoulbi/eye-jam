@@ -76,7 +76,7 @@
             0%, 100% { box-shadow: inset 0 0 100px rgba(139, 0, 0, 0.3); }
             50%       { box-shadow: inset 0 0 200px rgba(139, 0, 0, 0.9); }
         }
-        [scene="game"].vignette-active {
+        #game.vignette-active {
             animation: vignette-pulse 1.5s infinite; 
 }   
 
@@ -434,8 +434,6 @@
                 <img class="stat-img" id="sante" src="./assets/stats/sante/sante_15.PNG">
                 <img class="stat-img" id="lucide" src="./assets/stats/lucide/lucide_15.PNG">
                 <img class="stat-img" id="stress" src="./assets/stats/stress/stress_15.PNG">
-                <button onclick="stat.add('stress', +1)">destress</button>
-                <button onclick="stat.add('stress', -1)">stress</button>
                 <button onclick="stat.add('sante', +1)">soin</button>
                 <button onclick="stat.add('sante', -1)">dégats</button>
 
@@ -658,17 +656,17 @@
         function toggleSound() {
         soundEnabled = !soundEnabled;
 
-        if (current_audio) current_audio.muted = !soundEnabled;
+            if (current_audio) current_audio.muted = !soundEnabled;
 
-        const btn = document.getElementById('mute-btn');
-        if (btn) {
-            btn.textContent = soundEnabled ? '🔊 Mute' : '🔇 Unmute';
+            const btn = document.getElementById('mute-btn');
+            if (btn) {
+                btn.textContent = soundEnabled ? '🔊 Mute' : '🔇 Unmute';
+            }
         }
-    }
 
 
 
-            function setShake(niveau) {
+        function setShake(niveau) {
             const cible = document.getElementById('game');
             if (!cible) return;
             cible.classList.remove('shake-1','shake-2','shake-3','shake-4');
@@ -701,17 +699,17 @@
         }
 
 
-       function update_vignette() {
-    const sante = stat.get('sante');
-    const cible = document.querySelector('[scene="game"]');
-    if (!cible) return;
+        function update_vignette() {
+            const sante = stat.get('sante');
+            const cible = document.getElementById('game');
+            if (!cible) return;
 
-    if (sante <= 5) {
-        cible.classList.add('vignette-active');
-    } else {
-        cible.classList.remove('vignette-active');
-    }
-}
+            if (sante <= 5) {
+                cible.classList.add('vignette-active');
+            } else {
+                cible.classList.remove('vignette-active');
+            }
+        }
 
 
 
