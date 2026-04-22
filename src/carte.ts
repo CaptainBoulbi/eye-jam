@@ -1,4 +1,5 @@
 import cartes from "./data/cartes.json"
+import cartes_imp from "./data/cartes-importante.json"
 
 import salle from "./salle.ts"
 import stat from "./stat.ts"
@@ -66,6 +67,10 @@ let onchange_callback = () => {};
 
 let carte_actuel = get_carte(first_carte.id);
 let used_carte = [];
+let used_imp_carte = [];
+
+let carte_counter = 0;
+const carte_event_at = 5;
 
 function set_onchange_callback(cb: (() => void)) {
     onchange_callback = cb;
@@ -84,27 +89,48 @@ function next_carte(choice) {
     inventaire.add(carte_actuel.craft[choice]);
     inventaire.remove(carte_actuel.consume[choice]);
 
-    let access = get_accessible_carte();
-    if (access.length <= 0) {
-        used_carte = [];
-        access = get_accessible_carte();
+    if (carte_counter % carte_event_at) {
+        let access = get_accessible_carte(cartes, used_carte);
         if (access.length <= 0) {
-            access.push(no_carte_left_loser.id);
+            used_carte = [];
+            access = get_accessible_carte(cartes, used_carte);
+            if (access.length <= 0) {
+                access.push(no_carte_left_loser.id);
+            }
+        }
+        let carte_id = access[parseInt(Math.random() * access.length)];
+        carte_actuel = get_carte(carte_id);
+        used_carte.push(carte_id);
+    }
+    else {
+        let access = get_accessible_carte(cartes_imp, used_imp_carte);
+        if (access.length > 0) {
+            let carte_id = access[parseInt(Math.random() * access.length)];
+            carte_actuel = get_carte(carte_id);
+            used_imp_carte.push(carte_id);
+        }
+        else {
+            access = get_accessible_carte(cartes, used_carte);
+            if (access.length > 0) {
+                let carte_id = access[parseInt(Math.random() * access.length)];
+                carte_actuel = get_carte(carte_id);
+                used_carte.push(carte_id);
+            } else {
+                access.push(no_carte_left_loser.id);
+            }
         }
     }
-    let carte_id = access[parseInt(Math.random() * access.length)];
-    carte_actuel = get_carte(carte_id);
-    used_carte.push(carte_id);
 
+    carte_counter++;
     onchange_callback();
     return carte_actuel;
 }
 
-function get_accessible_carte() {
+function get_accessible_carte(cartes_from, used_carte_from) {
     let access = [];
 
-    Object.keys(cartes).forEach((carte_id) => {
-        let carte = cartes[carte_id];
+    Object.keys(cartes_from).forEach((carte_id) => {
+        let carte = cartes_from[carte_id];
 
         if (carte.salle.indexOf(salle.current().id) < 0) return;
 
@@ -122,7 +148,7 @@ function get_accessible_carte() {
         })
         if (nb_item_found != carte.ingredients.length) return;
 
-        if (used_carte.indexOf(carte_id) >= 0) return;
+        if (used_carte_from.indexOf(carte_id) >= 0) return;
 
         access.push(carte.id);
     })
@@ -133,7 +159,7 @@ function get_accessible_carte() {
 function get_carte(id) {
     if (id == no_carte_left_loser.id) return no_carte_left_loser;
     if (id == first_carte.id) return first_carte;
-    if (!id || !cartes[id]) {
+    if (!id || (!cartes[id] && !cartes_imp[id])) {
         let empty_carte = {}
         Object.getOwnPropertyNames(cartes[Object.keys(cartes)[0]]).forEach((cid) => {
             empty_carte[cid] = "";
@@ -146,11 +172,10 @@ function get_carte(id) {
         })
         return empty_carte;
     }
-    return cartes[id];
+    return cartes[id] ? cartes[id] : cartes_imp[id];
 }
 
 export default {
-    debug: get_accessible_carte,
     carte: get_carte,
     current: current_carte,
     next: next_carte,

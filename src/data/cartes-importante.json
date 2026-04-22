@@ -1,0 +1,62 @@
+{
+    "WOW1": {
+        "id": "WOW1",
+        "name": "WOW1",
+        "content": "WOW1",
+        "reference": null,
+        "salle": ["morgue"],
+        "stats": {
+            "sante": 0,
+            "lucide": 0,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Follow it"
+            },
+            {
+                "sante": -1,
+                "lucide": 0,
+                "stress": -1,
+                "description": "Ignore it"
+            }
+        ],
+        "ingredients": [],
+        "craft": ["log_d1", "log_d45"],
+        "consume": [null, null],
+        "image": "assets/innexistant.png"
+    },
+    "WOW2": {
+        "id": "WOW2",
+        "name": "WOW2",
+        "content": "WOW2",
+        "reference": null,
+        "salle": ["morgue"],
+        "stats": {
+            "sante": 0,
+            "lucide": 0,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Follow it"
+            },
+            {
+                "sante": -1,
+                "lucide": 0,
+                "stress": -1,
+                "description": "Ignore it"
+            }
+        ],
+        "ingredients": [],
+        "craft": ["log_d1", "log_d45"],
+        "consume": [null, null],
+        "image": "assets/innexistant.png"
+    }
+}
