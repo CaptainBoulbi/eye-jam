@@ -58,7 +58,7 @@ function get_accessible_carte() {
         })
         if (nb_stat_satisfied != stat.types().length) return;
 
-        // TODO: reference
+        if (carte.reference && used_carte.indexOf(carte.reference) < 0) return 0;
 
         let nb_item_found = 0;
         carte.ingredients.forEach((item_id) => {
