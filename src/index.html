@@ -287,6 +287,32 @@
 </head>
 <body>
 
+    <script>
+        let current_audio = null;
+        let soundEnabled = true;
+
+        document.addEventListener("click", () => {
+            play_audio("title");
+        }, { once: true });
+
+        function play_audio(room) {
+            let path = "./assets/music/" + room + ".mp3";
+            
+            if (current_audio) {
+                current_audio.pause();
+                current_audio.currentTime = 0;
+            }
+
+            current_audio = new Audio(path);
+            current_audio.loop = true; //pour que ça tourne en bouclo rhoya
+            current_audio.volume = 0.2; // volume par défaut à 20% je vous laisse modifier ça si vous vouléz
+            current_audio.muted = !soundEnabled;
+            current_audio.play();
+        }
+    </script>
+
+
+
     <div scene="presentation">
 
         <!-- Logo affiche en haut de la page -->
@@ -353,6 +379,7 @@
         <div class="menu">
             <button onclick="scene_show('game'); play_audio('morgue')">Jouer</button>
             <button onclick="scene_show('test-inventaire')">Options</button>
+            <button id="mute-btn" onclick="toggleSound()">🔊 Mute</button>
             <button onclick="scene_show('presentation')">Quitter</button>
         </div>
     </div>
@@ -524,26 +551,6 @@
         </ul>
     </div>
 
-    <script>
-        let current_audio = null;
-
-        document.addEventListener("click", () => {
-            play_audio("title");
-        }, { once: true });
-
-        function play_audio(room) {
-            let path = "./assets/music/" + room + ".mp3";
-            
-            if (current_audio) {
-                current_audio.pause();
-                current_audio.currentTime = 0;
-            }
-
-            current_audio = new Audio(path);
-            current_audio.play();
-        }
-    </script>
-
     <div scene="test-salle">
         <h1>Salle</h1>
         <p>Salle actuel: <span id="salle_actuel"></span></p>
@@ -595,6 +602,19 @@
             })
         }
         
+
+        function toggleSound() {
+        soundEnabled = !soundEnabled;
+
+        if (current_audio) current_audio.muted = !soundEnabled;
+
+        const btn = document.getElementById('mute-btn');
+        if (btn) {
+            btn.textContent = soundEnabled ? '🔊 Mute' : '🔇 Unmute';
+        }
+    }
+
+
 
          // Active ou desactive le tremblement de la scene game
         function setShake(niveau) {
