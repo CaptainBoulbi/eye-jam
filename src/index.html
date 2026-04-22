@@ -210,6 +210,7 @@
         }
         #background img{
             background-size: cover;
+            user-select: none;
         }
         #description{
             height: 15%;
@@ -222,10 +223,41 @@
             justify-content: center;
         }
         #cards{
+            margin-top: -30%;
             text-align: center;
             grid-column: 2/4;
             grid-row: 2;
-            border: 2px purple solid;
+        }
+        #card {
+            background: blue;
+            color: white;
+            font-family: "Mogra", system-ui;
+            font-weight: 100;
+            font-style: normal;
+            border-radius: 20px;
+            user-select: none;
+            height: 100%;
+            cursor: grab;
+
+
+            /* animation pilotée par variable */
+        }
+        #card:active {
+            cursor: grabbing;
+        }
+        #card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            opacity: calc(max(0, var(--x-num, 0) / 150));
+        }
+        #card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            opacity: calc(max(0, -var(--x-num, 0) / 150));
         }
         #pocket{
             border: 1px black solid;
@@ -403,12 +435,58 @@
                    BACK
                 </div>
                 <div id="description">
-                    <label>Je suis une description élaborée et très complexe à comprendre attention</label>
+                    <label id="show_carte"></label>
                 </div>
             </div>
             <div id="cards">
-                <!-- en attente du back -->
-                CARDS
+                <div id="card">
+                    <p>CARD</p>
+                </div>
+
+                <script>
+                    const card = document.getElementById('card');
+                    
+                    let startX = 0;
+                    let currentX = 0;
+                    let dragging = false;
+
+                    card.addEventListener("mousedown", (e) => {
+                        startX = e.clientX;
+                        dragging = true;
+                        currentX = 0;
+
+                        card.style.transition = "none";
+                    });
+
+                    card.addEventListener("mouseup", (e) => {
+                        if (!dragging) return;
+                        dragging = false;
+
+                        card.style.transition = "transform 0.3s ease";
+
+                        if (currentX > 50) {
+                            console.log("droite");
+                            carte.next(1);
+                        } else if (currentX < -50) {
+                            console.log("gauche");
+                            carte.next(0);
+                        }
+
+                    });
+
+                    document.addEventListener("mousemove", (e) => {
+                        if (!dragging) return;
+
+                        currentX = e.clientX - startX;
+
+                    });
+
+                    function update_carte() {
+                        show_carte.innerText = JSON.stringify(carte.current().content, null, 4);
+                    }
+                    carte.onchange(update_carte);
+                    update_carte();
+                </script>
             </div>
         </div>
     </div>
