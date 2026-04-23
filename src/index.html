@@ -230,7 +230,7 @@
             grid-gap: 10px;
             grid-auto-rows: minmax(100px, auto);
         }
-        /* Stats centrees en haut, sur toute la largeur */
+        /* placement des elements de la scene game */
         #stats {
             grid-column: 1/5;
             grid-row: 1;
@@ -241,7 +241,6 @@
             gap: 20px;
         }
 
-        /* Inventaire a droite, row 2 */
         #inventory {
             grid-column: 4/5;
             grid-row: 2;
@@ -249,7 +248,6 @@
             user-select: none;
         }
 
-        /* Map fixee en bas a gauche de l'ecran */
         #map {
             position: fixed;
             bottom: 20px;
@@ -262,12 +260,10 @@
             justify-content: center;
         }
 
-        /* Ancienne zone BACK masquee */
         #full-card {
             display: none;
         }
 
-        /* Bouton cacher/afficher l'inventaire (pret a recevoir une image de fond) */
         #toggle-inventory {
             position: fixed;
             bottom: 20px;
@@ -344,7 +340,6 @@
             background-size: cover;
             user-select: none;
         }
-        /* Carte centree au milieu de l'ecran */
         #cards {
             grid-column: 2/4;
             grid-row: 2;
@@ -428,7 +423,7 @@
             width: 75px;
         }
 
-        /* Empile l'image du stat avec son point indicateur en dessous */
+        /* stat + petit rond qui previent quand le choix va changer ce stat */
         .stat-wrapper {
             display: flex;
             flex-direction: column;
@@ -436,7 +431,6 @@
             gap: 6px;
         }
 
-        /* Petit rond blanc : invisible par defaut, visible si le choix previsualise change ce stat */
         .stat-dot {
             width: 10px;
             height: 10px;
@@ -568,13 +562,12 @@
     </div>
 
     <div scene="game">
-        <!-- Hors de #game pour ne pas bouger avec l'animation de shake -->
+        <!-- sortis de #game sinon le shake les fait bouger -->
         <button id="toggle-inventory" onclick="toggleInventory()">INV</button>
         <div id="map">MAP</div>
 
         <div id="game">
             <div id="stats">
-                <!-- Chaque stat a un point en dessous qui s'allume si le choix previsualise l'impacte -->
                 <div class="stat-wrapper">
                     <img class="stat-img" id="sante" src="./assets/stats/sante/sante_15.PNG">
                     <div class="stat-dot" id="dot-sante"></div>
@@ -664,19 +657,18 @@
                         inventaire.move(window.grab_from, coord_to);
                     });
 
-                    // Affiche la description de l'item au survol, la cache quand on sort
+                    // tooltip affiche au survol d'une case
                     cells[i].addEventListener('mouseenter', (e) => {
                         if (e.target.getAttribute('data-empty') === 'true') return;
-                        const coord = { x: parseInt(e.target.getAttribute('x')), y: parseInt(e.target.getAttribute('y')) };
-                        const item = inventaire.get(coord);
+                        const item = inventaire.get({ x: +e.target.getAttribute('x'), y: +e.target.getAttribute('y') });
                         if (!item.id) return;
                         const rect = e.target.getBoundingClientRect();
                         const tooltip = document.getElementById('tooltip');
                         tooltip.innerText = item.description;
                         tooltip.style.display = 'block';
                         tooltip.style.left = (rect.left - 220) + 'px';
-                        tooltip.style.top = (rect.top + rect.height / 2) + 'px';
-                        tooltip.style.transform = 'translateY(-50%)';
+                        const maxTop = window.innerHeight - tooltip.offsetHeight - 10;
+                        tooltip.style.top = Math.max(10, Math.min(rect.top, maxTop)) + 'px';
                     });
                     cells[i].addEventListener('mouseleave', () => {
                         document.getElementById('tooltip').style.display = 'none';
@@ -737,7 +729,7 @@
                         card.style.transition = "none";
                     });
 
-                    // Met a jour les points sous les stats : 0 = choix gauche, 1 = choix droite, null = aucun
+                    // allume les points sous les stats que le choix va modifier
                     function updateDots(choice) {
                         const deal = choice != null ? carte.current().deal?.[choice] : null;
                         ['sante', 'lucide', 'stress'].forEach((s) => {
@@ -784,11 +776,9 @@
 
                         const c = carte.current();
 
-                        // Texte des choix toujours affiche
                         choixGauche.innerText = c.deal?.[0]?.description || '?';
                         choixDroite.innerText = c.deal?.[1]?.description || '?';
 
-                        // Previsualise le choix selon le sens du swipe (gauche, droite, ou aucun)
                         if (currentX < -30) {
                             choixGauche.classList.add('visible');
                             choixDroite.classList.remove('visible');
@@ -902,7 +892,6 @@
             })
         }
 
-        // Cache ou reaffiche l'inventaire au clic du bouton
         function toggleInventory() {
             const inv = document.getElementById('inventory');
             inv.style.display = (inv.style.display === 'none') ? '' : 'none';
@@ -1042,8 +1031,11 @@
                 border-radius: 8px;
                 font-family: Mogra;
                 font-size: 14px;
-                max-width: 200px;
+                width: 200px;
+                overflow-wrap: break-word;
                 z-index: 999;
-                pointer-events: none;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
-            
+                pointer-events: none;">
+            </div>
+
+</body>
+</html>
