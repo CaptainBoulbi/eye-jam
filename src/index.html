@@ -419,7 +419,11 @@
             min-width: 100px;
             height: 50px;
             text-align: center;
+            cursor: pointer;
+            td:empty, td[data-empty="true"] {
+            cursor: default;
         }
+
     </style>
 </head>
 <body>
@@ -560,48 +564,90 @@
                 <button onclick="scene_show('test-inventaire')" style="margin-top: 1rem">Editer l'inventaire</button>
                 <button onclick="scene_show('test-carte')" style="margin-top: 1rem">Editer carte</button>
                 <script>
-                inventaire.onchange(() => {
-                    let inv_html = '';
-                    for (let y = 0; y < inventaire.grid_size.y; y++) {
-                        inv_html += '<tr>';
-                        for (let x = 0; x < inventaire.grid_size.x; x++) {
-                            let item = inventaire.get({x, y});
-
-                            inv_html += `<td x="${x}" y="${y}">${item.name}</td>`;
-                        }
-                        inv_html += '</tr>';
+               inventaire.onchange(() => {
+                let inv_html = '';
+                for (let y = 0; y < inventaire.grid_size.y; y++) {
+                    inv_html += '<tr>';
+                    for (let x = 0; x < inventaire.grid_size.x; x++) {
+                        let item = inventaire.get({x, y});
+                        inv_html += `<td x="${x}" y="${y}" ${!item.id ? 'data-empty="true"' : ''}>${item.name ?? ''}</td>`;
                     }
-                    pocket.innerHTML = inv_html;
+                    inv_html += '</tr>';
+                }
+                pocket.innerHTML = inv_html;
 
-                    let cells = document.getElementsByTagName('td');
-                    for (let i = 0; i < cells.length; i++) {
-                        cells[i].addEventListener("mousedown", (e) => {
-                            window.grab_from = {
-                                x: parseInt(e.target.getAttribute('x')),
-                                y: parseInt(e.target.getAttribute('y'))
-                            };
-                        })
-                        cells[i].addEventListener("mouseup", (e) => {
-                            let coord_to = {
-                                x: parseInt(e.target.getAttribute('x')),
-                                y: parseInt(e.target.getAttribute('y'))
-                            };
+                let dragGhost = null;
+                let cells = document.getElementsByTagName('td');
 
-                            inventaire.move(window.grab_from, coord_to);
-                        })
-                        cells[i].onclick = (e) => {
-                            let coord = {
-                                x: parseInt(e.target.getAttribute('x')),
-                                y: parseInt(e.target.getAttribute('y'))
-                            };
+                for (let i = 0; i < cells.length; i++) {
+                    cells[i].addEventListener("mousedown", (e) => {
+                        if (e.target.getAttribute('data-empty') === 'true') return;
+                        window.grab_from = {
+                            x: parseInt(e.target.getAttribute('x')),
+                            y: parseInt(e.target.getAttribute('y'))
+                        };
+                        dragGhost = document.createElement('div');
+                        dragGhost.innerText = e.target.innerText;
+                        dragGhost.style.cssText = `
+                            position: fixed;
+                            background: #1a1a1a;
+                            border: 1px solid #444;
+                            color: white;
+                            padding: 8px 12px;
+                            border-radius: 6px;
+                            font-family: Mogra;
+                            font-size: 14px;
+                            pointer-events: none;
+                            z-index: 9999;
+                            opacity: 0.85;
+                            transform: translate(-50%, -50%);
+                        `;
+                        dragGhost.style.left = e.clientX + 'px';
+                        dragGhost.style.top = e.clientY + 'px';
+                        document.body.appendChild(dragGhost);
+                    });
 
-                            let item = inventaire.get(coord);
-                            if (!item.id) return;
+                    cells[i].addEventListener("mouseup", (e) => {
+                        if (dragGhost) { dragGhost.remove(); dragGhost = null; }
+                        let coord_to = {
+                            x: parseInt(e.target.getAttribute('x')),
+                            y: parseInt(e.target.getAttribute('y'))
+                        };
+                        inventaire.move(window.grab_from, coord_to);
+                    });
 
-                            alert(item.description);
-                        }
+                    cells[i].onclick = (e) => {
+                        if (e.target.getAttribute('data-empty') === 'true') return;
+                        let coord = { x: parseInt(e.target.getAttribute('x')), y: parseInt(e.target.getAttribute('y')) };
+                        let item = inventaire.get(coord);
+                        if (!item.id) return;
+                        const tooltip = document.getElementById('tooltip');
+                        tooltip.innerText = item.description;
+                        tooltip.style.display = 'block';
+                        tooltip.style.left = '50%';
+                        tooltip.style.top = '50%';
+                        tooltip.style.transform = 'translate(-50%, -50%)';
+                    };
+                }
+
+                document.addEventListener('mousemove', (e) => {
+                    if (dragGhost) {
+                        dragGhost.style.left = e.clientX + 'px';
+                        dragGhost.style.top = e.clientY + 'px';
                     }
                 });
+
+                document.addEventListener('mouseup', () => {
+                    if (dragGhost) { dragGhost.remove(); dragGhost = null; }
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!e.target.closest('td')) {
+                        document.getElementById('tooltip').style.display = 'none';
+                    }
+                });
+            });
+
             </script>
 
             </div>
@@ -922,5 +968,24 @@
         //scene_show('game'); //pour faire des aller retours plus simplement
     </script>
 
+
+            <div id="tooltip" style="
+                display: none;
+                position: fixed;
+                background: #1a1a1a;
+                border: 1px solid #444;
+                color: white;
+                padding: 10px 14px;
+                border-radius: 8px;
+                font-family: Mogra;
+                font-size: 14px;
+                max-width: 200px;
+                z-index: 999;
+                pointer-events: none;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+                </div>
+
 </body>
 </html>
+
+
