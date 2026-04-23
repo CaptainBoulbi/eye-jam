@@ -3,7 +3,7 @@ const info_msg = "\033[0;36m[INFO]\033[0m"
 
 import { existsSync } from "fs";
 if (existsSync("./output")) {
-    await Bun.$`rm -rf ./output/*`;
+    await Bun.$`rm -rf ./output`;
     console.log(`${build_msg} Dossier output nettoyé`);
 }
 
