@@ -4,7 +4,9 @@
         "name": "Rat staring at you",
         "content": "A rat stares at you from the shadows. It doesn’t run away.",
         "reference": null,
-        "salle": ["morgue"],
+        "salle": [
+            "morgue"
+        ],
         "go": false,
         "stats": {
             "sante": 0,
@@ -26,8 +28,14 @@
             }
         ],
         "ingredients": [],
-        "craft": ["log_d1", "log_d45"],
-        "consume": [null, null],
+        "craft": [
+            null,
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
         "image": "assets/innexistant.png"
     },
     "rat_attack2": {
@@ -35,7 +43,9 @@
         "name": "Rat calling friends",
         "content": "The rat lets out a shrill squeak. More are coming.",
         "reference": "rat_attack",
-        "salle": ["morgue"],
+        "salle": [
+            "morgue"
+        ],
         "go": false,
         "stats": {
             "sante": 0,
@@ -57,16 +67,24 @@
             }
         ],
         "ingredients": [],
-        "craft": [null, null],
-        "consume": [null, null],
+        "craft": [
+            null,
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
         "image": "assets/innexistant.png"
-    }, 
+    },
     "rat_attack3": {
         "id": "rat_attack3",
         "name": "Rat & friends around",
         "content": "They circle around you. Too close.",
         "reference": "rat_attack2",
-        "salle": ["morgue"],
+        "salle": [
+            "morgue"
+        ],
         "go": false,
         "stats": {
             "sante": 0,
@@ -88,16 +106,24 @@
             }
         ],
         "ingredients": [],
-        "craft": [null, null],
-        "consume": [null, null],
+        "craft": [
+            null,
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
         "image": "assets/innexistant.png"
-    }, 
+    },
     "rat_attack4": {
         "id": "rat_attack4",
         "name": "Rat & friends attack",
         "content": "A bite. Blood is flowing. The rats leave.",
         "reference": "rat_attack3",
-        "salle": ["morgue"],
+        "salle": [
+            "morgue"
+        ],
         "go": false,
         "stats": {
             "sante": 0,
@@ -119,16 +145,24 @@
             }
         ],
         "ingredients": [],
-        "craft": [null, null],
-        "consume": [null, null],
+        "craft": [
+            null,
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
         "image": "assets/innexistant.png"
-    }, 
+    },
     "rat_attack5": {
         "id": "rat_attack5",
         "name": "Rat nest",
         "content": "You find a nest. Dozens of rats.",
         "reference": "rat_attack4",
-        "salle": ["morgue"],
+        "salle": [
+            "morgue"
+        ],
         "go": false,
         "stats": {
             "sante": 0,
@@ -150,16 +184,24 @@
             }
         ],
         "ingredients": [],
-        "craft": [null, null],
-        "consume": [null, null],
+        "craft": [
+            null,
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
         "image": "assets/innexistant.png"
     },
     "searching_shelf": {
         "id": "searching_shelf",
-        "name": "Search on shelf",
-        "content": "You look on a shelf",
+        "name": "Search on area",
+        "content": "You look on a area",
         "reference": null,
-        "salle": ["morgue"],
+        "salle": [
+            "morgue"
+        ],
         "go": false,
         "stats": {
             "sante": 0,
@@ -181,8 +223,14 @@
             }
         ],
         "ingredients": [],
-        "craft": [null, null],
-        "consume": [null, null],
+        "craft": [
+            null,
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
         "image": "assets/innexistant.png"
     },
     "find_map": {
@@ -190,7 +238,9 @@
         "name": "Find a map",
         "content": "You find a old map.",
         "reference": "searching_shelf",
-        "salle": ["morgue"],
+        "salle": [
+            "morgue"
+        ],
         "go": false,
         "stats": {
             "sante": 0,
@@ -211,17 +261,25 @@
                 "description": "Follow it"
             }
         ],
-        "ingredients": ["log_d1"],
-        "craft": [],
-        "consume": ["log_d1", "log_d1"],
+        "ingredients": [],
+        "craft": [
+            null,
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
         "image": "assets/innexistant.png"
     },
     "searching_desk": {
         "id": "searching_desk",
-        "name": "Search on a desk",
-        "content": "You search on the desk",
+        "name": "Search on a work surface",
+        "content": "You search on the work surface",
         "reference": null,
-        "salle": ["morgue"],
+        "salle": [
+            "morgue"
+        ],
         "go": false,
         "stats": {
             "sante": -3,
@@ -243,8 +301,14 @@
             }
         ],
         "ingredients": [],
-        "craft": [null, null],
-        "consume": [null, null],
+        "craft": [
+            null,
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
         "image": "assets/innexistant.png"
     },
     "find_medicine": {
@@ -252,7 +316,9 @@
         "name": "Find a bottle of chlorhexidine",
         "content": "You find a bottle of chlorhexidine",
         "reference": "searching_desk",
-        "salle": ["morgue"],
+        "salle": [
+            "morgue"
+        ],
         "go": false,
         "stats": {
             "sante": 0,
@@ -273,9 +339,3963 @@
                 "description": "Follow it"
             }
         ],
-        "ingredients": ["chlorhexidine_bottle"],
-        "craft": [null, null],
-        "consume": [null, null],
+        "ingredients": [
+            "chlorhexidine_bottle"
+        ],
+        "craft": [
+            null,
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
         "image": "assets/innexistant.png"
+    },
+    "morgue_ev_01": {
+        "id": "morgue_ev_01",
+        "name": "surface Check",
+        "content": "You inspect a steel surface in the morgue.",
+        "reference": null,
+        "salle": [
+            "morgue"
+        ],
+        "stats": {
+            "sante": -1,
+            "lucide": 1,
+            "stress": 2
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Inspect carefully"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Move on quickly"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "morgue_badge",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "morgue_ev_02": {
+        "id": "morgue_ev_02",
+        "name": "Cold Tag",
+        "content": "A body tag catches your eye.",
+        "reference": null,
+        "salle": [
+            "morgue"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 2,
+            "stress": 4
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Take samples"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Ignore minor clues"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "freezer_key",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "morgue_ev_03": {
+        "id": "morgue_ev_03",
+        "name": "Steel surface",
+        "content": "A room area rattles softly.",
+        "reference": null,
+        "salle": [
+            "morgue"
+        ],
+        "stats": {
+            "sante": 1,
+            "lucide": 3,
+            "stress": 6
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Read all notes"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": 0,
+                "description": "Keep only essentials"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "rusted_clip",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "morgue_ev_04": {
+        "id": "morgue_ev_04",
+        "name": "Body Record",
+        "content": "You sort old autopsy records.",
+        "reference": null,
+        "salle": [
+            "morgue"
+        ],
+        "stats": {
+            "sante": 2,
+            "lucide": 4,
+            "stress": 8
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 2,
+                "stress": 0,
+                "description": "Document findings"
+            },
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Close the file"
+            }
+        ],
+        "ingredients": [
+            "sedative_ampoule"
+        ],
+        "craft": [
+            "rest_note",
+            null
+        ],
+        "consume": [
+            null,
+            "sedative_ampoule"
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "morgue_ev_05": {
+        "id": "morgue_ev_05",
+        "name": "room area Note",
+        "content": "A dried blood trail points to a surface.",
+        "reference": "morgue_ev_04",
+        "salle": [
+            "morgue"
+        ],
+        "stats": {
+            "sante": 3,
+            "lucide": 5,
+            "stress": 1
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 1,
+                "description": "Search deeply"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Step back"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "locker_token",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "morgue_ev_06": {
+        "id": "morgue_ev_06",
+        "name": "Autopsy area",
+        "content": "A locked specimen box sits on a cart.",
+        "reference": null,
+        "salle": [
+            "morgue"
+        ],
+        "stats": {
+            "sante": 4,
+            "lucide": 6,
+            "stress": 3
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Check hidden spaces"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": -1,
+                "description": "Avoid touching evidence"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "radio_chip",
+            "clean_filter"
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "morgue_ev_07": {
+        "id": "morgue_ev_07",
+        "name": "Stain Trace",
+        "content": "You inspect a steel surface in the morgue.",
+        "reference": null,
+        "salle": [
+            "morgue"
+        ],
+        "stats": {
+            "sante": -2,
+            "lucide": 7,
+            "stress": 5
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Cross-check details"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Trust your memory"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "lab_slide",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "morgue_ev_08": {
+        "id": "morgue_ev_08",
+        "name": "Supply area Search",
+        "content": "A body tag catches your eye.",
+        "reference": null,
+        "salle": [
+            "morgue"
+        ],
+        "stats": {
+            "sante": -1,
+            "lucide": 8,
+            "stress": 7
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 2,
+                "stress": 0,
+                "description": "Open sealed crate"
+            },
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Skip the side path"
+            }
+        ],
+        "ingredients": [
+            "file_tab"
+        ],
+        "craft": [
+            "reagent_stub",
+            null
+        ],
+        "consume": [
+            null,
+            "file_tab"
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "morgue_ev_09": {
+        "id": "morgue_ev_09",
+        "name": "Specimen Box",
+        "content": "A room area rattles softly.",
+        "reference": null,
+        "salle": [
+            "morgue"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 0,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Analyze residue"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": 0,
+                "description": "Leave it for later"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "catalyst_note",
+            "decontaminated_syringe"
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "morgue_ev_10": {
+        "id": "morgue_ev_10",
+        "name": "Fridge Log",
+        "content": "You sort old autopsy records.",
+        "reference": "morgue_ev_09",
+        "salle": [
+            "morgue"
+        ],
+        "stats": {
+            "sante": 1,
+            "lucide": 1,
+            "stress": 2
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 1,
+                "description": "Review timestamps"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Take a fast glance"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "office_stamp",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "morgue_ev_11": {
+        "id": "morgue_ev_11",
+        "name": "surface Check",
+        "content": "A dried blood trail points to a surface.",
+        "reference": null,
+        "salle": [
+            "morgue"
+        ],
+        "stats": {
+            "sante": 2,
+            "lucide": 2,
+            "stress": 4
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Inspect carefully"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Move on quickly"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "file_tab",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "morgue_ev_12": {
+        "id": "morgue_ev_12",
+        "name": "Cold Tag",
+        "content": "A locked specimen box sits on a cart.",
+        "reference": null,
+        "salle": [
+            "morgue"
+        ],
+        "stats": {
+            "sante": 3,
+            "lucide": 3,
+            "stress": 6
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 2,
+                "stress": 0,
+                "description": "Take samples"
+            },
+            {
+                "sante": -1,
+                "lucide": 0,
+                "stress": -1,
+                "description": "Ignore minor clues"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "memo_sheet",
+            "lab_slide"
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "morgue_ev_13": {
+        "id": "morgue_ev_13",
+        "name": "Steel surface",
+        "content": "You inspect a steel surface in the morgue.",
+        "reference": null,
+        "salle": [
+            "morgue"
+        ],
+        "stats": {
+            "sante": 4,
+            "lucide": 4,
+            "stress": 8
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Read all notes"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Keep only essentials"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "iso_band",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "morgue_ev_14": {
+        "id": "morgue_ev_14",
+        "name": "Body Record",
+        "content": "A body tag catches your eye.",
+        "reference": null,
+        "salle": [
+            "morgue"
+        ],
+        "stats": {
+            "sante": -2,
+            "lucide": 5,
+            "stress": 1
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Document findings"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Close the file"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "vent_screw",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "morgue_ev_15": {
+        "id": "morgue_ev_15",
+        "name": "room area Note",
+        "content": "A room area rattles softly.",
+        "reference": "morgue_ev_14",
+        "salle": [
+            "morgue"
+        ],
+        "stats": {
+            "sante": -1,
+            "lucide": 6,
+            "stress": 3
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 1,
+                "description": "Search deeply"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": 0,
+                "description": "Step back"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "obs_clip",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "morgue_ev_16": {
+        "id": "morgue_ev_16",
+        "name": "Autopsy area",
+        "content": "You sort old autopsy records.",
+        "reference": null,
+        "salle": [
+            "morgue"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 7,
+            "stress": 5
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 2,
+                "stress": 0,
+                "description": "Check hidden spaces"
+            },
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Avoid touching evidence"
+            }
+        ],
+        "ingredients": [
+            "radio_chip"
+        ],
+        "craft": [
+            "morgue_badge",
+            null
+        ],
+        "consume": [
+            null,
+            "radio_chip"
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "morgue_ev_17": {
+        "id": "morgue_ev_17",
+        "name": "Stain Trace",
+        "content": "A dried blood trail points to a surface.",
+        "reference": null,
+        "salle": [
+            "morgue"
+        ],
+        "stats": {
+            "sante": 1,
+            "lucide": 8,
+            "stress": 7
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Cross-check details"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Trust your memory"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "freezer_key",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "morgue_ev_18": {
+        "id": "morgue_ev_18",
+        "name": "Supply area Search",
+        "content": "A locked specimen box sits on a cart.",
+        "reference": null,
+        "salle": [
+            "morgue"
+        ],
+        "stats": {
+            "sante": 2,
+            "lucide": 0,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Open sealed crate"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": -1,
+                "description": "Skip the side path"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "rusted_clip",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "morgue_ev_19": {
+        "id": "morgue_ev_19",
+        "name": "Specimen Box",
+        "content": "You inspect a steel surface in the morgue.",
+        "reference": null,
+        "salle": [
+            "morgue"
+        ],
+        "stats": {
+            "sante": 3,
+            "lucide": 1,
+            "stress": 2
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Analyze residue"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Leave it for later"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "rest_note",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "morgue_ev_20": {
+        "id": "morgue_ev_20",
+        "name": "Fridge Log",
+        "content": "A body tag catches your eye.",
+        "reference": "morgue_ev_19",
+        "salle": [
+            "morgue"
+        ],
+        "stats": {
+            "sante": 4,
+            "lucide": 2,
+            "stress": 4
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 2,
+                "stress": 1,
+                "description": "Review timestamps"
+            },
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Take a fast glance"
+            }
+        ],
+        "ingredients": [
+            "empty_syringe"
+        ],
+        "craft": [
+            "locker_token",
+            null
+        ],
+        "consume": [
+            null,
+            "empty_syringe"
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "rest_room_ev_01": {
+        "id": "rest_room_ev_01",
+        "name": "Storage storage area Sweep",
+        "content": "You search the abandoned rest room.",
+        "reference": null,
+        "salle": [
+            "rest_room"
+        ],
+        "stats": {
+            "sante": -1,
+            "lucide": 1,
+            "stress": 2
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Inspect carefully"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Move on quickly"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "morgue_badge",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "rest_room_ev_02": {
+        "id": "rest_room_ev_02",
+        "name": "Bench Note",
+        "content": "A storage storage area door hangs open.",
+        "reference": null,
+        "salle": [
+            "rest_room"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 2,
+            "stress": 4
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Take samples"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Ignore minor clues"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "freezer_key",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "rest_room_ev_03": {
+        "id": "rest_room_ev_03",
+        "name": "Coffee Tin",
+        "content": "A torn note is taped behind a bench.",
+        "reference": null,
+        "salle": [
+            "rest_room"
+        ],
+        "stats": {
+            "sante": 1,
+            "lucide": 3,
+            "stress": 6
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Read all notes"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": 0,
+                "description": "Keep only essentials"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "rusted_clip",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "rest_room_ev_04": {
+        "id": "rest_room_ev_04",
+        "name": "Radio Static",
+        "content": "A portable radio emits static bursts.",
+        "reference": null,
+        "salle": [
+            "rest_room"
+        ],
+        "stats": {
+            "sante": 2,
+            "lucide": 4,
+            "stress": 8
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 2,
+                "stress": 0,
+                "description": "Document findings"
+            },
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Close the file"
+            }
+        ],
+        "ingredients": [
+            "sedative_ampoule"
+        ],
+        "craft": [
+            "rest_note",
+            null
+        ],
+        "consume": [
+            null,
+            "sedative_ampoule"
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "rest_room_ev_05": {
+        "id": "rest_room_ev_05",
+        "name": "Vending Crack",
+        "content": "An old bag sits under a cot.",
+        "reference": "rest_room_ev_04",
+        "salle": [
+            "rest_room"
+        ],
+        "stats": {
+            "sante": 3,
+            "lucide": 5,
+            "stress": 1
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 1,
+                "description": "Search deeply"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Step back"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "locker_token",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "rest_room_ev_06": {
+        "id": "rest_room_ev_06",
+        "name": "Pill Bottle",
+        "content": "A cracked mirror has written marks.",
+        "reference": null,
+        "salle": [
+            "rest_room"
+        ],
+        "stats": {
+            "sante": 4,
+            "lucide": 6,
+            "stress": 3
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Check hidden spaces"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": -1,
+                "description": "Avoid touching evidence"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "radio_chip",
+            "clean_filter"
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "rest_room_ev_07": {
+        "id": "rest_room_ev_07",
+        "name": "Cot Search",
+        "content": "You search the abandoned rest room.",
+        "reference": null,
+        "salle": [
+            "rest_room"
+        ],
+        "stats": {
+            "sante": -2,
+            "lucide": 7,
+            "stress": 5
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Cross-check details"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Trust your memory"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "lab_slide",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "rest_room_ev_08": {
+        "id": "rest_room_ev_08",
+        "name": "Poster Code",
+        "content": "A storage storage area door hangs open.",
+        "reference": null,
+        "salle": [
+            "rest_room"
+        ],
+        "stats": {
+            "sante": -1,
+            "lucide": 8,
+            "stress": 7
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 2,
+                "stress": 0,
+                "description": "Open sealed crate"
+            },
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Skip the side path"
+            }
+        ],
+        "ingredients": [
+            "file_tab"
+        ],
+        "craft": [
+            "reagent_stub",
+            null
+        ],
+        "consume": [
+            null,
+            "file_tab"
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "rest_room_ev_09": {
+        "id": "rest_room_ev_09",
+        "name": "Mirror Mark",
+        "content": "A torn note is taped behind a bench.",
+        "reference": null,
+        "salle": [
+            "rest_room"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 0,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Analyze residue"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": 0,
+                "description": "Leave it for later"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "catalyst_note",
+            "decontaminated_syringe"
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "rest_room_ev_10": {
+        "id": "rest_room_ev_10",
+        "name": "Dusty Bag",
+        "content": "A portable radio emits static bursts.",
+        "reference": "rest_room_ev_09",
+        "salle": [
+            "rest_room"
+        ],
+        "stats": {
+            "sante": 1,
+            "lucide": 1,
+            "stress": 2
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 1,
+                "description": "Review timestamps"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Take a fast glance"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "office_stamp",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "rest_room_ev_11": {
+        "id": "rest_room_ev_11",
+        "name": "Storage storage area Sweep",
+        "content": "An old bag sits under a cot.",
+        "reference": null,
+        "salle": [
+            "rest_room"
+        ],
+        "stats": {
+            "sante": 2,
+            "lucide": 2,
+            "stress": 4
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Inspect carefully"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Move on quickly"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "file_tab",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "rest_room_ev_12": {
+        "id": "rest_room_ev_12",
+        "name": "Bench Note",
+        "content": "A cracked mirror has written marks.",
+        "reference": null,
+        "salle": [
+            "rest_room"
+        ],
+        "stats": {
+            "sante": 3,
+            "lucide": 3,
+            "stress": 6
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 2,
+                "stress": 0,
+                "description": "Take samples"
+            },
+            {
+                "sante": -1,
+                "lucide": 0,
+                "stress": -1,
+                "description": "Ignore minor clues"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "memo_sheet",
+            "lab_slide"
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "rest_room_ev_13": {
+        "id": "rest_room_ev_13",
+        "name": "Coffee Tin",
+        "content": "You search the abandoned rest room.",
+        "reference": null,
+        "salle": [
+            "rest_room"
+        ],
+        "stats": {
+            "sante": 4,
+            "lucide": 4,
+            "stress": 8
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Read all notes"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Keep only essentials"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "iso_band",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "rest_room_ev_14": {
+        "id": "rest_room_ev_14",
+        "name": "Radio Static",
+        "content": "A storage storage area door hangs open.",
+        "reference": null,
+        "salle": [
+            "rest_room"
+        ],
+        "stats": {
+            "sante": -2,
+            "lucide": 5,
+            "stress": 1
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Document findings"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Close the file"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "vent_screw",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "rest_room_ev_15": {
+        "id": "rest_room_ev_15",
+        "name": "Vending Crack",
+        "content": "A torn note is taped behind a bench.",
+        "reference": "rest_room_ev_14",
+        "salle": [
+            "rest_room"
+        ],
+        "stats": {
+            "sante": -1,
+            "lucide": 6,
+            "stress": 3
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 1,
+                "description": "Search deeply"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": 0,
+                "description": "Step back"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "obs_clip",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "rest_room_ev_16": {
+        "id": "rest_room_ev_16",
+        "name": "Pill Bottle",
+        "content": "A portable radio emits static bursts.",
+        "reference": null,
+        "salle": [
+            "rest_room"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 7,
+            "stress": 5
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 2,
+                "stress": 0,
+                "description": "Check hidden spaces"
+            },
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Avoid touching evidence"
+            }
+        ],
+        "ingredients": [
+            "radio_chip"
+        ],
+        "craft": [
+            "morgue_badge",
+            null
+        ],
+        "consume": [
+            null,
+            "radio_chip"
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "rest_room_ev_17": {
+        "id": "rest_room_ev_17",
+        "name": "Cot Search",
+        "content": "An old bag sits under a cot.",
+        "reference": null,
+        "salle": [
+            "rest_room"
+        ],
+        "stats": {
+            "sante": 1,
+            "lucide": 8,
+            "stress": 7
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Cross-check details"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Trust your memory"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "freezer_key",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "rest_room_ev_18": {
+        "id": "rest_room_ev_18",
+        "name": "Poster Code",
+        "content": "A cracked mirror has written marks.",
+        "reference": null,
+        "salle": [
+            "rest_room"
+        ],
+        "stats": {
+            "sante": 2,
+            "lucide": 0,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Open sealed crate"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": -1,
+                "description": "Skip the side path"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "rusted_clip",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "rest_room_ev_19": {
+        "id": "rest_room_ev_19",
+        "name": "Mirror Mark",
+        "content": "You search the abandoned rest room.",
+        "reference": null,
+        "salle": [
+            "rest_room"
+        ],
+        "stats": {
+            "sante": 3,
+            "lucide": 1,
+            "stress": 2
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Analyze residue"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Leave it for later"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "rest_note",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "rest_room_ev_20": {
+        "id": "rest_room_ev_20",
+        "name": "Dusty Bag",
+        "content": "A storage storage area door hangs open.",
+        "reference": "rest_room_ev_19",
+        "salle": [
+            "rest_room"
+        ],
+        "stats": {
+            "sante": 4,
+            "lucide": 2,
+            "stress": 4
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 2,
+                "stress": 1,
+                "description": "Review timestamps"
+            },
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Take a fast glance"
+            }
+        ],
+        "ingredients": [
+            "empty_syringe"
+        ],
+        "craft": [
+            "locker_token",
+            null
+        ],
+        "consume": [
+            null,
+            "empty_syringe"
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "lab_ev_01": {
+        "id": "lab_ev_01",
+        "name": "Bench Probe",
+        "content": "You inspect a laboratory bench.",
+        "reference": null,
+        "salle": [
+            "lab"
+        ],
+        "stats": {
+            "sante": -1,
+            "lucide": 1,
+            "stress": 2
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Inspect carefully"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Move on quickly"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "morgue_badge",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "lab_ev_02": {
+        "id": "lab_ev_02",
+        "name": "Reagent Scan",
+        "content": "A centrifuge still contains residue.",
+        "reference": null,
+        "salle": [
+            "lab"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 2,
+            "stress": 4
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Take samples"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Ignore minor clues"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "freezer_key",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "lab_ev_03": {
+        "id": "lab_ev_03",
+        "name": "Microscope Log",
+        "content": "A microscope slide is labeled by hand.",
+        "reference": null,
+        "salle": [
+            "lab"
+        ],
+        "stats": {
+            "sante": 1,
+            "lucide": 3,
+            "stress": 6
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Read all notes"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": 0,
+                "description": "Keep only essentials"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "rusted_clip",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "lab_ev_04": {
+        "id": "lab_ev_04",
+        "name": "Centrifuge Dust",
+        "content": "A protocol printout is half-burned.",
+        "reference": null,
+        "salle": [
+            "lab"
+        ],
+        "stats": {
+            "sante": 2,
+            "lucide": 4,
+            "stress": 8
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 2,
+                "stress": 0,
+                "description": "Document findings"
+            },
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Close the file"
+            }
+        ],
+        "ingredients": [
+            "sedative_ampoule"
+        ],
+        "craft": [
+            "rest_note",
+            null
+        ],
+        "consume": [
+            null,
+            "sedative_ampoule"
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "lab_ev_05": {
+        "id": "lab_ev_05",
+        "name": "Tube storage area",
+        "content": "A sealed tube storage area is still intact.",
+        "reference": "lab_ev_04",
+        "salle": [
+            "lab"
+        ],
+        "stats": {
+            "sante": 3,
+            "lucide": 5,
+            "stress": 1
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 1,
+                "description": "Search deeply"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Step back"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "locker_token",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "lab_ev_06": {
+        "id": "lab_ev_06",
+        "name": "Sample Note",
+        "content": "A monitor cache stores old data.",
+        "reference": null,
+        "salle": [
+            "lab"
+        ],
+        "stats": {
+            "sante": 4,
+            "lucide": 6,
+            "stress": 3
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Check hidden spaces"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": -1,
+                "description": "Avoid touching evidence"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "radio_chip",
+            "clean_filter"
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "lab_ev_07": {
+        "id": "lab_ev_07",
+        "name": "Catalyst Draft",
+        "content": "You inspect a laboratory bench.",
+        "reference": null,
+        "salle": [
+            "lab"
+        ],
+        "stats": {
+            "sante": -2,
+            "lucide": 7,
+            "stress": 5
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Cross-check details"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Trust your memory"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "lab_slide",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "lab_ev_08": {
+        "id": "lab_ev_08",
+        "name": "Burned File",
+        "content": "A centrifuge still contains residue.",
+        "reference": null,
+        "salle": [
+            "lab"
+        ],
+        "stats": {
+            "sante": -1,
+            "lucide": 8,
+            "stress": 7
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 2,
+                "stress": 0,
+                "description": "Open sealed crate"
+            },
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Skip the side path"
+            }
+        ],
+        "ingredients": [
+            "file_tab"
+        ],
+        "craft": [
+            "reagent_stub",
+            null
+        ],
+        "consume": [
+            null,
+            "file_tab"
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "lab_ev_09": {
+        "id": "lab_ev_09",
+        "name": "Protocol Copy",
+        "content": "A microscope slide is labeled by hand.",
+        "reference": null,
+        "salle": [
+            "lab"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 0,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Analyze residue"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": 0,
+                "description": "Leave it for later"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "catalyst_note",
+            "decontaminated_syringe"
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "lab_ev_10": {
+        "id": "lab_ev_10",
+        "name": "Monitor Cache",
+        "content": "A protocol printout is half-burned.",
+        "reference": "lab_ev_09",
+        "salle": [
+            "lab"
+        ],
+        "stats": {
+            "sante": 1,
+            "lucide": 1,
+            "stress": 2
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 1,
+                "description": "Review timestamps"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Take a fast glance"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "office_stamp",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "lab_ev_11": {
+        "id": "lab_ev_11",
+        "name": "Bench Probe",
+        "content": "A sealed tube storage area is still intact.",
+        "reference": null,
+        "salle": [
+            "lab"
+        ],
+        "stats": {
+            "sante": 2,
+            "lucide": 2,
+            "stress": 4
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Inspect carefully"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Move on quickly"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "file_tab",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "lab_ev_12": {
+        "id": "lab_ev_12",
+        "name": "Reagent Scan",
+        "content": "A monitor cache stores old data.",
+        "reference": null,
+        "salle": [
+            "lab"
+        ],
+        "stats": {
+            "sante": 3,
+            "lucide": 3,
+            "stress": 6
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 2,
+                "stress": 0,
+                "description": "Take samples"
+            },
+            {
+                "sante": -1,
+                "lucide": 0,
+                "stress": -1,
+                "description": "Ignore minor clues"
+            }
+        ],
+        "ingredients": [
+            "empty_syringe"
+        ],
+        "craft": [
+            "memo_sheet",
+            "lab_slide"
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "lab_ev_13": {
+        "id": "lab_ev_13",
+        "name": "Microscope Log",
+        "content": "You inspect a laboratory bench.",
+        "reference": null,
+        "salle": [
+            "lab"
+        ],
+        "stats": {
+            "sante": 4,
+            "lucide": 4,
+            "stress": 8
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Read all notes"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Keep only essentials"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "iso_band",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "lab_ev_14": {
+        "id": "lab_ev_14",
+        "name": "Centrifuge Dust",
+        "content": "A centrifuge still contains residue.",
+        "reference": null,
+        "salle": [
+            "lab"
+        ],
+        "stats": {
+            "sante": -2,
+            "lucide": 5,
+            "stress": 1
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Document findings"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Close the file"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "vent_screw",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "lab_ev_15": {
+        "id": "lab_ev_15",
+        "name": "Tube storage area",
+        "content": "A microscope slide is labeled by hand.",
+        "reference": "lab_ev_14",
+        "salle": [
+            "lab"
+        ],
+        "stats": {
+            "sante": -1,
+            "lucide": 6,
+            "stress": 3
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 1,
+                "description": "Search deeply"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": 0,
+                "description": "Step back"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "obs_clip",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "lab_ev_16": {
+        "id": "lab_ev_16",
+        "name": "Sample Note",
+        "content": "A protocol printout is half-burned.",
+        "reference": null,
+        "salle": [
+            "lab"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 7,
+            "stress": 5
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 2,
+                "stress": 0,
+                "description": "Check hidden spaces"
+            },
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Avoid touching evidence"
+            }
+        ],
+        "ingredients": [
+            "radio_chip"
+        ],
+        "craft": [
+            "morgue_badge",
+            null
+        ],
+        "consume": [
+            null,
+            "radio_chip"
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "lab_ev_17": {
+        "id": "lab_ev_17",
+        "name": "Catalyst Draft",
+        "content": "A sealed tube storage area is still intact.",
+        "reference": null,
+        "salle": [
+            "lab"
+        ],
+        "stats": {
+            "sante": 1,
+            "lucide": 8,
+            "stress": 7
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Cross-check details"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Trust your memory"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "freezer_key",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "lab_ev_18": {
+        "id": "lab_ev_18",
+        "name": "Burned File",
+        "content": "A monitor cache stores old data.",
+        "reference": null,
+        "salle": [
+            "lab"
+        ],
+        "stats": {
+            "sante": 2,
+            "lucide": 0,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Open sealed crate"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": -1,
+                "description": "Skip the side path"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "rusted_clip",
+            "enzymatic_catalyst"
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "lab_ev_19": {
+        "id": "lab_ev_19",
+        "name": "Protocol Copy",
+        "content": "You inspect a laboratory bench.",
+        "reference": null,
+        "salle": [
+            "lab"
+        ],
+        "stats": {
+            "sante": 3,
+            "lucide": 1,
+            "stress": 2
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Analyze residue"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Leave it for later"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "rest_note",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "lab_ev_20": {
+        "id": "lab_ev_20",
+        "name": "Monitor Cache",
+        "content": "A centrifuge still contains residue.",
+        "reference": "lab_ev_19",
+        "salle": [
+            "lab"
+        ],
+        "stats": {
+            "sante": 4,
+            "lucide": 2,
+            "stress": 4
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 2,
+                "stress": 1,
+                "description": "Review timestamps"
+            },
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Take a fast glance"
+            }
+        ],
+        "ingredients": [
+            "empty_syringe"
+        ],
+        "craft": [
+            "locker_token",
+            null
+        ],
+        "consume": [
+            null,
+            "empty_syringe"
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "office_ev_01": {
+        "id": "office_ev_01",
+        "name": "work surface Search",
+        "content": "You scan the office work surface for clues.",
+        "reference": null,
+        "salle": [
+            "office"
+        ],
+        "stats": {
+            "sante": -1,
+            "lucide": 1,
+            "stress": 2
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Inspect carefully"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Move on quickly"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "morgue_badge",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "office_ev_02": {
+        "id": "office_ev_02",
+        "name": "Safe Scratch",
+        "content": "A filing surface is jammed shut.",
+        "reference": null,
+        "salle": [
+            "office"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 2,
+            "stress": 4
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Take samples"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Ignore minor clues"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "freezer_key",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "office_ev_03": {
+        "id": "office_ev_03",
+        "name": "Board Memo",
+        "content": "A whiteboard still holds a memo.",
+        "reference": null,
+        "salle": [
+            "office"
+        ],
+        "stats": {
+            "sante": 1,
+            "lucide": 3,
+            "stress": 6
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Read all notes"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": 0,
+                "description": "Keep only essentials"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "rusted_clip",
+            "chlorhexidine_bottle"
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "office_ev_04": {
+        "id": "office_ev_04",
+        "name": "Terminal Dump",
+        "content": "A terminal stores fragmented logs.",
+        "reference": null,
+        "salle": [
+            "office"
+        ],
+        "stats": {
+            "sante": 2,
+            "lucide": 4,
+            "stress": 8
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 2,
+                "stress": 0,
+                "description": "Document findings"
+            },
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Close the file"
+            }
+        ],
+        "ingredients": [
+            "sedative_ampoule"
+        ],
+        "craft": [
+            "rest_note",
+            null
+        ],
+        "consume": [
+            null,
+            "sedative_ampoule"
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "office_ev_05": {
+        "id": "office_ev_05",
+        "name": "File surface",
+        "content": "A tape recorder case sits under papers.",
+        "reference": "office_ev_04",
+        "salle": [
+            "office"
+        ],
+        "stats": {
+            "sante": 3,
+            "lucide": 5,
+            "stress": 1
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 1,
+                "description": "Search deeply"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Step back"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "locker_token",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "office_ev_06": {
+        "id": "office_ev_06",
+        "name": "Lamp Note",
+        "content": "A marked map corner is pinned to cork.",
+        "reference": null,
+        "salle": [
+            "office"
+        ],
+        "stats": {
+            "sante": 4,
+            "lucide": 6,
+            "stress": 3
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Check hidden spaces"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": -1,
+                "description": "Avoid touching evidence"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "radio_chip",
+            "clean_filter"
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "office_ev_07": {
+        "id": "office_ev_07",
+        "name": "Code Sheet",
+        "content": "You scan the office work surface for clues.",
+        "reference": null,
+        "salle": [
+            "office"
+        ],
+        "stats": {
+            "sante": -2,
+            "lucide": 7,
+            "stress": 5
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Cross-check details"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Trust your memory"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "lab_slide",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "office_ev_08": {
+        "id": "office_ev_08",
+        "name": "Photo Stack",
+        "content": "A filing surface is jammed shut.",
+        "reference": null,
+        "salle": [
+            "office"
+        ],
+        "stats": {
+            "sante": -1,
+            "lucide": 8,
+            "stress": 7
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 2,
+                "stress": 0,
+                "description": "Open sealed crate"
+            },
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Skip the side path"
+            }
+        ],
+        "ingredients": [
+            "file_tab"
+        ],
+        "craft": [
+            "reagent_stub",
+            null
+        ],
+        "consume": [
+            null,
+            "file_tab"
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "office_ev_09": {
+        "id": "office_ev_09",
+        "name": "Recorder Case",
+        "content": "A whiteboard still holds a memo.",
+        "reference": null,
+        "salle": [
+            "office"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 0,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Analyze residue"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": 0,
+                "description": "Leave it for later"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "catalyst_note",
+            "decontaminated_syringe"
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "office_ev_10": {
+        "id": "office_ev_10",
+        "name": "Map Corner",
+        "content": "A terminal stores fragmented logs.",
+        "reference": "office_ev_09",
+        "salle": [
+            "office"
+        ],
+        "stats": {
+            "sante": 1,
+            "lucide": 1,
+            "stress": 2
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 1,
+                "description": "Review timestamps"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Take a fast glance"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "office_stamp",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "office_ev_11": {
+        "id": "office_ev_11",
+        "name": "work surface Search",
+        "content": "A tape recorder case sits under papers.",
+        "reference": null,
+        "salle": [
+            "office"
+        ],
+        "stats": {
+            "sante": 2,
+            "lucide": 2,
+            "stress": 4
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Inspect carefully"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Move on quickly"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "file_tab",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "office_ev_12": {
+        "id": "office_ev_12",
+        "name": "Safe Scratch",
+        "content": "A marked map corner is pinned to cork.",
+        "reference": null,
+        "salle": [
+            "office"
+        ],
+        "stats": {
+            "sante": 3,
+            "lucide": 3,
+            "stress": 6
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 2,
+                "stress": 0,
+                "description": "Take samples"
+            },
+            {
+                "sante": -1,
+                "lucide": 0,
+                "stress": -1,
+                "description": "Ignore minor clues"
+            }
+        ],
+        "ingredients": [
+            "neural_extract"
+        ],
+        "craft": [
+            "memo_sheet",
+            "lab_slide"
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "office_ev_13": {
+        "id": "office_ev_13",
+        "name": "Board Memo",
+        "content": "You scan the office work surface for clues.",
+        "reference": null,
+        "salle": [
+            "office"
+        ],
+        "stats": {
+            "sante": 4,
+            "lucide": 4,
+            "stress": 8
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Read all notes"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Keep only essentials"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "iso_band",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "office_ev_14": {
+        "id": "office_ev_14",
+        "name": "Terminal Dump",
+        "content": "A filing surface is jammed shut.",
+        "reference": null,
+        "salle": [
+            "office"
+        ],
+        "stats": {
+            "sante": -2,
+            "lucide": 5,
+            "stress": 1
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Document findings"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Close the file"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "vent_screw",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "office_ev_15": {
+        "id": "office_ev_15",
+        "name": "File surface",
+        "content": "A whiteboard still holds a memo.",
+        "reference": "office_ev_14",
+        "salle": [
+            "office"
+        ],
+        "stats": {
+            "sante": -1,
+            "lucide": 6,
+            "stress": 3
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 1,
+                "description": "Search deeply"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": 0,
+                "description": "Step back"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "obs_clip",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "office_ev_16": {
+        "id": "office_ev_16",
+        "name": "Lamp Note",
+        "content": "A terminal stores fragmented logs.",
+        "reference": null,
+        "salle": [
+            "office"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 7,
+            "stress": 5
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 2,
+                "stress": 0,
+                "description": "Check hidden spaces"
+            },
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Avoid touching evidence"
+            }
+        ],
+        "ingredients": [
+            "radio_chip"
+        ],
+        "craft": [
+            "morgue_badge",
+            null
+        ],
+        "consume": [
+            null,
+            "radio_chip"
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "office_ev_17": {
+        "id": "office_ev_17",
+        "name": "Code Sheet",
+        "content": "A tape recorder case sits under papers.",
+        "reference": null,
+        "salle": [
+            "office"
+        ],
+        "stats": {
+            "sante": 1,
+            "lucide": 8,
+            "stress": 7
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Cross-check details"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Trust your memory"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "freezer_key",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "office_ev_18": {
+        "id": "office_ev_18",
+        "name": "Photo Stack",
+        "content": "A marked map corner is pinned to cork.",
+        "reference": null,
+        "salle": [
+            "office"
+        ],
+        "stats": {
+            "sante": 2,
+            "lucide": 0,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Open sealed crate"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": -1,
+                "description": "Skip the side path"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "rusted_clip",
+            "stabilizer_ampoule"
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "office_ev_19": {
+        "id": "office_ev_19",
+        "name": "Recorder Case",
+        "content": "You scan the office work surface for clues.",
+        "reference": null,
+        "salle": [
+            "office"
+        ],
+        "stats": {
+            "sante": 3,
+            "lucide": 1,
+            "stress": 2
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Analyze residue"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Leave it for later"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "rest_note",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "office_ev_20": {
+        "id": "office_ev_20",
+        "name": "Map Corner",
+        "content": "A filing surface is jammed shut.",
+        "reference": "office_ev_19",
+        "salle": [
+            "office"
+        ],
+        "stats": {
+            "sante": 4,
+            "lucide": 2,
+            "stress": 4
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 2,
+                "stress": 1,
+                "description": "Review timestamps"
+            },
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Take a fast glance"
+            }
+        ],
+        "ingredients": [
+            "empty_syringe"
+        ],
+        "craft": [
+            "locker_token",
+            null
+        ],
+        "consume": [
+            null,
+            "empty_syringe"
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "isolation_ev_01": {
+        "id": "isolation_ev_01",
+        "name": "Door Hatch",
+        "content": "You inspect the isolation chamber.",
+        "reference": null,
+        "salle": [
+            "isolation"
+        ],
+        "stats": {
+            "sante": -1,
+            "lucide": 1,
+            "stress": 2
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Inspect carefully"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Move on quickly"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "morgue_badge",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "isolation_ev_02": {
+        "id": "isolation_ev_02",
+        "name": "Bed Frame",
+        "content": "A vent grate is loose.",
+        "reference": null,
+        "salle": [
+            "isolation"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 2,
+            "stress": 4
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Take samples"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Ignore minor clues"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "freezer_key",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "isolation_ev_03": {
+        "id": "isolation_ev_03",
+        "name": "Vent Grate",
+        "content": "A medicine surface remains on the floor.",
+        "reference": null,
+        "salle": [
+            "isolation"
+        ],
+        "stats": {
+            "sante": 1,
+            "lucide": 3,
+            "stress": 6
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Read all notes"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": 0,
+                "description": "Keep only essentials"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "rusted_clip",
+            "clean_filter"
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "isolation_ev_04": {
+        "id": "isolation_ev_04",
+        "name": "Wall Script",
+        "content": "A wall script is scratched by hand.",
+        "reference": null,
+        "salle": [
+            "isolation"
+        ],
+        "stats": {
+            "sante": 2,
+            "lucide": 4,
+            "stress": 8
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 2,
+                "stress": 0,
+                "description": "Document findings"
+            },
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Close the file"
+            }
+        ],
+        "ingredients": [
+            "sedative_ampoule"
+        ],
+        "craft": [
+            "rest_note",
+            null
+        ],
+        "consume": [
+            null,
+            "sedative_ampoule"
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "isolation_ev_05": {
+        "id": "isolation_ev_05",
+        "name": "Clamp Box",
+        "content": "An observation log is clipped to glass.",
+        "reference": "isolation_ev_04",
+        "salle": [
+            "isolation"
+        ],
+        "stats": {
+            "sante": 3,
+            "lucide": 5,
+            "stress": 1
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 1,
+                "description": "Search deeply"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Step back"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "locker_token",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "isolation_ev_06": {
+        "id": "isolation_ev_06",
+        "name": "Medicine surface",
+        "content": "A hidden panel crack reveals paper.",
+        "reference": null,
+        "salle": [
+            "isolation"
+        ],
+        "stats": {
+            "sante": 4,
+            "lucide": 6,
+            "stress": 3
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Check hidden spaces"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": -1,
+                "description": "Avoid touching evidence"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "radio_chip",
+            "clean_filter"
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "isolation_ev_07": {
+        "id": "isolation_ev_07",
+        "name": "Observation Log",
+        "content": "You inspect the isolation chamber.",
+        "reference": null,
+        "salle": [
+            "isolation"
+        ],
+        "stats": {
+            "sante": -2,
+            "lucide": 7,
+            "stress": 5
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Cross-check details"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Trust your memory"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "lab_slide",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "isolation_ev_08": {
+        "id": "isolation_ev_08",
+        "name": "Drain Mark",
+        "content": "A vent grate is loose.",
+        "reference": null,
+        "salle": [
+            "isolation"
+        ],
+        "stats": {
+            "sante": -1,
+            "lucide": 8,
+            "stress": 7
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 2,
+                "stress": 0,
+                "description": "Open sealed crate"
+            },
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Skip the side path"
+            }
+        ],
+        "ingredients": [
+            "file_tab"
+        ],
+        "craft": [
+            "reagent_stub",
+            null
+        ],
+        "consume": [
+            null,
+            "file_tab"
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "isolation_ev_09": {
+        "id": "isolation_ev_09",
+        "name": "Syringe Wrap",
+        "content": "A medicine surface remains on the floor.",
+        "reference": null,
+        "salle": [
+            "isolation"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 0,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Analyze residue"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": 0,
+                "description": "Leave it for later"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "catalyst_note",
+            "decontaminated_syringe"
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "isolation_ev_10": {
+        "id": "isolation_ev_10",
+        "name": "Panel Crack",
+        "content": "A wall script is scratched by hand.",
+        "reference": "isolation_ev_09",
+        "salle": [
+            "isolation"
+        ],
+        "stats": {
+            "sante": 1,
+            "lucide": 1,
+            "stress": 2
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 1,
+                "description": "Review timestamps"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Take a fast glance"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "office_stamp",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "isolation_ev_11": {
+        "id": "isolation_ev_11",
+        "name": "Door Hatch",
+        "content": "An observation log is clipped to glass.",
+        "reference": null,
+        "salle": [
+            "isolation"
+        ],
+        "stats": {
+            "sante": 2,
+            "lucide": 2,
+            "stress": 4
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Inspect carefully"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Move on quickly"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "file_tab",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "isolation_ev_12": {
+        "id": "isolation_ev_12",
+        "name": "Bed Frame",
+        "content": "A hidden panel crack reveals paper.",
+        "reference": null,
+        "salle": [
+            "isolation"
+        ],
+        "stats": {
+            "sante": 3,
+            "lucide": 3,
+            "stress": 6
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 2,
+                "stress": 0,
+                "description": "Take samples"
+            },
+            {
+                "sante": -1,
+                "lucide": 0,
+                "stress": -1,
+                "description": "Ignore minor clues"
+            }
+        ],
+        "ingredients": [
+            "bioseal_tube"
+        ],
+        "craft": [
+            "memo_sheet",
+            "lab_slide"
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "isolation_ev_13": {
+        "id": "isolation_ev_13",
+        "name": "Vent Grate",
+        "content": "You inspect the isolation chamber.",
+        "reference": null,
+        "salle": [
+            "isolation"
+        ],
+        "stats": {
+            "sante": 4,
+            "lucide": 4,
+            "stress": 8
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Read all notes"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Keep only essentials"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "iso_band",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "isolation_ev_14": {
+        "id": "isolation_ev_14",
+        "name": "Wall Script",
+        "content": "A vent grate is loose.",
+        "reference": null,
+        "salle": [
+            "isolation"
+        ],
+        "stats": {
+            "sante": -2,
+            "lucide": 5,
+            "stress": 1
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Document findings"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Close the file"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "vent_screw",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "isolation_ev_15": {
+        "id": "isolation_ev_15",
+        "name": "Clamp Box",
+        "content": "A medicine surface remains on the floor.",
+        "reference": "isolation_ev_14",
+        "salle": [
+            "isolation"
+        ],
+        "stats": {
+            "sante": -1,
+            "lucide": 6,
+            "stress": 3
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 1,
+                "description": "Search deeply"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": 0,
+                "description": "Step back"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "obs_clip",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "isolation_ev_16": {
+        "id": "isolation_ev_16",
+        "name": "Medicine surface",
+        "content": "A wall script is scratched by hand.",
+        "reference": null,
+        "salle": [
+            "isolation"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 7,
+            "stress": 5
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 2,
+                "stress": 0,
+                "description": "Check hidden spaces"
+            },
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Avoid touching evidence"
+            }
+        ],
+        "ingredients": [
+            "radio_chip"
+        ],
+        "craft": [
+            "morgue_badge",
+            null
+        ],
+        "consume": [
+            null,
+            "radio_chip"
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "isolation_ev_17": {
+        "id": "isolation_ev_17",
+        "name": "Observation Log",
+        "content": "An observation log is clipped to glass.",
+        "reference": null,
+        "salle": [
+            "isolation"
+        ],
+        "stats": {
+            "sante": 1,
+            "lucide": 8,
+            "stress": 7
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Cross-check details"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Trust your memory"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "freezer_key",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "isolation_ev_18": {
+        "id": "isolation_ev_18",
+        "name": "Drain Mark",
+        "content": "A hidden panel crack reveals paper.",
+        "reference": null,
+        "salle": [
+            "isolation"
+        ],
+        "stats": {
+            "sante": 2,
+            "lucide": 0,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Open sealed crate"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": -1,
+                "description": "Skip the side path"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "rusted_clip",
+            "sedative_ampoule"
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "isolation_ev_19": {
+        "id": "isolation_ev_19",
+        "name": "Syringe Wrap",
+        "content": "You inspect the isolation chamber.",
+        "reference": null,
+        "salle": [
+            "isolation"
+        ],
+        "stats": {
+            "sante": 3,
+            "lucide": 1,
+            "stress": 2
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Analyze residue"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Leave it for later"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "rest_note",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "isolation_ev_20": {
+        "id": "isolation_ev_20",
+        "name": "Panel Crack",
+        "content": "A vent grate is loose.",
+        "reference": "isolation_ev_19",
+        "salle": [
+            "isolation"
+        ],
+        "stats": {
+            "sante": 4,
+            "lucide": 2,
+            "stress": 4
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 2,
+                "stress": 1,
+                "description": "Review timestamps"
+            },
+            {
+                "sante": -1,
+                "lucide": 1,
+                "stress": -1,
+                "description": "Take a fast glance"
+            }
+        ],
+        "ingredients": [
+            "empty_syringe"
+        ],
+        "craft": [
+            "locker_token",
+            null
+        ],
+        "consume": [
+            null,
+            "empty_syringe"
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
     }
 }
