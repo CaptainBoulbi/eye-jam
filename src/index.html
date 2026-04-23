@@ -70,18 +70,11 @@
             }
 
             /* Application des animations sur la zone de jeu */
-            #game.vignette-active { animation: vignette-pulse 1.5s infinite; }
+            [scene="game"].vignette-active { animation: vignette-pulse 1.5s infinite; }
             #game.shake-1 { animation: horizontal-shaking-1 1s; }
             #game.shake-2 { animation: horizontal-shaking-2 1s; }
             #game.shake-3 { animation: horizontal-shaking-3 1s; }
             #game.shake-4 { animation: horizontal-shaking-4 1s; }
-
-            /* Combinaisons shake + vignette : quand les deux effets sont actifs en meme temps */
-            /* On declare les deux animations avec une virgule pour qu'elles s'appliquent ensemble */
-            #game.vignette-active.shake-1 { animation: horizontal-shaking-1 1s, vignette-pulse 1.5s infinite; }
-            #game.vignette-active.shake-2 { animation: horizontal-shaking-2 1s, vignette-pulse 1.5s infinite; }
-            #game.vignette-active.shake-3 { animation: horizontal-shaking-3 1s, vignette-pulse 1.5s infinite; }
-            #game.vignette-active.shake-4 { animation: horizontal-shaking-4 1s, vignette-pulse 1.5s infinite; }
 
 
 
@@ -962,7 +955,7 @@
     function update_vignette() {
         const sante = stat.get('sante');
         const lucide = stat.get('lucide');
-        const cible = document.getElementById('game');
+        const cible = document.querySelector('[scene="game"]');
         if (!cible) return;
 
         // Active la vignette rouge qui pulse si la sante est critique (<=5)
