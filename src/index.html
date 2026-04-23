@@ -281,6 +281,7 @@
         }
 
         #choixGauche, #choixDroite {
+            z-index: 10;
             width: 140px;     
             font-size: 14px;     
             font-weight: bold;
@@ -302,16 +303,16 @@
         #choixGauche.visible {
             opacity: 1;
             transform: scale(1.1);
-            color: #ff6b6b;
-            border-color: #ff4444;
-            background: rgba(255, 80, 80, 0.15);
+            color: white;
+            border-color: #10500d;
+            background: rgba(80, 255, 80, 0.15);
         }
 
         #choixDroite.visible {
             opacity: 1;
             transform: scale(1.1);
-            color: #6bff6b;
-            border-color: #44ff44;
+            color: white;
+            border-color: #10500d;
             background: rgba(80, 255, 80, 0.15);
         }
 
@@ -339,6 +340,7 @@
         }
 
        #card {
+            z-index: 5;
             padding: 20px;
             background: blue;
             color: white;
@@ -659,6 +661,8 @@
                         card.style.setProperty("--x-num", 0);
                         choixGauche.classList.remove('visible');
                         choixDroite.classList.remove('visible');
+                        choixGauche.innerText = '';
+                        choixDroite.innerText = '';
                     });
 
                     document.addEventListener("mouseleave", () => {
