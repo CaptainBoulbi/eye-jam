@@ -1,11 +1,12 @@
 {
-    "WOW1": {
-        "id": "WOW1",
-        "name": "WOW1",
-        "content": "WOW1",
+    "morgue_wake": {
+        "id": "morgue_wake",
+        "name": "Cold Awakening",
+        "content": "You wake in the morgue with blood on both hands. You are alone.",
         "reference": null,
-        "salle": ["morgue"],
-        "go": false,
+        "salle": [
+            "morgue"
+        ],
         "stats": {
             "sante": 0,
             "lucide": 0,
@@ -13,30 +14,38 @@
         },
         "deal": [
             {
-                "sante": -1,
+                "sante": 0,
                 "lucide": 1,
-                "stress": 0,
-                "description": "Follow it"
+                "stress": 1,
+                "description": "Steady your breath and check your body"
             },
             {
                 "sante": -1,
-                "lucide": 0,
-                "stress": -1,
-                "description": "Ignore it"
+                "lucide": -1,
+                "stress": 2,
+                "description": "Panic and scrub blood from your hands"
             }
         ],
         "ingredients": [],
-        "craft": ["log_d1", "log_d45"],
-        "consume": [null, null],
-        "image": "assets/innexistant.png"
+        "craft": [
+            null,
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
     },
-    "WOW2": {
-        "id": "WOW2",
-        "name": "WOW2",
-        "content": "WOW2",
-        "reference": "WOW1",
-        "salle": ["morgue"],
-        "go": true,
+    "move_morgue": {
+        "id": "move_morgue",
+        "name": "Morgue Exit",
+        "content": "Two paths leave the morgue: the lab wing and the rest room corridor.",
+        "reference": "morgue_wake",
+        "salle": [
+            "morgue"
+        ],
         "stats": {
             "sante": 0,
             "lucide": 0,
@@ -44,21 +53,432 @@
         },
         "deal": [
             {
-                "sante": -1,
+                "sante": 0,
                 "lucide": 1,
                 "stress": 0,
-                "description": "Follow it"
+                "description": "Go toward the lab"
             },
             {
-                "sante": -1,
-                "lucide": 0,
-                "stress": -1,
-                "description": "Ignore it"
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Go toward the rest room"
             }
         ],
         "ingredients": [],
-        "craft": ["log_d1", "log_d45"],
-        "consume": [null, null],
-        "image": "assets/innexistant.png"
+        "craft": [
+            null,
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": true
+    },
+    "lab_recipe": {
+        "id": "lab_recipe",
+        "name": "Recipe File",
+        "content": "You recover TLD-V1 documentation. It explicitly states the vaccine is not feasible.",
+        "reference": "move_morgue",
+        "salle": [
+            "lab"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 1,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 2,
+                "stress": 1,
+                "description": "Read the full protocol and accept failure"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Secure the file and move on"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "vaccine_tld_v1",
+            "vaccine_tld_v1"
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "lab_fragment": {
+        "id": "lab_fragment",
+        "name": "Lab Audio",
+        "content": "A recorder confirms Patient Zero blood is lost on the surface and cannot be retrieved.",
+        "reference": "lab_recipe",
+        "salle": [
+            "lab"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 2,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 1,
+                "description": "Archive the recording with the recipe"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Memorize the key line and leave"
+            }
+        ],
+        "ingredients": [
+            "vaccine_tld_v1"
+        ],
+        "craft": [
+            "recorder_fragment_a",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "move_lab": {
+        "id": "move_lab",
+        "name": "Lab Junction",
+        "content": "From the lab you can return to the morgue or continue to the office.",
+        "reference": "lab_fragment",
+        "salle": [
+            "lab"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 0,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Go to morgue"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Go to office"
+            }
+        ],
+        "ingredients": [
+            "vaccine_tld_v1"
+        ],
+        "craft": [
+            null,
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": true
+    },
+    "office_code": {
+        "id": "office_code",
+        "name": "Code Note",
+        "content": "A bloodstained post-it in the office contains elevator code : 5924.",
+        "reference": "move_lab",
+        "salle": [
+            "office"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 2,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Store the elevator code safely"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": -1,
+                "description": "Memorize code and destroy the note"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            "elevator_code",
+            "elevator_code"
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "office_fragment": {
+        "id": "office_fragment",
+        "name": "Office Audio",
+        "content": "Security recordings confirm Marcus reached the surface. Multiple civilians were killed.",
+        "reference": "office_code",
+        "salle": [
+            "office"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 2,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 2,
+                "stress": 2,
+                "description": "Review complete incident timestamps"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Read summary and close the file"
+            }
+        ],
+        "ingredients": [
+            "elevator_code"
+        ],
+        "craft": [
+            "recorder_fragment_b",
+            "final_report"
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "office_last_words": {
+        "id": "office_last_words",
+        "name": "Last Message",
+        "content": "Elena Vasquez states she chose suicide to avoid transformation.",
+        "reference": "office_fragment",
+        "salle": [
+            "office"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 2,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 2,
+                "stress": 1,
+                "description": "Keep the final recording"
+            },
+            {
+                "sante": 0,
+                "lucide": 0,
+                "stress": -1,
+                "description": "Stop listening and lock the terminal"
+            }
+        ],
+        "ingredients": [
+            "final_report"
+        ],
+        "craft": [
+            "recorder_fragment_c",
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "move_office": {
+        "id": "move_office",
+        "name": "Office Junction",
+        "content": "From the office, routes lead to the lab and isolation.",
+        "reference": "office_last_words",
+        "salle": [
+            "office"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 0,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Go to lab"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Go to isolation"
+            }
+        ],
+        "ingredients": [
+            "vaccine_tld_v1",
+            "elevator_code"
+        ],
+        "craft": [
+            null,
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": true
+    },
+    "move_rest": {
+        "id": "move_rest",
+        "name": "Rest Junction",
+        "content": "From the rest room, routes lead to morgue and isolation.",
+        "reference": "move_morgue",
+        "salle": [
+            "rest_room"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 0,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Go to morgue"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Go to isolation"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            null,
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+    },
+    "move_isolation": {
+        "id": "move_isolation",
+        "name": "Isolation Junction",
+        "content": "From isolation, routes lead to office and rest room.",
+        "reference": "move_office",
+        "salle": [
+            "isolation"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 0,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Go to office"
+            },
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Go to rest room"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            null,
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": true
+    },
+    "morgue_end": {
+        "id": "morgue_end",
+        "name": "Final Morgue",
+        "content": "Back in the morgue, you accept the truth: vaccine impossible, Patient Zero blood unavailable, no one else alive.",
+        "reference": "move_office",
+        "salle": [
+            "morgue"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 0,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": -15,
+                "lucide": 1,
+                "stress": 0,
+                "description": "Write the final note and lie on the slab"
+            },
+            {
+                "sante": -15,
+                "lucide": 0,
+                "stress": -1,
+                "description": "Record final words and let go"
+            }
+        ],
+        "ingredients": [
+            "vaccine_tld_v1",
+            "elevator_code"
+        ],
+        "craft": [
+            "farewell_note",
+            "farewell_note"
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
     }
 }
