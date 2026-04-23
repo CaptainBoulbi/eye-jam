@@ -10,6 +10,7 @@ try {
 } catch {
   spawnSync(["apt-get", "update", "-y"], { stdio: ["inherit", "inherit", "inherit"] });
   spawnSync(["apt-get", "install", "-y", "git"], { stdio: ["inherit", "inherit", "inherit"] });
+  spawnSync(["git", "config", "--global", "--add", "safe.directory", "/app"], { stdio: ["inherit", "inherit", "inherit"] });
 }
 
 serve({
