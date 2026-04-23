@@ -230,40 +230,56 @@
             grid-gap: 10px;
             grid-auto-rows: minmax(100px, auto);
         }
-        #stats{
-            grid-column: 1/4;
+        /* Stats centrees en haut, sur toute la largeur */
+        #stats {
+            grid-column: 1/5;
             grid-row: 1;
             height: 15vh;
-            width: 25vh;
             display: flex;
-            flex-direction: row;
-            gap: 10px;
-            text-align: center;
-        }
-        #inventory{
-            text-align: center;
-            grid-column: 4/4;
-            grid-row: 1;
-            height: 90vh;
-            user-select: none;
-        }
-        #map{
-            grid-column: 1/4;
-            grid-row: 2;
-            height: 25vh;
-            width: 25vh;
-            text-align: center;
-            border: 2px white solid;
-            margin-top: -20%;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
         }
 
-        #full-card{
-            grid-column: 2/4;
-            grid-row: 1;
-            height: 60vh;
-            align-items: center;
+        /* Inventaire a droite, row 2 */
+        #inventory {
+            grid-column: 4/5;
+            grid-row: 2;
             text-align: center;
-            padding: 10px 10px 10px;
+            user-select: none;
+        }
+
+        /* Map fixee en bas a gauche de l'ecran */
+        #map {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            height: 20vh;
+            width: 20vh;
+            border: 2px white solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Ancienne zone BACK masquee */
+        #full-card {
+            display: none;
+        }
+
+        /* Bouton cacher/afficher l'inventaire (pret a recevoir une image de fond) */
+        #toggle-inventory {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 64px;
+            height: 64px;
+            background: #1a1a1a;
+            border: 2px solid #444;
+            color: #aaa;
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
         }
 
        #choix-wrapper {
@@ -328,11 +344,11 @@
             background-size: cover;
             user-select: none;
         }
+        /* Carte centree au milieu de l'ecran */
         #cards {
-            margin-top: -50%; 
-            text-align: center;
             grid-column: 2/4;
             grid-row: 2;
+            min-height: 70vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -410,6 +426,27 @@
         .stat-img {
             height: 75px;
             width: 75px;
+        }
+
+        /* Empile l'image du stat avec son point indicateur en dessous */
+        .stat-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Petit rond blanc : invisible par defaut, visible si le choix previsualise change ce stat */
+        .stat-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: white;
+            opacity: 0;
+            transition: opacity 0.15s;
+        }
+        .stat-dot.visible {
+            opacity: 1;
         }
 
 
@@ -531,15 +568,25 @@
     </div>
 
     <div scene="game">
+        <!-- Hors de #game pour ne pas bouger avec l'animation de shake -->
+        <button id="toggle-inventory" onclick="toggleInventory()">INV</button>
+        <div id="map">MAP</div>
+
         <div id="game">
             <div id="stats">
-                <img class="stat-img" id="sante" src="./assets/stats/sante/sante_15.PNG">
-                <img class="stat-img" id="lucide" src="./assets/stats/lucide/lucide_15.PNG">
-                <img class="stat-img" id="stress" src="./assets/stats/stress/stress_15.PNG">
-                <button onclick="stat.add('sante', -1)">dégats</button>
-                <button onclick="stat.add('lucide', -1)">parano</button>
-                <button onclick="stat.add('stress', -1)">stress</button>
-
+                <!-- Chaque stat a un point en dessous qui s'allume si le choix previsualise l'impacte -->
+                <div class="stat-wrapper">
+                    <img class="stat-img" id="sante" src="./assets/stats/sante/sante_15.PNG">
+                    <div class="stat-dot" id="dot-sante"></div>
+                </div>
+                <div class="stat-wrapper">
+                    <img class="stat-img" id="lucide" src="./assets/stats/lucide/lucide_15.PNG">
+                    <div class="stat-dot" id="dot-lucide"></div>
+                </div>
+                <div class="stat-wrapper">
+                    <img class="stat-img" id="stress" src="./assets/stats/stress/stress_15.PNG">
+                    <div class="stat-dot" id="dot-stress"></div>
+                </div>
             </div>
 
 
@@ -617,18 +664,23 @@
                         inventaire.move(window.grab_from, coord_to);
                     });
 
-                    cells[i].onclick = (e) => {
+                    // Affiche la description de l'item au survol, la cache quand on sort
+                    cells[i].addEventListener('mouseenter', (e) => {
                         if (e.target.getAttribute('data-empty') === 'true') return;
-                        let coord = { x: parseInt(e.target.getAttribute('x')), y: parseInt(e.target.getAttribute('y')) };
-                        let item = inventaire.get(coord);
+                        const coord = { x: parseInt(e.target.getAttribute('x')), y: parseInt(e.target.getAttribute('y')) };
+                        const item = inventaire.get(coord);
                         if (!item.id) return;
+                        const rect = e.target.getBoundingClientRect();
                         const tooltip = document.getElementById('tooltip');
                         tooltip.innerText = item.description;
                         tooltip.style.display = 'block';
-                        tooltip.style.left = '50%';
-                        tooltip.style.top = '50%';
-                        tooltip.style.transform = 'translate(-50%, -50%)';
-                    };
+                        tooltip.style.left = (rect.left - 220) + 'px';
+                        tooltip.style.top = (rect.top + rect.height / 2) + 'px';
+                        tooltip.style.transform = 'translateY(-50%)';
+                    });
+                    cells[i].addEventListener('mouseleave', () => {
+                        document.getElementById('tooltip').style.display = 'none';
+                    });
                 }
 
                 document.addEventListener('mousemove', (e) => {
@@ -641,20 +693,10 @@
                 document.addEventListener('mouseup', () => {
                     if (dragGhost) { dragGhost.remove(); dragGhost = null; }
                 });
-
-                document.addEventListener('click', (e) => {
-                    if (!e.target.closest('td')) {
-                        document.getElementById('tooltip').style.display = 'none';
-                    }
-                });
             });
 
             </script>
 
-            </div>
-            <div id="map">
-                <!-- en attente des assets -->
-                MAP
             </div>
             <div id="full-card">
                 <div id="background">
@@ -695,6 +737,15 @@
                         card.style.transition = "none";
                     });
 
+                    // Met a jour les points sous les stats : 0 = choix gauche, 1 = choix droite, null = aucun
+                    function updateDots(choice) {
+                        const deal = choice != null ? carte.current().deal?.[choice] : null;
+                        ['sante', 'lucide', 'stress'].forEach((s) => {
+                            const change = deal?.[s] || 0;
+                            document.getElementById('dot-' + s).classList.toggle('visible', change !== 0);
+                        });
+                    }
+
                     document.addEventListener("mouseup", (e) => {
                         if (!dragging) return;
                         dragging = false;
@@ -710,6 +761,7 @@
                         choixDroite.classList.remove('visible');
                         choixGauche.innerText = '';
                         choixDroite.innerText = '';
+                        updateDots(null);
                     });
 
                     document.addEventListener("mouseleave", () => {
@@ -720,6 +772,7 @@
                         card.style.setProperty("--x-num", 0);
                         choixGauche.classList.remove('visible');
                         choixDroite.classList.remove('visible');
+                        updateDots(null);
                     });
 
 
@@ -731,21 +784,23 @@
 
                         const c = carte.current();
 
+                        // Texte des choix toujours affiche
+                        choixGauche.innerText = c.deal?.[0]?.description || '?';
+                        choixDroite.innerText = c.deal?.[1]?.description || '?';
+
+                        // Previsualise le choix selon le sens du swipe (gauche, droite, ou aucun)
                         if (currentX < -30) {
-                            choixGauche.innerText = c.deal?.[0]?.description || '?';
                             choixGauche.classList.add('visible');
                             choixDroite.classList.remove('visible');
-                            choixDroite.innerText = c.deal?.[1]?.description || '?';
+                            updateDots(0);
                         } else if (currentX > 30) {
-                            choixDroite.innerText = c.deal?.[1]?.description || '?';
                             choixDroite.classList.add('visible');
                             choixGauche.classList.remove('visible');
-                            choixGauche.innerText = c.deal?.[0]?.description || '?';
+                            updateDots(1);
                         } else {
                             choixGauche.classList.remove('visible');
                             choixDroite.classList.remove('visible');
-                            choixGauche.innerText = c.deal?.[0]?.description || '?';
-                            choixDroite.innerText = c.deal?.[1]?.description || '?';
+                            updateDots(null);
                         }
                     });
 
@@ -845,6 +900,12 @@
             document.querySelectorAll('[scene]').forEach((scene) => {
                 scene.hidden = scene.getAttribute('scene') !== name
             })
+        }
+
+        // Cache ou reaffiche l'inventaire au clic du bouton
+        function toggleInventory() {
+            const inv = document.getElementById('inventory');
+            inv.style.display = (inv.style.display === 'none') ? '' : 'none';
         }
         
 
@@ -985,10 +1046,4 @@
                 z-index: 999;
                 pointer-events: none;
                 box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
-                </div>
-
-
-                
-
-</body>
-</html>
+            
