@@ -254,7 +254,9 @@
             width: 25vh;
             text-align: center;
             border: 2px white solid;
+            margin-top: -20%;
         }
+
         #full-card{
             grid-column: 2/4;
             grid-row: 1;
@@ -264,31 +266,57 @@
             padding: 10px 10px 10px;
         }
 
-       #choixGauche, #choixDroite {
-            font-size: 17px;
+       #choix-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        #card-title {
+            font-size: 16px;
             font-weight: bold;
-            padding: 10px 16px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        #choixGauche, #choixDroite {
+            width: 140px;     
+            font-size: 14px;     
+            font-weight: bold;
+            padding: 12px 14px;  
             border-radius: 10px;
-            min-height: 36px;
-            transition: opacity 0.2s;
-            opacity: 0;
+            text-align: center;
+            opacity: 0.6;
+            transform: scale(0.9);
+            transition: opacity 0.15s, transform 0.15s, color 0.15s;
+            color: #ccc;
+            border: 2px solid #666;
+            min-height: 70px;   
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        #choixGauche:not(:empty) {
+
+        #choixGauche.visible {
             opacity: 1;
+            transform: scale(1.1);
             color: #ff6b6b;
-            background: rgba(255, 80, 80, 0.12);
-            box-shadow: inset 0 0 12px rgba(255, 60, 60, 0.2);
-            border-left: 3px solid #ff4444;
+            border-color: #ff4444;
+            background: rgba(255, 80, 80, 0.15);
         }
 
-        #choixDroite:not(:empty) {
+        #choixDroite.visible {
             opacity: 1;
+            transform: scale(1.1);
             color: #6bff6b;
-            background: rgba(80, 255, 80, 0.12);
-            box-shadow: inset 0 0 12px rgba(60, 255, 60, 0.2);
-            border-right: 3px solid #44ff44;
+            border-color: #44ff44;
+            background: rgba(80, 255, 80, 0.15);
         }
+
+
+
         #background{
             height: 80%;
             width: 100%;
@@ -299,43 +327,61 @@
             background-size: cover;
             user-select: none;
         }
-        #description{
-            height: 15%;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.3);
-            color: white;
-            font-style: italic;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        #cards{
-            margin-top: -30%;
+        #cards {
+            margin-top: -50%; 
             text-align: center;
             grid-column: 2/4;
             grid-row: 2;
-
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
         }
-        #card {
-            padding: 12px;
+
+       #card {
+            padding: 20px;
             background: blue;
             color: white;
             font-family: "Mogra", system-ui;
-            font-weight: 100;
-            font-style: normal;
             border-radius: 20px;
             user-select: none;
-            height: 40%;
+            width: 340px;      
+            min-height: 260px;   
             cursor: grab;
-
             --x: 0px;
             --x-num: 0;
-
-            /* animation pilotée par variable */
             transform: translateX(var(--x)) rotate(calc(var(--x-num) * 0.05deg));
             transition: transform 0.2s ease;
             position: relative;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
+
+
+        #card-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            display: block;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding-bottom: 8px;
+        }
+
+        #card-content {
+            font-size: 18px;
+            font-style: italic;
+            opacity: 0.9;
+            line-height: 1.5;
+            flex-grow: 1;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center; /* ← ajoute */
+        }
+
+
         #card:active {
             cursor: grabbing;
         }
@@ -571,12 +617,16 @@
                 </div>
             </div>
             <div id="cards">
-            <div id="card">
-                <span id="choixGauche"></span>
-                <p>CARD</p>
-                <span id="choixDroite"></span>
+                <span id="choixGauche">...</span>
+                <div id="card">
+                    <span id="card-title">CARD</span>
+                    <p id="card-content"></p>
+                </div>
+                <span id="choixDroite">...</span>
             </div>
-        </div>
+
+
+
 
 
 
@@ -596,42 +646,75 @@
                         card.style.transition = "none";
                     });
 
-                    card.addEventListener("mouseup", (e) => {
+                    document.addEventListener("mouseup", (e) => {
                         if (!dragging) return;
                         dragging = false;
-
                         card.style.transition = "transform 0.3s ease";
-
                         if (currentX > 50) {
                             carte.next(1);
                         } else if (currentX < -50) {
                             carte.next(0);
                         }
-
                         card.style.setProperty("--x", "0px");
                         card.style.setProperty("--x-num", 0);
+                        choixGauche.classList.remove('visible');
+                        choixDroite.classList.remove('visible');
                     });
+
+                    document.addEventListener("mouseleave", () => {
+                        if (!dragging) return;
+                        dragging = false;
+                        card.style.transition = "transform 0.3s ease";
+                        card.style.setProperty("--x", "0px");
+                        card.style.setProperty("--x-num", 0);
+                        choixGauche.classList.remove('visible');
+                        choixDroite.classList.remove('visible');
+                    });
+
 
                     document.addEventListener("mousemove", (e) => {
                         if (!dragging) return;
-
                         currentX = e.clientX - startX;
-
                         card.style.setProperty("--x", currentX + "px");
                         card.style.setProperty("--x-num", currentX);
 
-                        // Affiche la description du choix gauche/droite en fonction de la position de la carte
                         const c = carte.current();
-                        choixGauche.innerText = currentX < -30 ? (c.deal?.[0]?.description || '') : '';
-                        choixDroite.innerText = currentX > 30 ? (c.deal?.[1]?.description || '') : '';
 
+                        if (currentX < -30) {
+                            choixGauche.innerText = c.deal?.[0]?.description || '?';
+                            choixGauche.classList.add('visible');
+                            choixDroite.classList.remove('visible');
+                            choixDroite.innerText = c.deal?.[1]?.description || '?';
+                        } else if (currentX > 30) {
+                            choixDroite.innerText = c.deal?.[1]?.description || '?';
+                            choixDroite.classList.add('visible');
+                            choixGauche.classList.remove('visible');
+                            choixGauche.innerText = c.deal?.[0]?.description || '?';
+                        } else {
+                            choixGauche.classList.remove('visible');
+                            choixDroite.classList.remove('visible');
+                            choixGauche.innerText = c.deal?.[0]?.description || '?';
+                            choixDroite.innerText = c.deal?.[1]?.description || '?';
+                        }
                     });
 
+
+                      const choixGauche = document.getElementById('choixGauche');
+                      const choixDroite = document.getElementById('choixDroite');
+
                     function update_carte() {
-                        show_carte.innerText = JSON.stringify(carte.current().content, null, 4);
+                        const c = carte.current();
+                        document.getElementById('card-title').innerText = c.name || '';
+                        document.getElementById('card-content').innerText = c.content || '';
+                        choixGauche.innerText = c.deal?.[0]?.description || '?';
+                        choixDroite.innerText = c.deal?.[1]?.description || '?';
                     }
+
                     carte.onchange(update_carte);
                     update_carte();
+
+
+
                 </script>
             </div>
         </div>
