@@ -1,0 +1,11 @@
+services:
+  eye-jam:
+    container_name: "eye-jam"
+    image: oven/bun:latest
+    working_dir: /app
+    volumes:
+      - ./:/app
+    ports:
+      - "6913:6913"
+    command: bun run serve
+    restart: unless-stopped
