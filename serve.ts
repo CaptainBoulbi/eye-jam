@@ -5,8 +5,9 @@ import { spawnSync } from "bun";
 const OUTPUT_DIR = "./output";
 const PORT = 6913;
 
-const gitCheck = spawnSync(["git", "--version"], { stderr: "pipe", stdout: "pipe" });
-if (gitCheck.exitCode !== 0) {
+try {
+  const gitCheck = spawnSync(["git", "--version"], { stderr: "pipe", stdout: "pipe" });
+} catch {
   spawnSync(["apt-get", "update", "-y"], { stdio: ["inherit", "inherit", "inherit"] });
   spawnSync(["apt-get", "install", "-y", "git"], { stdio: ["inherit", "inherit", "inherit"] });
 }
