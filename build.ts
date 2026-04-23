@@ -1,8 +1,11 @@
 const build_msg = "\033[0;32m[BUILD]\033[0m"
 const info_msg = "\033[0;36m[INFO]\033[0m"
 
-await Bun.$`rm -rf ./output/*`;
-console.log(`${build_msg} Dossier output nettoyé`);
+import { existsSync } from "fs";
+if (existsSync("./output")) {
+    await Bun.$`rm -rf ./output/*`;
+    console.log(`${build_msg} Dossier output nettoyé`);
+}
 
 const result = await Bun.build({
     entrypoints: ["./src/game.ts"],
