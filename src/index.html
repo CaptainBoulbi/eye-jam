@@ -138,8 +138,8 @@
             transform: translateX(-50%);
         }
 
-        [scene="game"] { 
-            background : radial-gradient(circle, #1c1c1c 0%, #0a0a0a 50%, #000000 100%);
+        [scene="game"] {
+            background: url('./assets/Fond-morgue.jpeg') center/cover no-repeat, #000;
             min-height: 100vh;
             margin: 0;
             color: #cccccc;
@@ -232,6 +232,8 @@
             justify-content: center;
             align-items: center;
             gap: 20px;
+            /* voile sombre pour attenuer le fond derriere les stats */
+            background: rgba(0, 0, 0, 0.35);
         }
 
         #inventory {
@@ -239,37 +241,37 @@
             grid-row: 2;
             text-align: center;
             user-select: none;
-        }
-
-        #map {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            height: 20vh;
-            width: 20vh;
-            border: 2px white solid;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            /* voile sombre pour attenuer le fond derriere l'inventaire */
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 8px;
+            padding: 8px;
         }
 
         #full-card {
             display: none;
         }
 
-        #toggle-inventory {
+        /* zone invisible sur le sac du fond, ajuster les valeurs si besoin */
+        #sac-zone {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 64px;
-            height: 64px;
-            background: #1a1a1a;
-            border: 2px solid #444;
-            color: #aaa;
+            bottom: 0vh; /* augmente = monte vers le haut */
+            right: 10vw; /* augmente = va vers la gauche */
+            width: 13vw;
+            height: 18vh;
             cursor: pointer;
-            background-size: cover;
-            background-position: center;
+            z-index: 1000;
+            /* DEBUG : décommente pour voir la zone 
+            background: rgba(255, 0, 0, 0.4);
+            border: 2px solid red;
+                */
         }
+
+
+        #sac-zone:hover {
+            /* petit glow au survol pour indiquer que c'est cliquable */
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+        }
+
 
        #choix-wrapper {
             display: flex;
@@ -346,8 +348,9 @@
        #card {
             z-index: 5;
             padding: 20px;
-            background: blue;
-            color: white;
+            /* teinte sombre verdatre qui matche l'ambiance morgue */
+            background: #1e2a22;
+            color: #d8d8d8;
             font-family: "Mogra", system-ui;
             border-radius: 20px;
             user-select: none;
@@ -555,9 +558,6 @@
     </div>
 
     <div scene="game">
-        <!-- sortis de #game sinon le shake les fait bouger -->
-        <button id="toggle-inventory" onclick="toggleInventory()">INV</button>
-        <div id="map">MAP</div>
 
         <div id="game">
             <div id="stats">
@@ -807,6 +807,10 @@
                 </script>
             </div>
         </div>
+
+        <div id="sac-zone" onclick="toggleInventory()"></div>
+
+
     </div>
 
     <div scene="game-over">
@@ -1029,6 +1033,9 @@
                 z-index: 999;
                 pointer-events: none;">
             </div>
+
+            <!-- zone cliquable sur le sac du fond, hors de #game pour eviter le shake -->
+        <div id="sac-zone" onclick="toggleInventory()"></div>
 
 </body>
 </html>
