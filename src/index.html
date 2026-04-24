@@ -97,6 +97,8 @@
         [scene] {
             animation: fadeIn 1s ease-in;
         }
+        /* hidden doit toujours cacher meme si une scene a display:flex */
+        [scene][hidden] { display: none !important; }
 
         [scene="presentation"] { 
             background: radial-gradient(circle, #1c1c1c 0%, #0a0a0a 50%, #000000 100%);
@@ -139,7 +141,8 @@
         }
 
         [scene="game"] {
-            background: url('./assets/Fond-morgue.jpeg') center/cover no-repeat, #000;
+            /* le fond est mis par JS selon la salle */
+            background: #000 center/cover no-repeat;
             min-height: 100vh;
             margin: 0;
             color: #cccccc;
@@ -452,9 +455,97 @@
         }
         }
 
+        /* ecran de mort par decomposition */
+        [scene="game-over"] {
+            background: url('./assets/Fin_Decomposition-GrainEpais.PNG') center/cover no-repeat, #000;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Mogra", system-ui;
+        }
+        #game-over-text {
+            color: #e0e0e0;
+            font-size: 42px;
+            text-align: center;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+            padding: 20px 30px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+        }
+
+        /* zone cliquable sur les molettes en haut a gauche */
+        #settings-zone {
+            position: fixed;
+            top: 1vh;
+            left: 0.5vw;
+            width: 50px;
+            height: 70px;
+            cursor: pointer;
+            z-index: 9997;
+        }
+        /* petit panneau avec le bouton mute, cache par defaut */
+        #settings-panel {
+            position: fixed;
+            top: 8vh;
+            left: 1vw;
+            background: rgba(0, 0, 0, 0.75);
+            padding: 8px;
+            border-radius: 6px;
+            display: none;
+            z-index: 9997;
+        }
+        #settings-panel.visible { display: block; }
+        #settings-panel button {
+            background: transparent;
+            border: 1px solid #555;
+            color: #ddd;
+            padding: 6px 10px;
+            font-family: "Mogra", system-ui;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        /* notif quand un objet est ajoute */
+        #notif {
+            position: fixed;
+            top: 20vh;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #e8e8e8;
+            padding: 14px 22px;
+            border-radius: 8px;
+            font-family: "Mogra", system-ui;
+            font-size: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            z-index: 9998;
+        }
+        #notif.visible { opacity: 1; }
+
+        /* splash affiche 3s devant tout quand on lance le jeu */
+        #splash {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: url('./assets/Fond_Intro-sansUI.PNG') center/cover no-repeat, #000;
+            display: none;
+        }
+        #splash.visible { display: block; }
+
     </style>
 </head>
 <body>
+
+    <div id="splash"></div>
+    <div id="notif"></div>
+
+    <div id="settings-zone" onclick="toggleSettings()"></div>
+    <div id="settings-panel">
+        <button id="mute-btn-global" onclick="toggleSound()">Mute</button>
+    </div>
 
     <script>
         let current_audio = null;
@@ -463,6 +554,35 @@
         document.addEventListener("click", () => {
             play_audio("title");
         }, { once: true });
+
+        // wrap inventaire.add pour afficher une notif quand un objet est recupere
+        window.addEventListener('load', () => {
+            const og_add = inventaire.add;
+            inventaire.add = (id) => {
+                const ok = og_add(id);
+                const it = item.get(id);
+                if (it && it.name) showNotif('+ ' + it.name);
+                return ok;
+            };
+        });
+
+        let notif_timer = null;
+        function showNotif(txt) {
+            const n = document.getElementById('notif');
+            n.innerText = txt;
+            n.classList.add('visible');
+            clearTimeout(notif_timer);
+            notif_timer = setTimeout(() => n.classList.remove('visible'), 2000);
+        }
+
+        // splash 3s avant d'entrer dans le jeu
+        function playIntro() {
+            const splash = document.getElementById('splash');
+            splash.classList.add('visible');
+            scene_show('game');
+            play_audio('morgue');
+            setTimeout(() => splash.classList.remove('visible'), 3000);
+        }
 
         function play_audio(room) {
             let path = "./assets/music/" + room + ".mp3";
@@ -550,7 +670,7 @@
             <h1 class="title">The Lazarus Project</h1>
         </div>
         <div class="menu">
-            <button onclick="scene_show('game'); play_audio('morgue')">Jouer</button>
+            <button onclick="playIntro()">Jouer</button>
             <button onclick="scene_show('test-inventaire')">Options</button>
             <button id="mute-btn" onclick="toggleSound()">🔊 Mute</button>
             <button onclick="scene_show('presentation')">Quitter</button>
@@ -802,7 +922,21 @@
                     carte.onchange(update_carte);
                     update_carte();
 
-
+                    // fond de la scene selon la salle, ajouter les autres quand dispo
+                    const fonds = {
+                        morgue: './assets/Fond_Morgue-Def.PNG',
+                        lab: './assets/Fond_Labo-Def.PNG',
+                        // rest_room: './assets/Fond_Rest-Def.PNG',
+                        // office: './assets/Fond_Office-Def.PNG',
+                        // isolation: './assets/Fond_Isolation-Def.PNG',
+                    };
+                    function update_fond() {
+                        const img = fonds[salle.current().id];
+                        const scene = document.querySelector('[scene="game"]');
+                        scene.style.backgroundImage = img ? `url('${img}')` : 'none';
+                    }
+                    salle.onchange(update_fond);
+                    update_fond();
 
                 </script>
             </div>
@@ -814,7 +948,7 @@
     </div>
 
     <div scene="game-over">
-        <h1>Tu es mort</h1>
+        <h1 id="game-over-text">Vous etes mort de decomposition</h1>
     </div>
 
     <div scene="test-inventaire">
@@ -896,14 +1030,19 @@
         
 
         function toggleSound() {
-        soundEnabled = !soundEnabled;
-
+            soundEnabled = !soundEnabled;
             if (current_audio) current_audio.muted = !soundEnabled;
 
+            const label = soundEnabled ? 'Mute' : 'Unmute';
             const btn = document.getElementById('mute-btn');
-            if (btn) {
-                btn.textContent = soundEnabled ? '🔊 Mute' : '🔇 Unmute';
-            }
+            if (btn) btn.textContent = soundEnabled ? '🔊 Mute' : '🔇 Unmute';
+            const btn2 = document.getElementById('mute-btn-global');
+            if (btn2) btn2.textContent = label;
+        }
+
+        // affiche/cache le petit panneau parametres
+        function toggleSettings() {
+            document.getElementById('settings-panel').classList.toggle('visible');
         }
 
 
@@ -1038,4 +1177,4 @@
         <div id="sac-zone" onclick="toggleInventory()"></div>
 
 </body>
-</html>
+</html
