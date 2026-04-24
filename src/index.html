@@ -555,17 +555,6 @@
             play_audio("title");
         }, { once: true });
 
-        // wrap inventaire.add pour afficher une notif quand un objet est recupere
-        window.addEventListener('load', () => {
-            const og_add = inventaire.add;
-            inventaire.add = (id) => {
-                const ok = og_add(id);
-                const it = item.get(id);
-                if (it && it.name) showNotif('+ ' + it.name);
-                return ok;
-            };
-        });
-
         let notif_timer = null;
         function showNotif(txt) {
             const n = document.getElementById('notif');

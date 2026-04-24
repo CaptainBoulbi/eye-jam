@@ -2,7 +2,7 @@ import salles from "./data/salles.json"
 
 let salle_in = Object.keys(salles)[0];
 
-let onchange_callbacks: (() => void)[] = [];
+let onchange_callback = () => {};
 
 function get_current() {
     return salles[salle_in];
@@ -24,11 +24,11 @@ function salle_go(id) {
 
     salle_in = salles[salle_in].links[id];
 
-    onchange_callbacks.forEach((cb) => cb());
+    onchange_callback();
 }
 
 function set_onchange_callback(cb: (() => void)) {
-    onchange_callbacks.push(cb);
+    onchange_callback = cb;
 }
 
 export default {
