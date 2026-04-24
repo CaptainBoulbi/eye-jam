@@ -50,7 +50,7 @@ function move_item(from: Coord, to: Coord) {
     set_item(to, from_item.id);
     set_item(from, to_item.id);
 
-    onchange_callback();
+    onchange_callback({action: 'move', from, to, from_item, to_item});
 
     return true;
 }
@@ -65,7 +65,7 @@ function add_item(id: Item) {
         }
     }
 
-    onchange_callback();
+    onchange_callback({'action': 'add', id});
 }
 
 function remove_item(id: Item) {
@@ -77,7 +77,7 @@ function remove_item(id: Item) {
         }
     }
 
-    onchange_callback();
+    onchange_callback({action: 'remove', id});
 }
 
 function find_item(id: Item) {

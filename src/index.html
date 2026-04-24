@@ -707,7 +707,11 @@
                 <button onclick="scene_show('test-inventaire')" style="margin-top: 1rem">Editer l'inventaire</button>
                 <button onclick="scene_show('test-carte')" style="margin-top: 1rem">Editer carte</button>
                 <script>
-               inventaire.onchange(() => {
+               inventaire.onchange((data) => {
+                if (data && data.action == "add") {
+                    let new_item = item.get(data.id);
+                    showNotif(`+ ${new_item.name}`);
+                }
                 let inv_html = '';
                 for (let y = 0; y < inventaire.grid_size.y; y++) {
                     inv_html += '<tr>';
