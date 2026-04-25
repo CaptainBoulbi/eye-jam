@@ -152,22 +152,24 @@
         }
 
 
-        [scene="intro"] { 
-        background: 
-            radial-gradient(ellipse at 50% 100%, #0c3b09 0%, transparent 60%),
-            radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
-        min-height: 100vh;
-        margin: 0;
-        color: #cccccc;
-        font-family: "Mogra", system-ui;
-        font-weight: 100;
-        font-style: normal;
-        animation: breathing 5s ease-in-out infinite;
+        [scene="intro"] {
+            min-height: 100vh;
+            margin: 0;
+            color: #cccccc;
+            font-family: "Mogra", system-ui;
 
+            background:
+                radial-gradient(ellipse at 50% 100%, rgba(12, 59, 9, 0.8) 0%, transparent 30%),
+                radial-gradient(circle at center, transparent 20%, rgba(0, 0, 0, 0.75) 100%),
+                url("./assets/stats/Page_Start-sansfond.PNG") center/cover no-repeat,
+                #000;
+
+            animation: breathing 5s ease-in-out infinite;
         }
 
         @keyframes breathing {
-            50% { filter: brightness(1.2); }
+            0%, 100% { filter: brightness(0.85); }
+            50%      { filter: brightness(1.15); }
         }
 
         /* Menu vertical avec 3 boutons */
@@ -475,6 +477,23 @@
             border-radius: 8px;
         }
 
+        .retry-btn {
+            background: transparent;
+            color: #aaaaaa;
+            border: 1px solid #444;
+            padding: 12px 32px;
+            font-family: "Mogra", system-ui;
+            font-size: 18px;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: all 0.4s;
+        }
+        .retry-btn:hover {
+            color: rgba(42, 195, 34, 1);
+            border-color: rgba(42, 195, 34, 1);
+            letter-spacing: 6px;
+        }
+
         /* zone cliquable sur les molettes en haut a gauche */
         #settings-zone {
             position: fixed;
@@ -572,7 +591,7 @@
             play_audio('morgue');
             setTimeout(() => splash.classList.remove('visible'), 3000);
         }
-
+        
         function play_audio(room) {
             let path = "./assets/music/" + room + ".mp3";
             
@@ -660,7 +679,6 @@
         </div>
         <div class="menu">
             <button onclick="playIntro()">Jouer</button>
-            <button onclick="scene_show('test-inventaire')">Options</button>
             <button id="mute-btn" onclick="toggleSound()">🔊 Mute</button>
             <button onclick="scene_show('presentation')">Quitter</button>
         </div>
@@ -941,7 +959,8 @@
     </div>
 
     <div scene="game-over">
-        <h1 id="game-over-text">Vous etes mort de decomposition</h1>
+        <h1 id="game-over-text">Vous êtes mort de décomposition</h1>
+        <button class="retry-btn" onclick="location.reload(present)">Recommencer</button>
     </div>
 
     <div scene="test-inventaire">
