@@ -635,25 +635,6 @@
                 <label>Le mec chiant qui veut sa photo : <img src="feur" alt="le chiant"> </label><br>
             </div>
 
-            <!-- Les autres elements se suivent normalement en partant du haut -->
-            <button 
-                class="btn"
-                onclick="scene_show('test-inventaire')"
-            >
-                Test Inventaire
-            </button>
-            <button
-                class="btn"
-                onclick="scene_show('test-salle'); play_audio('morgue')"
-            >
-                Test Salle
-            </button>
-            <button
-                class="btn"
-                onclick="scene_show('test-carte')"
-            >
-                Test Carte
-            </button>
             <button onclick="setShake(0)">Stop</button>
             <button onclick="setShake(1)">Shake 1</button>
             <button onclick="setShake(2)">Shake 2</button>
@@ -722,8 +703,6 @@
                         <td>Empty, waiting to be initialised</td>
                     </tr>
                 </table>
-                <button onclick="scene_show('test-inventaire')" style="margin-top: 1rem">Editer l'inventaire</button>
-                <button onclick="scene_show('test-carte')" style="margin-top: 1rem">Editer carte</button>
                 <script>
                inventaire.onchange((data) => {
                 if (data && data.action == "add") {
@@ -961,70 +940,6 @@
     <div scene="game-over">
         <h1 id="game-over-text">Vous êtes mort de décomposition</h1>
         <button class="retry-btn" onclick="recommencer()">Recommencer</button>
-    </div>
-
-    <div scene="test-inventaire">
-        <input id="input_item" placeholder="clé" style="margin-top: 1rem"></input>
-        <button onclick="inventaire.add(input_item.value)">Ajouter item</button>
-        <br>
-        <input id="delete_item" placeholder="pomme" style="margin-top: 1rem"></input>
-        <button onclick="inventaire.remove(delete_item.value)">Enlever item</button>
-        <br>
-        <input onchange="search_item.innerText = `l\'objet '${this.value}' ` + (inventaire.find(this.value) ? 'existe' : 'n\'existe pas')" placeholder="antidote" style="margin-top: 1rem"></input>
-        <span id="search_item" >Entrez le nom d'un item</span>
-        <br>
-        <button onclick="scene_show('game')" style="margin-top: 1rem">Voir l'inventaire</button>
-        <p>Action de l'inventaire :</p>
-        <ul>
-            <li>deplacer objet (drag & drop)</li>
-            <li>afficher objet (cliquer sur la case)</li>
-            <li>ajouter objet</li>
-            <li>verifier si un objet est dans l'inventaire</li>
-            <li>enlever un objet de l'inventaire (consommé)</li>
-        </ul>
-    </div>
-
-    <div scene="test-salle">
-        <h1>Salle</h1>
-        <p>Salle actuel: <span id="salle_actuel"></span></p>
-        <p>Salle liées:</p>
-        <button onclick="salle.go(0)" id="salle_1"></button>
-        <button onclick="salle.go(1)" id="salle_2"></button>
-        <p>ID des item debloquable dans cet salle:</p>
-        <ul id="salle_item"></ul>
-        <script>
-            function update_salle() {
-                salle_actuel.innerText = salle.current().name;
-                play_audio(salle.current().id);
-                salle_1.innerText = 'Aller à ' + salle.link(0).name;
-                salle_2.innerText = 'Aller à ' + salle.link(1).name;
-                salle_item.innerHTML = "";
-                salle.current().items.forEach((item_id) => {
-                    salle_item.innerHTML += "<li>"+item.get(item_id).name+"</li>"
-                })
-            }
-            salle.onchange(update_salle);
-            update_salle();
-        </script>
-    </div>
-
-    <div scene="test-carte">
-        <h1>Carte</h1>
-        <p>Carte actuel:</p>
-        <pre id="show_carte"></pre>
-        <button onclick="carte.next(0)">choix gauche</button>
-        <button onclick="carte.next(1)">choix droite</button>
-        <br>
-        <button onclick="scene_show('game')">voir stats</button>
-<!--
-        <script>
-            function update_carte() {
-                show_carte.innerText = JSON.stringify(carte.current(), null, 4);
-            }
-            carte.onchange(update_carte);
-            update_carte();
-        </script>
-        --->
     </div>
 
     <script>
