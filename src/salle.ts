@@ -31,9 +31,17 @@ function set_onchange_callback(cb: (() => void)) {
     onchange_callback = cb;
 }
 
+
+function salle_clear() {
+    salle_in = Object.keys(salles)[0];
+
+    onchange_callback();
+}
+
 export default {
     current: get_current,
     link: get_link,
     go: salle_go,
     onchange: set_onchange_callback,
+    clear: salle_clear,
 }

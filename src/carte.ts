@@ -179,9 +179,19 @@ function get_carte(id) {
     return cartes[id] ? cartes[id] : cartes_imp[id];
 }
 
+function carte_clear() {
+    carte_actuel = get_carte(first_carte.id);
+    used_carte = [];
+    used_imp_carte = [];
+    carte_counter = 0;
+
+    onchange_callback();
+}
+
 export default {
     carte: get_carte,
     current: current_carte,
     next: next_carte,
     onchange: set_onchange_callback,
+    clear: carte_clear,
 }

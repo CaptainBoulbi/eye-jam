@@ -34,10 +34,21 @@ function stat_add(type, value) {
     if (stat_value.sante <= 0) stat_ondeath_callback();
 }
 
+function stat_clear() {
+    stat_value.sante = stat_full_val;
+    stat_value.lucide = stat_full_val;
+    stat_value.stress = stat_full_val;
+
+    stat_onchange_callback('sante');
+    stat_onchange_callback('lucide');
+    stat_onchange_callback('stress');
+}
+
 export default {
     get: get_stat,
     add: stat_add,
     types: stat_types,
     onchange: stat_set_onchange_callback,
     ondeath: stat_set_ondeath_callback,
+    clear: stat_clear,
 }

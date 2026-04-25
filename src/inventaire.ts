@@ -120,6 +120,13 @@ function test_data() {
     onchange_callback();
 }
 
+
+function inventaire_clear() {
+    grid = new Array(grid_cap);
+
+    onchange_callback();
+}
+
 export default {
     grid_size,
     get: get_item,
@@ -128,4 +135,5 @@ export default {
     remove: remove_item,
     find: find_item,
     onchange: set_onchange_callback,
+    clear: inventaire_clear,
 }

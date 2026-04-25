@@ -12,3 +12,11 @@ window.carte = carte;
 
 import stat from "./stat.ts"
 window.stat = stat;
+
+window.recommencer = () => {
+    stat.clear();
+    inventaire.clear();
+    salle.clear();
+    carte.clear();
+    scene_show('presentation');
+}
