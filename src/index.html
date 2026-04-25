@@ -591,7 +591,7 @@
             play_audio('morgue');
             setTimeout(() => splash.classList.remove('visible'), 3000);
         }
-        
+
         function play_audio(room) {
             let path = "./assets/music/" + room + ".mp3";
             
@@ -627,20 +627,13 @@
             </div>
             <br>
             <div class="credits">
-                <h2>Crédits</h2>
-                <label>Graphismes : la madame</label><br>
+                <h2>Credits</h2>
+                <label>Artwork : the lady</label><br>
                 <label>Code : nemocouille, ltuffery</label><br>
-                <label>Scénario : le raccoon sdf</label><br>
-                <label>Ceux qui pètent tout : SARI Ebral, ltuffery</label><br>
-                <label>Le mec chiant qui veut sa photo : <img src="feur" alt="le chiant"> </label><br>
+                <label>Scenario : the raccoon</label><br>
+                <label>Those who break everything : SARI Ebral, ltuffery</label><br>
+                <label>The annoying guy who wants his photo : <img src="feur" alt="the annoying guy"> </label><br>
             </div>
-
-            <button onclick="setShake(0)">Stop</button>
-            <button onclick="setShake(1)">Shake 1</button>
-            <button onclick="setShake(2)">Shake 2</button>
-            <button onclick="setShake(3)">Shake 3</button>
-            <button onclick="setShake(4)">Shake 4</button>
-
 
             <!-- Bouton Enter : toujours colle en bas grace a la classe btn-enter -->
             <button 
@@ -659,9 +652,9 @@
             <h1 class="title">The Lazarus Project</h1>
         </div>
         <div class="menu">
-            <button onclick="playIntro()">Jouer</button>
+            <button onclick="playIntro()">Play</button>
             <button id="mute-btn" onclick="toggleSound()">🔊 Mute</button>
-            <button onclick="scene_show('presentation')">Quitter</button>
+            <button onclick="scene_show('presentation')">Quit</button>
         </div>
     </div>
 
@@ -938,8 +931,8 @@
     </div>
 
     <div scene="game-over">
-        <h1 id="game-over-text">Vous êtes mort de décomposition</h1>
-        <button class="retry-btn" onclick="recommencer()">Recommencer</button>
+        <h1 id="game-over-text">You died of decay!</h1>
+        <button class="retry-btn" onclick="recommencer()">Try again</button>
     </div>
 
     <script>
