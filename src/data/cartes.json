@@ -137,7 +137,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Cross-reference with the inventory"
       },
@@ -177,7 +177,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Mark it and return later"
       },
@@ -217,7 +217,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Systematically clear the area"
       },
@@ -297,7 +297,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Analyze before disturbing anything"
       },
@@ -337,7 +337,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Full sweep of the immediate area"
       },
@@ -377,7 +377,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Log the anomaly in detail"
       },
@@ -417,7 +417,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Expand the search radius"
       },
@@ -457,7 +457,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Photograph the pattern first"
       },
@@ -497,7 +497,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Compare against the original layout"
       },
@@ -537,7 +537,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Catalog systematically"
       },
@@ -577,7 +577,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Investigate the secondary traces"
       },
@@ -657,7 +657,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Treat it as a planted item"
       },
@@ -697,7 +697,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Secure and seal the scene"
       },
@@ -737,7 +737,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Look for what is missing, not what is present"
       },
@@ -777,7 +777,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Run a second pass before concluding"
       },
@@ -817,7 +817,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Build the full picture first"
       },
@@ -857,7 +857,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Preserve the chain of custody"
       },
@@ -2737,7 +2737,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Take the way that costs less",
         "salle": "lab"
@@ -2779,7 +2779,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Maintain control of the return route",
         "salle": "lab"
@@ -2821,7 +2821,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Default to the mapped option",
         "salle": "lab"
@@ -2905,7 +2905,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Use the access confirmed earlier",
         "salle": "lab"
@@ -2989,7 +2989,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Head toward the known hazard",
         "salle": "lab"
@@ -3031,7 +3031,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Keep noise minimal, take the long way",
         "salle": "lab"
@@ -3073,7 +3073,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Follow the route that keeps options open",
         "salle": "lab"
@@ -3115,7 +3115,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Conserve energy — longer but safer",
         "salle": "lab"
@@ -3157,7 +3157,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Take the secondary passage",
         "salle": "lab"
@@ -3199,7 +3199,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Navigate toward what you have already cleared",
         "salle": "lab"
@@ -3241,7 +3241,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Let the route serve the plan",
         "salle": "lab"
@@ -3283,7 +3283,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Commit to the direct line",
         "salle": "lab"
@@ -3367,7 +3367,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Stay high — upper corridor, better oversight",
         "salle": "lab"
@@ -3493,7 +3493,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Head toward noise to gather information",
         "salle": "lab"
@@ -3535,7 +3535,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Take the route that allows retreat",
         "salle": "lab"
@@ -3577,7 +3577,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Commit to the route with consistent cover",
         "salle": "lab"
@@ -3619,7 +3619,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Use the corridor with recent activity",
         "salle": "lab"
@@ -3661,7 +3661,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Trace the full sequence"
       },
@@ -3701,7 +3701,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Go deeper into the contents"
       },
@@ -3741,7 +3741,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Cross-reference with the inventory"
       },
@@ -3821,7 +3821,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Systematically clear the area"
       },
@@ -3861,7 +3861,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Follow the residue trail"
       },
@@ -3901,7 +3901,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Analyze before disturbing anything"
       },
@@ -3981,7 +3981,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Log the anomaly in detail"
       },
@@ -4061,7 +4061,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Photograph the pattern first"
       },
@@ -4101,7 +4101,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Compare against the original layout"
       },
@@ -4141,7 +4141,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Catalog systematically"
       },
@@ -4261,7 +4261,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Treat it as a planted item"
       },
@@ -4301,7 +4301,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Secure and seal the scene"
       },
@@ -4381,7 +4381,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Run a second pass before concluding"
       },
@@ -4461,7 +4461,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Preserve the chain of custody"
       },
@@ -4501,7 +4501,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Assess the full area before extracting"
       },
@@ -4541,7 +4541,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Cross-map it against your notes"
       },
@@ -4581,7 +4581,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Prioritize recovery over conservation"
       },
@@ -4621,7 +4621,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Act while the effect is still manageable"
       },
@@ -4661,7 +4661,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Commit to recovery, cost what it costs"
       },
@@ -4701,7 +4701,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Use a partial dose, stay mobile"
       },
@@ -4741,7 +4741,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Address the root cause now"
       },
@@ -4781,7 +4781,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Consume now to restore function"
       },
@@ -4821,7 +4821,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Full application — function restored"
       },
@@ -4861,7 +4861,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Treat before the cascade starts"
       },
@@ -4941,7 +4941,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Correct while you still have leverage"
       },
@@ -4981,7 +4981,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Act against the decline early"
       },
@@ -5021,7 +5021,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Use all of it now"
       },
@@ -5101,7 +5101,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Full treatment, accept the resource cost"
       },
@@ -5141,7 +5141,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Use what you have on this specifically"
       },
@@ -5181,7 +5181,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Treat it as urgent, act now"
       },
@@ -5221,7 +5221,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Intervene at first sign"
       },
@@ -5301,7 +5301,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Use the targeted item now"
       },
@@ -5341,7 +5341,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Override the discomfort with intervention"
       },
@@ -5381,7 +5381,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Spend the resource to stabilize function"
       },
@@ -5421,7 +5421,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Treat twice — once for symptom, once for cause"
       },
@@ -6423,7 +6423,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Default to the mapped option",
         "salle": "morgue"
@@ -6465,7 +6465,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Take the longer route with better cover",
         "salle": "morgue"
@@ -6507,7 +6507,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Use the access confirmed earlier",
         "salle": "morgue"
@@ -6549,7 +6549,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Move along the edge zones",
         "salle": "morgue"
@@ -6633,7 +6633,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Keep noise minimal, take the long way",
         "salle": "morgue"
@@ -6675,7 +6675,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Follow the route that keeps options open",
         "salle": "morgue"
@@ -6717,7 +6717,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Conserve energy — longer but safer",
         "salle": "morgue"
@@ -6759,7 +6759,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Take the secondary passage",
         "salle": "morgue"
@@ -6843,7 +6843,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Let the route serve the plan",
         "salle": "morgue"
@@ -6885,7 +6885,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Commit to the direct line",
         "salle": "morgue"
@@ -6969,7 +6969,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Stay high — upper corridor, better oversight",
         "salle": "morgue"
@@ -7011,7 +7011,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Route through the monitored zone",
         "salle": "morgue"
@@ -7053,7 +7053,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Use the checkpoint route — slow but logged",
         "salle": "morgue"
@@ -7137,7 +7137,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Take the route that allows retreat",
         "salle": "morgue"
@@ -7221,7 +7221,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Use the corridor with recent activity",
         "salle": "morgue"
@@ -7305,7 +7305,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Go deeper into the contents"
       },
@@ -7385,7 +7385,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Mark it and return later"
       },
@@ -7425,7 +7425,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Systematically clear the area"
       },
@@ -7505,7 +7505,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Analyze before disturbing anything"
       },
@@ -7545,7 +7545,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Full sweep of the immediate area"
       },
@@ -7625,7 +7625,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Expand the search radius"
       },
@@ -7665,7 +7665,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Photograph the pattern first"
       },
@@ -7705,7 +7705,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Compare against the original layout"
       },
@@ -7745,7 +7745,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Catalog systematically"
       },
@@ -7785,7 +7785,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Investigate the secondary traces"
       },
@@ -7825,7 +7825,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Cross-check with earlier markings"
       },
@@ -7865,7 +7865,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Treat it as a planted item"
       },
@@ -7905,7 +7905,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Secure and seal the scene"
       },
@@ -7945,7 +7945,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Look for what is missing, not what is present"
       },
@@ -7985,7 +7985,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Run a second pass before concluding"
       },
@@ -8025,7 +8025,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Build the full picture first"
       },
@@ -8065,7 +8065,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Preserve the chain of custody"
       },
@@ -8185,7 +8185,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Secure secondary evidence too"
       },
@@ -8225,7 +8225,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Act while the effect is still manageable"
       },
@@ -8265,7 +8265,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Commit to recovery, cost what it costs"
       },
@@ -8305,7 +8305,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Use a partial dose, stay mobile"
       },
@@ -8345,7 +8345,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Address the root cause now"
       },
@@ -8385,7 +8385,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Consume now to restore function"
       },
@@ -8425,7 +8425,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Full application — function restored"
       },
@@ -8505,7 +8505,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Short-term response, full use"
       },
@@ -8585,7 +8585,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Act against the decline early"
       },
@@ -8625,7 +8625,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Use all of it now"
       },
@@ -8745,7 +8745,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Use what you have on this specifically"
       },
@@ -8785,7 +8785,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Treat it as urgent, act now"
       },
@@ -8825,7 +8825,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Intervene at first sign"
       },
@@ -8865,7 +8865,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Restore baseline before proceeding"
       },
@@ -8905,7 +8905,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Use the targeted item now"
       },
@@ -8945,7 +8945,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Override the discomfort with intervention"
       },
@@ -8985,7 +8985,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Spend the resource to stabilize function"
       },
@@ -9025,7 +9025,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Treat twice — once for symptom, once for cause"
       },
@@ -9065,7 +9065,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Use the item now, manage the cost"
       },
@@ -9105,7 +9105,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Treat the symptom immediately"
       },
@@ -10025,7 +10025,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Default to the mapped option",
         "salle": "morgue"
@@ -10067,7 +10067,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Take the longer route with better cover",
         "salle": "morgue"
@@ -10151,7 +10151,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Move along the edge zones",
         "salle": "morgue"
@@ -10193,7 +10193,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Head toward the known hazard",
         "salle": "morgue"
@@ -10235,7 +10235,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Keep noise minimal, take the long way",
         "salle": "morgue"
@@ -10277,7 +10277,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Follow the route that keeps options open",
         "salle": "morgue"
@@ -10319,7 +10319,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Conserve energy — longer but safer",
         "salle": "morgue"
@@ -10361,7 +10361,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Take the secondary passage",
         "salle": "morgue"
@@ -10445,7 +10445,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Let the route serve the plan",
         "salle": "morgue"
@@ -10487,7 +10487,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Commit to the direct line",
         "salle": "morgue"
@@ -10529,7 +10529,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Accept reduced visibility for better speed",
         "salle": "morgue"
@@ -10571,7 +10571,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Stay high — upper corridor, better oversight",
         "salle": "morgue"
@@ -10655,7 +10655,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Use the checkpoint route — slow but logged",
         "salle": "morgue"
@@ -10697,7 +10697,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Head toward noise to gather information",
         "salle": "morgue"
@@ -10739,7 +10739,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Take the route that allows retreat",
         "salle": "morgue"
@@ -10781,7 +10781,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Commit to the route with consistent cover",
         "salle": "morgue"
@@ -10823,7 +10823,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Use the corridor with recent activity",
         "salle": "morgue"
@@ -10865,7 +10865,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Move with the lighting advantage",
         "salle": "morgue"
@@ -10907,7 +10907,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Move through the quieter route",
         "salle": "morgue"
@@ -10949,7 +10949,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Cross-reference with the inventory"
       },
@@ -10989,7 +10989,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Mark it and return later"
       },
@@ -11029,7 +11029,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Systematically clear the area"
       },
@@ -11069,7 +11069,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Follow the residue trail"
       },
@@ -11109,7 +11109,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Analyze before disturbing anything"
       },
@@ -11149,7 +11149,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Full sweep of the immediate area"
       },
@@ -11189,7 +11189,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Log the anomaly in detail"
       },
@@ -11229,7 +11229,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Expand the search radius"
       },
@@ -11349,7 +11349,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Catalog systematically"
       },
@@ -11389,7 +11389,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Investigate the secondary traces"
       },
@@ -11429,7 +11429,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Cross-check with earlier markings"
       },
@@ -11469,7 +11469,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Treat it as a planted item"
       },
@@ -11509,7 +11509,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Secure and seal the scene"
       },
@@ -11549,7 +11549,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Look for what is missing, not what is present"
       },
@@ -11589,7 +11589,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Run a second pass before concluding"
       },
@@ -11629,7 +11629,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Build the full picture first"
       },
@@ -11669,7 +11669,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Preserve the chain of custody"
       },
@@ -11709,7 +11709,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Assess the full area before extracting"
       },
@@ -11749,7 +11749,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Cross-map it against your notes"
       },
@@ -11789,7 +11789,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Secure secondary evidence too"
       },
@@ -11829,7 +11829,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Commit to recovery, cost what it costs"
       },
@@ -11909,7 +11909,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Address the root cause now"
       },
@@ -11949,7 +11949,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Consume now to restore function"
       },
@@ -11989,7 +11989,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Full application — function restored"
       },
@@ -12029,7 +12029,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Treat before the cascade starts"
       },
@@ -12069,7 +12069,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Short-term response, full use"
       },
@@ -12109,7 +12109,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Correct while you still have leverage"
       },
@@ -12149,7 +12149,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Act against the decline early"
       },
@@ -12189,7 +12189,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Use all of it now"
       },
@@ -12229,7 +12229,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Stabilize before moving"
       },
@@ -12269,7 +12269,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Full treatment, accept the resource cost"
       },
@@ -12309,7 +12309,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Use what you have on this specifically"
       },
@@ -12349,7 +12349,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Treat it as urgent, act now"
       },
@@ -12509,7 +12509,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Override the discomfort with intervention"
       },
@@ -12589,7 +12589,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Treat twice — once for symptom, once for cause"
       },
@@ -12629,7 +12629,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Use the item now, manage the cost"
       },
@@ -13629,7 +13629,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Take the longer route with better cover",
         "salle": "lab"
@@ -13671,7 +13671,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Use the access confirmed earlier",
         "salle": "lab"
@@ -13713,7 +13713,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Move along the edge zones",
         "salle": "lab"
@@ -13755,7 +13755,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Head toward the known hazard",
         "salle": "lab"
@@ -13797,7 +13797,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Keep noise minimal, take the long way",
         "salle": "lab"
@@ -13839,7 +13839,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Follow the route that keeps options open",
         "salle": "lab"
@@ -13881,7 +13881,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Conserve energy — longer but safer",
         "salle": "lab"
@@ -13923,7 +13923,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Take the secondary passage",
         "salle": "lab"
@@ -13965,7 +13965,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Navigate toward what you have already cleared",
         "salle": "lab"
@@ -14007,7 +14007,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Let the route serve the plan",
         "salle": "lab"
@@ -14049,7 +14049,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Commit to the direct line",
         "salle": "lab"
@@ -14091,7 +14091,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Accept reduced visibility for better speed",
         "salle": "lab"
@@ -14175,7 +14175,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Route through the monitored zone",
         "salle": "lab"
@@ -14259,7 +14259,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Head toward noise to gather information",
         "salle": "lab"
@@ -14301,7 +14301,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Take the route that allows retreat",
         "salle": "lab"
@@ -14343,7 +14343,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Commit to the route with consistent cover",
         "salle": "lab"
@@ -14427,7 +14427,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Move with the lighting advantage",
         "salle": "lab"
@@ -14511,7 +14511,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Follow the known route",
         "salle": "lab"
@@ -14553,7 +14553,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Prioritize distance over cover",
         "salle": "lab"
@@ -18115,7 +18115,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Follow the known route",
         "salle": "office"
@@ -18157,7 +18157,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Prioritize distance over cover",
         "salle": "office"
@@ -18199,7 +18199,7 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": 0,
+        "lucide": -1,
         "stress": 0,
         "description": "Keep to the periphery",
         "salle": "office"
