@@ -31,7 +31,9 @@ function stat_add(type, value) {
     if (stat_types().indexOf(type) < 0) return -1;
     stat_value[type] = Math.min(Math.max(stat_value[type] + parseInt(value), 0), stat_full_val);
     stat_onchange_callback(type);
-    if (stat_value.sante <= 0) stat_ondeath_callback();
+    if (stat_value.stress <= 0) stat_ondeath_callback('stress');
+    if (stat_value.lucide <= 0) stat_ondeath_callback('lucide');
+    if (stat_value.sante <= 0) stat_ondeath_callback('sante');
 }
 
 function stat_clear() {

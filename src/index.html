@@ -1183,15 +1183,13 @@
                     if (type === 'sante' || type === 'lucide') update_vignette(); //pareil pour la vignette
                 }
                 stat.onchange(draw_stat);
-                stat.ondeath(() => {
-                if (stat.get('stress') >= 15) {
-                    scene_show('game-over-cardiaque');
-                } else if (stat.get('lucide') <= 0) {
-                    scene_show('game-over-folie');
-                } else {
-                    scene_show('game-over'); // sante a 0 (ou fallback)
-                }
-            });
+                stat.ondeath((type) => {
+                    switch(type) {
+                        case 'stress': scene_show('game-over-cardiaque'); break;
+                        case 'lucide': scene_show('game-over-folie'); break;
+                        default: case 'sante': scene_show('game-over'); break;
+                    }
+                });
             </script>
 
             <div id="inventory">
