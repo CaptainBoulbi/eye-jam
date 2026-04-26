@@ -906,7 +906,7 @@ a:hover { color: var(--cream); }
 
     <div id="settings-zone" onclick="toggleSettings()"></div>
     <div id="settings-panel">
-        <button id="mute-btn-global" onclick="toggleSound()">Mute</button>
+        <button id="mute-btn-global" onclick="toggleSound(); play_sound('assets/sfx/click.ogg')">Mute</button>
     </div>
 
     <script>
@@ -949,6 +949,14 @@ a:hover { color: var(--cream); }
             current_audio.muted = !soundEnabled;
             current_audio.play();
         }
+
+        function play_sound(file) {
+            let audio = new Audio(file);
+            audio.loop = false;
+            audio.volume = 0.5;
+            audio.muted = !soundEnabled;
+            audio.play();
+        }
     </script>
 
 
@@ -987,7 +995,7 @@ a:hover { color: var(--cream); }
             <!-- Bouton Enter : toujours colle en bas grace a la classe btn-enter -->
             <button 
                 class="btn-enter btn"
-                onclick="scene_show('intro')"
+                onclick="scene_show('intro'); play_sound('assets/sfx/click.ogg')"
             >
                 Enter
             </button>
@@ -1001,9 +1009,9 @@ a:hover { color: var(--cream); }
             <h1 class="title">The Lazarus Project</h1>
         </div>
         <div class="menu">
-            <button onclick="playIntro()">Play</button>
-            <button id="mute-btn" onclick="toggleSound()">🔊 Mute</button>
-            <button onclick="scene_show('presentation')">Quit</button>
+            <button onclick="playIntro(); play_sound('assets/sfx/click.ogg')">Play</button>
+            <button id="mute-btn" onclick="toggleSound(); play_sound('assets/sfx/click.ogg')">🔊 Mute</button>
+            <button onclick="scene_show('presentation'); play_sound('assets/sfx/click.ogg')">Quit</button>
         </div>
     </div>
 
@@ -1047,6 +1055,7 @@ a:hover { color: var(--cream); }
                 }
                 stat.onchange(draw_stat);
                 stat.ondeath((type) => {
+                    play_sound('assets/sfx/death.ogg');
                     switch(type) {
                         case 'stress': scene_show('game-over-cardiaque'); break;
                         case 'lucide': scene_show('game-over-folie'); break;
@@ -1066,6 +1075,7 @@ a:hover { color: var(--cream); }
                 if (data && data.action == "add") {
                     let new_item = item.get(data.id);
                     showNotif(`+ ${new_item.name}`);
+                    play_sound('assets/sfx/pick_item.ogg');
                 }
                 let inv_html = '';
                 for (let y = 0; y < inventaire.grid_size.y; y++) {
@@ -1316,6 +1326,7 @@ a:hover { color: var(--cream); }
                     const scene = document.querySelector('[scene="game"]');
                     scene.style.backgroundImage = img ? `url('${img}')` : 'none';
                     update_sac_anchor();
+                    play_sound('assets/sfx/door.ogg');
                     }
 
                     // Cale #sac-anchor sur la zone reellement occupee par l'image cover-scalee
@@ -1365,19 +1376,19 @@ a:hover { color: var(--cream); }
     <div scene="game-over">
         <h1 class="game-over-text">You died of decay!</h1>
         <br>
-        <button class="retry-btn" onclick="recommencer()">Try again</button>
+        <button class="retry-btn" onclick="recommencer(); play_sound('assets/sfx/click.ogg')">Try again</button>
     </div>
 
     <div scene="game-over-cardiaque">
         <h1 class="game-over-text">You died of a heart attack!</h1>
         <br>
-        <button class="retry-btn" onclick="recommencer()">Try again</button>
+        <button class="retry-btn" onclick="recommencer(); play_sound('assets/sfx/click.ogg')">Try again</button>
     </div>
 
     <div scene="game-over-folie">
         <h1 class="game-over-text">You lost your mind!</h1>
         <br>
-        <button class="retry-btn" onclick="recommencer()">Try again</button>
+        <button class="retry-btn" onclick="recommencer(); play_sound('assets/sfx/click.ogg')">Try again</button>
     </div>
 
     <script>
@@ -1520,7 +1531,6 @@ a:hover { color: var(--cream); }
         //scene_show('game'); //pour faire des aller retours plus simplement
 
     </script>
-
 
             <div id="tooltip" style="
                 display: none;
