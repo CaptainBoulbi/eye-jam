@@ -299,7 +299,7 @@ a:hover { color: var(--cream); }
 
 .title {
   font-family: var(--font-title);
-  font-size: clamp(42px, 8vw, 72px);
+  font-size: clamp(42px, 4vw, 72px);
   font-weight: 400;
   letter-spacing: 0.04em;
   color: var(--cream);
@@ -522,7 +522,9 @@ a:hover { color: var(--cream); }
   position: fixed;
   right: 4%;
   z-index: 500;
-  background: var(--surface);
+  background:
+    linear-gradient(rgba(19, 17, 26, 0.80), rgba(19, 17, 26, 0.80)),
+    url('./assets/stats/Fond_inv.JPG') center/100% 100% no-repeat;
   border: 1px solid var(--green-dim);
   padding: 20px;
   clip-path: polygon(12px 0%, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px), 0% 12px);
@@ -548,7 +550,6 @@ a:hover { color: var(--cream); }
 #pocket td {
   width: 80px;
   height: 70px;
-  border: 1px solid var(--green-dim);
   text-align: center;
   vertical-align: middle;
   font-family: var(--font-mono);
