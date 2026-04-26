@@ -1,4 +1,44 @@
 {
+    "morgue_wake" : {
+        "id": "morgue_wake",
+        "name": "Cold Awakening",
+        "content": "You wake in the morgue with blood on both hands. You are alone.",
+        "reference": null,
+        "salle": [
+            "morgue"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 0,
+            "stress": 0
+        },
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 1,
+                "description": "Steady your breath and check your body"
+            },
+            {
+                "sante": -1,
+                "lucide": -1,
+                "stress": 2,
+                "description": "Panic and scrub blood from your hands"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            null,
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+
+    },
     "move_morgue": {
         "id": "move_morgue",
         "name": "Morgue Exit",
@@ -15,13 +55,13 @@
         "deal": [
             {
                 "sante": 0,
-                "lucide": 1,
+                "lucide": 0,
                 "stress": 0,
                 "description": "Go toward the lab"
             },
             {
                 "sante": 0,
-                "lucide": 1,
+                "lucide": 0,
                 "stress": 0,
                 "description": "Go toward the rest room"
             }
@@ -54,8 +94,8 @@
         "deal": [
             {
                 "sante": 0,
-                "lucide": 2,
-                "stress": 1,
+                "lucide": -2,
+                "stress": -1,
                 "description": "Read the full protocol and accept failure"
             },
             {
