@@ -52,33 +52,44 @@ let no_carte_left_loser = {
 };
 
 let first_carte = {
-    id: "first",
-    name: "Welcome to the lab",
-    content: "Welcome to the lab",
-    reference: null,
-    salle: ["morgue", "rest_room", "lab", "office", "isolation"],
-    go: false,
-    stats: {
-        sante: 0,
-        lucide: 0,
-        stress: 0
-    },
-    deal: [
-        {
-            sante: 0,
-            lucide: 0,
-            stress: 0
+        "id": "morgue_wake",
+        "name": "Cold Awakening",
+        "content": "You wake in the morgue with blood on both hands. You are alone.",
+        "reference": null,
+        "salle": [
+            "morgue"
+        ],
+        "stats": {
+            "sante": 0,
+            "lucide": 0,
+            "stress": 0
         },
-        {
-            sante: 0,
-            lucide: 0,
-            stress: 0
-        }
-    ],
-    ingredients: [],
-    craft: [null, null],
-    consume: ["log_d1", "log_d45"],
-    image: "assets/innexistant.png"
+        "deal": [
+            {
+                "sante": 0,
+                "lucide": 1,
+                "stress": 1,
+                "description": "Steady your breath and check your body"
+            },
+            {
+                "sante": -1,
+                "lucide": -1,
+                "stress": 2,
+                "description": "Panic and scrub blood from your hands"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            null,
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png",
+        "go": false
+
 };
 
 let onchange_callback = () => {};
