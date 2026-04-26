@@ -269,26 +269,33 @@
             display: none;
         }
 
-        /* zone invisible sur le sac du fond, ajuster les valeurs si besoin */
-        #sac-zone {
+        /* Conteneur qui suit exactement le sac du fond */
+        #sac-anchor {
             position: fixed;
-            bottom: 0vh; /* augmente = monte vers le haut */
-            right: 1vw; /* augmente = va vers la gauche */
-            width: min(8vw, 64px);
-            height: min(14vh, 72px);
-            min-width: 36px;
-            min-height: 42px;
-            cursor: pointer;
-            z-index: 20;
-            /* DEBUG : décommente pour voir la zone 
-            background: rgba(255, 0, 0, 0.4);
-            border: 2px solid red;
-                */
+            pointer-events: none;
+            z-index: 19;
+            /* taille et position calculees en JS */
         }
 
+        /* zone cliquable sur le sac, positionnee en % de l'IMAGE */
+        #sac-zone {
+            position: absolute;
+            /* ajuste ces % pour aligner avec le sac dessine */
+            left: 78%;
+            top: 83%;
+            width: 12%;
+            height: 15%;
+            cursor: pointer;
+            pointer-events: auto;
+            z-index: 20;
+
+            /* DEBUG : pour voir la zone, commente quand c'est cale 
+            background: rgba(255, 0, 0, 0.4);
+            border: 2px solid red;
+            */
+        }
 
         #sac-zone:hover {
-            /* petit glow au survol pour indiquer que c'est cliquable */
             filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
         }
 
@@ -494,17 +501,30 @@
             display: none;
         }
 
-        /* ecran de mort par decomposition */
-        [scene="game-over"] {
-            background: url('./assets/Fin_Decomposition-Def.PNG') center/cover no-repeat, #000;
+        /* ecrans de mort : un par stat critique */
+        [scene="game-over"],
+        [scene="game-over-cardiaque"],
+        [scene="game-over-folie"] {
             min-height: 100vh;
             margin: 0;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
             font-family: "Mogra", system-ui;
         }
-        #game-over-text {
+        [scene="game-over"] {
+            background: url('./assets/Fin_Decomposition-Def.PNG') center/cover no-repeat, #000;
+        }
+        [scene="game-over-cardiaque"] {
+            background: url('./assets/Fin_CriseCardi.PNG') center/cover no-repeat, #000;
+        }
+        /*
+        [scene="game-over-folie"] {
+            background: url('./assets/Fin_Folie-Def.PNG') center/cover no-repeat, #000;
+        }
+            */
+        .game-over-text {
             color: #e0e0e0;
             font-size: 42px;
             text-align: center;
@@ -600,7 +620,9 @@
             [scene="presentation"],
             [scene="intro"],
             [scene="game"],
-            [scene="game-over"] {
+            [scene="game-over"],
+            [scene="game-over-cardiaque"],
+            [scene="game-over-folie"] {
                 min-height: 100vh;
                 height: 100vh;
                 overflow: hidden;
@@ -794,10 +816,10 @@
                 height: 22vh;
             }
 
-            #game-over-text {
-                font-size: 30px;
-                padding: 10px 12px;
-            }
+            .game-over-text {
+            font-size: 30px;
+            padding: 10px 12px;
+        }
 
             .retry-btn {
                 padding: 8px 12px;
@@ -820,7 +842,9 @@
             [scene="presentation"],
             [scene="intro"],
             [scene="game"],
-            [scene="game-over"] {
+            [scene="game-over"],
+            [scene="game-over-cardiaque"],
+            [scene="game-over-folie"] {
                 min-height: var(--target-height);
             }
 
@@ -981,7 +1005,7 @@
                 height: 24vh;
             }
 
-            #game-over-text {
+            .game-over-text {
                 font-size: 18px;
                 padding: 8px;
             }
@@ -1128,6 +1152,10 @@
 
     <div scene="game">
 
+        <div id="sac-anchor">
+            <div id="sac-zone" onclick="toggleInventory()"></div>
+        </div>
+
         <div id="game">
             <div id="stats">
                 <div class="stat-wrapper">
@@ -1155,7 +1183,15 @@
                     if (type === 'sante' || type === 'lucide') update_vignette(); //pareil pour la vignette
                 }
                 stat.onchange(draw_stat);
-                stat.ondeath(() => { scene_show('game-over') });
+                stat.ondeath(() => {
+                if (stat.get('stress') >= 15) {
+                    scene_show('game-over-cardiaque');
+                } else if (stat.get('lucide') <= 0) {
+                    scene_show('game-over-folie');
+                } else {
+                    scene_show('game-over'); // sante a 0 (ou fallback)
+                }
+            });
             </script>
 
             <div id="inventory">
@@ -1425,28 +1461,74 @@
                         morgue: './assets/Fond_Morgue-Def.PNG',
                         lab: './assets/stats/Fond-LABO-DEF.PNG',
                         // rest_room: './assets/Fond_Rest-Def.PNG',
-                        // office: './assets/Fond_Office-Def.PNG',
+                        office: './assets/stats/Fond-BUREAU-DEF.PNG',
                         isolation: './assets/stats/Fond-SI-DEF.PNG',
                     };
                     function update_fond() {
-                        const img = fonds[salle.current().id];
-                        const scene = document.querySelector('[scene="game"]');
-                        scene.style.backgroundImage = img ? `url('${img}')` : 'none';
+                    const img = fonds[salle.current().id];
+                    const scene = document.querySelector('[scene="game"]');
+                    scene.style.backgroundImage = img ? `url('${img}')` : 'none';
+                    update_sac_anchor();
                     }
+
+                    // Cale #sac-anchor sur la zone reellement occupee par l'image cover-scalee
+                    function update_sac_anchor() {
+                        const anchor = document.getElementById('sac-anchor');
+                        const fondPath = fonds[salle.current().id];
+                        if (!fondPath || !anchor) return;
+
+                        const img = new Image();
+                        img.onload = () => {
+                            const vw = window.innerWidth;
+                            const vh = window.innerHeight;
+                            const imgAspect = img.naturalWidth / img.naturalHeight;
+                            const vAspect = vw / vh;
+
+                            let renderedW, renderedH;
+                            if (vAspect > imgAspect) {
+                                // viewport plus large que l'image : l'image remplit la largeur
+                                renderedW = vw;
+                                renderedH = vw / imgAspect;
+                            } else {
+                                // viewport plus haut que l'image : l'image remplit la hauteur
+                                renderedH = vh;
+                                renderedW = vh * imgAspect;
+                            }
+
+                            anchor.style.width = renderedW + 'px';
+                            anchor.style.height = renderedH + 'px';
+                            anchor.style.left = ((vw - renderedW) / 2) + 'px';
+                            anchor.style.top = ((vh - renderedH) / 2) + 'px';
+                        };
+                        img.src = fondPath;
+                    }
+
                     salle.onchange(update_fond);
+                    window.addEventListener('resize', update_sac_anchor);
                     update_fond();
 
                 </script>
             </div>
         </div>
 
-        <div id="sac-zone" onclick="toggleInventory()"></div>
 
 
     </div>
 
     <div scene="game-over">
-        <h1 id="game-over-text">You died of decay!</h1>
+        <h1 class="game-over-text">You died of decay!</h1>
+        <br>
+        <button class="retry-btn" onclick="recommencer()">Try again</button>
+    </div>
+
+    <div scene="game-over-cardiaque">
+        <h1 class="game-over-text">You died of a heart attack!</h1>
+        <br>
+        <button class="retry-btn" onclick="recommencer()">Try again</button>
+    </div>
+
+    <div scene="game-over-folie">
+        <h1 class="game-over-text">You lost your mind!</h1>
         <br>
         <button class="retry-btn" onclick="recommencer()">Try again</button>
     </div>
@@ -1608,9 +1690,6 @@
                 z-index: 999;
                 pointer-events: none;">
             </div>
-
-            <!-- zone cliquable sur le sac du fond, hors de #game pour eviter le shake -->
-        <div id="sac-zone" onclick="toggleInventory()"></div>
 
 </body>
 </html
