@@ -6,49 +6,47 @@ import stat from "./stat.ts"
 import inventaire from "./inventaire.ts"
 
 let no_carte_left_loser = {
-    "vitality_regain": {
-        "id": "vitality_regain",
-        "name": "Vitality Regain",
-        "content": "You pause, breathe, and recover enough strength to continue.",
-        "reference": null,
-        "salle": [
-            "morgue",
-            "rest_room",
-            "lab",
-            "office",
-            "isolation"
-        ],
-        "go": false,
-        "stats": {
-            "sante": -999,
-            "lucide": -999,
-            "stress": -999
+    "id": "vitality_regain",
+    "name": "Vitality Regain",
+    "content": "You pause, breathe, and recover enough strength to continue.",
+    "reference": null,
+    "salle": [
+        "morgue",
+        "rest_room",
+        "lab",
+        "office",
+        "isolation"
+    ],
+    "go": false,
+    "stats": {
+        "sante": -999,
+        "lucide": -999,
+        "stress": -999
+    },
+    "deal": [
+        {
+            "sante": 1,
+            "lucide": 1,
+            "stress": 1,
+            "description": "Center yourself"
         },
-        "deal": [
-            {
-                "sante": 1,
-                "lucide": 1,
-                "stress": 1,
-                "description": "Center yourself"
-            },
-            {
-                "sante": 1,
-                "lucide": 1,
-                "stress": 1,
-                "description": "Take one steady breath"
-            }
-        ],
-        "ingredients": [],
-        "craft": [
-            null,
-            null
-        ],
-        "consume": [
-            null,
-            null
-        ],
-        "image": "assets/innexistant.png"
-    }
+        {
+            "sante": 1,
+            "lucide": 1,
+            "stress": 1,
+            "description": "Take one steady breath"
+        }
+    ],
+    "ingredients": [],
+    "craft": [
+        null,
+        null
+    ],
+    "consume": [
+        null,
+        null
+    ],
+    "image": "assets/innexistant.png"
 };
 
 let first_carte = {
@@ -147,7 +145,7 @@ function next_carte(choice) {
                 carte_actuel = get_carte(carte_id);
                 used_carte.push(carte_id);
             } else {
-                access.push(no_carte_left_loser.id);
+                carte_actuel = get_carte(no_carte_left_loser.id);
             }
         }
     }
