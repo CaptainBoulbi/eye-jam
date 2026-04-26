@@ -98,24 +98,24 @@ function set_onchange_callback(cb: (() => void)) {
 
 function test_data() {
     // check if grid empty
-    for (let i = 0; i < grid_cap; i++) {
-        if (grid[i]) return;
-    }
+    // for (let i = 0; i < grid_cap; i++) {
+    //     if (grid[i]) return;
+    // }
 
-    for (let i = 0; i < 3; i++) {
-        let items_idx = parseInt(Math.random() * item.keys().length);
-        let coord = null;
-        let max = 50;
-        do {
-            coord = {
-                x: Math.floor(Math.random() * grid_size.x),
-                y: Math.floor(Math.random() * grid_size.y),
-            };
-            max--
-        } while (get_item(coord) && max > 0);
+    // for (let i = 0; i < 3; i++) {
+    //     let items_idx = parseInt(Math.random() * item.keys().length);
+    //     let coord = null;
+    //     let max = 50;
+    //     do {
+    //         coord = {
+    //             x: Math.floor(Math.random() * grid_size.x),
+    //             y: Math.floor(Math.random() * grid_size.y),
+    //         };
+    //         max--
+    //     } while (get_item(coord) && max > 0);
 
-        let ret = set_item(coord, item.keys()[items_idx]);
-    };
+    //     let ret = set_item(coord, item.keys()[items_idx]);
+    // };
 
     onchange_callback();
 }
