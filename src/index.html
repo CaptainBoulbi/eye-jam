@@ -1308,6 +1308,7 @@ a:hover { color: var(--cream); }
                         document.getElementById('card-content').innerText = c.content || '';
                         choixGauche.innerText = c.deal?.[0]?.description || '?';
                         choixDroite.innerText = c.deal?.[1]?.description || '?';
+                        play_sound('assets/sfx/paper.ogg');
                     }
 
                     carte.onchange(update_carte);
