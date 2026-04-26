@@ -27,6 +27,10 @@
             background-color: black;
         }
 
+        * {
+            user-select: none;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to   { opacity: 1; }
@@ -127,7 +131,7 @@
 
         .btn {
             margin: 20px 10px 20px;
-            padding: 40px;
+            padding: 20px;
             font-family: "Mogra", system-ui;
             font-weight: 100;
             font-style: normal;
@@ -245,10 +249,9 @@
         }
 
         #inventory {
-            grid-column: 2 / 3;
+            grid-column: 5/5;
             grid-row: 2;
-            width: 160px;
-            max-width: 160px;
+            width: 300px;
             text-align: center;
             user-select: none;
             background: rgba(0, 0, 0, 0.55);
@@ -321,7 +324,7 @@
             pointer-events: none;
             transition: opacity 0.15s, transform 0.15s, color 0.15s;
             color: #ccc;
-            border: 2px solid #666;
+            border: 4px solid #666;
             min-height: 60px;
             display: flex;
             align-items: center;
@@ -334,8 +337,8 @@
         #choixDroite.visible {
             opacity: 1;
             color: white;
-            border-color: #10500d;
-            background: rgba(80, 255, 80, 0.15);
+            border-color: #10250d;
+            background: #1e2a22;
         }
 
 
@@ -351,8 +354,6 @@
             user-select: none;
         }
         #cards {
-            grid-column: 1 / 2;
-            grid-row: 2;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -371,8 +372,9 @@
             color: #d8d8d8;
             font-family: "Mogra", system-ui;
             border-radius: 14px;
+            border: 4px solid #10250d;
             user-select: none;
-            width: clamp(200px, 38vw, 400px);
+            width: min(52vw, 315px);
             height: calc(100vh - 74px - 32px);
             max-height: 480px;
             cursor: grab;
@@ -477,8 +479,6 @@
             border: 1px solid rgba(255,255,255,0.3);
             width: 46px;
             height: 46px;
-            max-width: 46px;
-            max-height: 46px;
             text-align: center;
             cursor: pointer;
             font-size: 9px;
@@ -518,7 +518,7 @@
         [scene="game-over-folie"] {
             background: url('./assets/Fin_Folie-Def.PNG') center/cover no-repeat, #000;
         }
-            */
+        */
         .game-over-text {
             color: #e0e0e0;
             font-size: 42px;
@@ -647,7 +647,7 @@
 
             .btn {
                 margin: 8px 6px;
-                padding: 12px 18px;
+                padding: 6px 9px;
                 font-size: 18px;
             }
 
@@ -715,8 +715,6 @@
             }
 
             #cards {
-                grid-column: 1/2;
-                grid-row: 2;
                 min-height: 0;
                 height: 100%;
                 gap: 6px;
@@ -734,7 +732,7 @@
             }
 
             #card {
-                width: min(52vw, 420px);
+                width: min(52vw, 315px);
                 min-height: min(48vh, 300px);
                 max-height: calc(100vh - 120px);
                 padding: 12px;
@@ -755,11 +753,9 @@
             }
 
             #inventory {
-                grid-column: 2/3;
-                grid-row: 2;
                 padding: 4px;
                 border-radius: 6px;
-                overflow: auto;
+                overflow: none;
                 max-height: calc(100vh - 76px);
                 min-height: 0;
                 height: 100%;
@@ -857,7 +853,7 @@
 
             .btn {
                 margin: 6px 4px;
-                padding: 8px 10px;
+                padding: 4px 5px;
                 font-size: 12px;
             }
 
@@ -907,8 +903,6 @@
             }
 
             #cards {
-                grid-column: 1/2;
-                grid-row: 2;
                 gap: 4px;
                 padding: 2px;
                 min-height: 0;
@@ -926,7 +920,7 @@
             }
 
             #card {
-                width: min(52vw, 190px);
+                width: min(52vw, 80px);
                 min-height: min(42vh, 130px);
                 max-height: calc(100vh - 84px);
                 padding: 7px;
@@ -946,7 +940,7 @@
             #inventory {
                 grid-column: 2/3;
                 grid-row: 2;
-                width: 120px;
+                width: 240px;
                 padding: 2px;
                 border-radius: 4px;
                 max-height: calc(100vh - 44px);
@@ -1267,15 +1261,6 @@
             </script>
 
             </div>
-            <div id="full-card">
-                <div id="background">
-                   <!-- en attente des assets -->
-                   BACK
-                </div>
-                <div id="description">
-                    <label id="show_carte"></label>
-                </div>
-            </div>
             <div id="cards">
                 <span id="choixGauche">...</span>
                 <div id="card">
@@ -1284,11 +1269,6 @@
                 </div>
                 <span id="choixDroite">...</span>
             </div>
-
-
-
-
-
 
                 <script>
                     const card = document.getElementById('card');
