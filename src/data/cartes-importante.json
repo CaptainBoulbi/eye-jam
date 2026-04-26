@@ -47,9 +47,9 @@
             "morgue"
         ],
         "stats": {
-            "sante": 0,
-            "lucide": 0,
-            "stress": 0
+            "sante": 3,
+            "lucide": 4,
+            "stress": 1
         },
         "deal": [
             {
@@ -86,9 +86,9 @@
             "lab"
         ],
         "stats": {
-            "sante": 0,
-            "lucide": 1,
-            "stress": 0
+            "sante": 4,
+            "lucide": 8,
+            "stress": 2
         },
         "deal": [
             {
@@ -125,9 +125,9 @@
             "lab"
         ],
         "stats": {
-            "sante": 0,
-            "lucide": 2,
-            "stress": 0
+            "sante": 4,
+            "lucide": 9,
+            "stress": 3
         },
         "deal": [
             {
@@ -166,9 +166,9 @@
             "lab"
         ],
         "stats": {
-            "sante": 0,
-            "lucide": 0,
-            "stress": 0
+            "sante": 3,
+            "lucide": 6,
+            "stress": 2
         },
         "deal": [
             {
@@ -207,9 +207,9 @@
             "office"
         ],
         "stats": {
-            "sante": 0,
-            "lucide": 2,
-            "stress": 0
+            "sante": 4,
+            "lucide": 8,
+            "stress": 2
         },
         "deal": [
             {
@@ -246,9 +246,9 @@
             "office"
         ],
         "stats": {
-            "sante": 0,
-            "lucide": 2,
-            "stress": 0
+            "sante": 3,
+            "lucide": 9,
+            "stress": 5
         },
         "deal": [
             {
@@ -287,9 +287,9 @@
             "office"
         ],
         "stats": {
-            "sante": 0,
-            "lucide": 2,
-            "stress": 0
+            "sante": 2,
+            "lucide": 7,
+            "stress": 8
         },
         "deal": [
             {
@@ -328,9 +328,9 @@
             "office"
         ],
         "stats": {
-            "sante": 0,
-            "lucide": 0,
-            "stress": 0
+            "sante": 3,
+            "lucide": 5,
+            "stress": 3
         },
         "deal": [
             {
@@ -370,9 +370,9 @@
             "rest_room"
         ],
         "stats": {
-            "sante": 0,
-            "lucide": 0,
-            "stress": 0
+            "sante": 3,
+            "lucide": 4,
+            "stress": 2
         },
         "deal": [
             {
@@ -409,9 +409,9 @@
             "isolation"
         ],
         "stats": {
-            "sante": 0,
-            "lucide": 0,
-            "stress": 0
+            "sante": 2,
+            "lucide": 4,
+            "stress": 6
         },
         "deal": [
             {
@@ -448,9 +448,9 @@
             "morgue"
         ],
         "stats": {
-            "sante": 0,
-            "lucide": 0,
-            "stress": 0
+            "sante": 1,
+            "lucide": 6,
+            "stress": 9
         },
         "deal": [
             {

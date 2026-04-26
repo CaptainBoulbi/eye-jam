@@ -44,7 +44,7 @@
     "rodriguez_journal": {
         "id": "rodriguez_journal",
         "name": "Personal Journal ",
-        "description": "Mike Rodriguez, Lab Technician\n\nI knew something was wrong.\nThe scientists were scared.\nEven Dr. Vasquez.\n\nThe day Marcus escaped, I was there.\nI saw him.\nHe wasn’t running.\nHe was walking. Calmly.\nAs if he knew exactly where to go.\n\nThe guards fired.\nThe bullets didn’t stop him.\nHe looked at them. And he smiled.\n\nNot a human smile.\nSomething… satisfied.\n\nI hid.\nThat’s why I’m still alive.\n\nBut sometimes, at night, I swear\nI hear footsteps outside.\nSlow footsteps. Deliberate.\n\nHe knows where I am.\nHe’s just waiting for the right moment.",
+        "description": "Mike Rodriguez, Lab Technician\n\nI knew something was wrong.\nThe scientists were scared.\nEven Dr. Vasquez.\n\nThe day Marcus escaped, I was there.\nI saw him.\nHe wasn’t running.\nHe was walking. Calmly.\nAs if he knew exactly where to go.\n\nThe guards fired.\nThe bullets didn’t stop him.\nHe looked at them. And he smiled.\n\nNot a human smile.\nSomething… satisfied.\n\nI hid.\nThat’s why I’m still alive.\n\nBut sometimes, at night, I swear\nI hear footsteps in the corridor.\nSlow footsteps. Deliberate.\n\nHe knows where I am.\nHe’s just waiting for the right moment.",
         "icon": "assets/innexistant.png",
         "image": "assets/innexistant.png"
     },
@@ -64,29 +64,386 @@
     },
     "elevator_code": {
         "id": "elevator_code",
-        "name":"Post-it",
+        "name": "Post-it",
         "description": "A bloodstained Post-it note with the elevator code: 5924",
         "icon": "assets/innexistant.png",
         "image": "assets/innexistant.png"
     },
     "empty_syringe": {
         "id": "empty_syringe",
-        "name":"Empty Syringe",
+        "name": "Empty Syringe",
         "description": "An empty syringe",
         "icon": "assets/innexistant.png",
         "image": "assets/innexistant.png"
     },
     "enzymatic_catalyst": {
         "id": "enzymatic_catalyst",
-        "name":"Enzymatic Catalyst",
+        "name": "Enzymatic Catalyst",
         "description": "An enzymatic catalyst for the production of the experimental TLD-V1 vaccine",
         "icon": "assets/innexistant.png",
         "image": "assets/innexistant.png"
     },
     "chlorhexidine_bottle": {
         "id": "chlorhexidine_bottle",
-        "name":"A bottle of chlorhexidine",
+        "name": "A bottle of chlorhexidine",
         "description": "A bottle of chlorhexidine for disinfecting a wound",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "recorder_fragment_a": {
+        "id": "recorder_fragment_a",
+        "name": "Recorder Fragment A",
+        "description": "AUDIO LOG FRAGMENT A - LAB ANNEX\nSpeaker: Dr. Elena Vasquez\n\n\"If anyone hears this, this is not a cure log.\nThe TLD-V1 protocol is incomplete and unstable.\nPatient Zero blood is mandatory for antibody isolation.\nWithout it, every branch fails at stage three.\n\nThe subject escaped containment and reached the surface.\nRecovery teams reported mass casualties and then went dark.\nNo confirmed sample retrieval.\n\nIf you are still inside the facility, do not attempt final synthesis.\nPreserve the notes. Seal the rooms. Survive as long as you can.\"",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "recorder_fragment_b": {
+        "id": "recorder_fragment_b",
+        "name": "Recorder Fragment B",
+        "description": "AUDIO LOG FRAGMENT B - SECURITY CHANNEL\nSpeaker: Captain R. Heller\n\n\"Perimeter collapse confirmed.\nSubject Marcus Cole breached outer doors and moved topside.\nCivilian casualties reported in multiple sectors.\nEngagement units failed to contain.\n\nInside the lab: guards and researchers are non-responsive, infected, or armed against themselves.\nSeveral staff chose self-termination rather than transformation.\nOthers were neutralized after turning.\n\nIf you are hearing this, assume total internal loss of personnel.\nDo not expect rescue.\"",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "recorder_fragment_c": {
+        "id": "recorder_fragment_c",
+        "name": "Recorder Fragment C",
+        "description": "AUDIO LOG FRAGMENT C - PERSONAL FILE\nSpeaker: Dr. Elena Vasquez\n\n\"I am recording this before I take my life.\nThe infection progresses too fast. I will not become one of them.\n\nTo the survivors who will come after me: if you are hearing this, you are alone.\nNo guards. No team. No command.\nOnly records, blood, and consequences.\n\nThe elevator code is preserved in the office.\nThe vaccine file is in the lab, but it cannot be completed.\nPatient Zero blood is lost to the surface.\n\nDo not chase hope where none remains.\nLeave the truth. End this in the morgue.\nI am sorry.\"",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "neural_extract": {
+        "id": "neural_extract",
+        "name": "Neural Extract",
+        "description": "A stabilized extract required by the abandoned vaccine protocol.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "stabilizer_ampoule": {
+        "id": "stabilizer_ampoule",
+        "name": "Stabilizer Ampoule",
+        "description": "A sealed ampoule that slows rapid mutation in vitro.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "clean_filter": {
+        "id": "clean_filter",
+        "name": "Clean Micro-Filter",
+        "description": "A sterile filter used for blood fraction processing.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "bioseal_tube": {
+        "id": "bioseal_tube",
+        "name": "Bioseal Tube",
+        "description": "A pressure-safe tube for unstable biological compounds.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "sedative_ampoule": {
+        "id": "sedative_ampoule",
+        "name": "Sedative Ampoule",
+        "description": "A fast-acting sedative for crisis moments.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "oxygen_mask": {
+        "id": "oxygen_mask",
+        "name": "Oxygen Mask",
+        "description": "A portable oxygen mask with enough pressure for one crisis.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "antibody_trace": {
+        "id": "antibody_trace",
+        "name": "Antibody Trace",
+        "description": "A weak trace of Patient Zero antibodies.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "memory_photo": {
+        "id": "memory_photo",
+        "name": "Memory Photo",
+        "description": "A photo of the Lazarus team. Your face is visible.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "farewell_note": {
+        "id": "farewell_note",
+        "name": "Farewell Note",
+        "description": "A signed note prepared for whoever finds the facility later.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "patient_zero_blood": {
+        "id": "patient_zero_blood",
+        "name": "Patient Zero Blood",
+        "description": "Marcus Cole's blood sample. Contains rare antibodies.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "composite_catalyst": {
+        "id": "composite_catalyst",
+        "name": "Composite Catalyst",
+        "description": "A refined catalyst synthesized from available reagents.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "decontaminated_syringe": {
+        "id": "decontaminated_syringe",
+        "name": "Decontaminated Syringe",
+        "description": "A sterile syringe ready for precision extraction.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "prototype_serum": {
+        "id": "prototype_serum",
+        "name": "Prototype Serum",
+        "description": "A temporary serum delaying cellular collapse temporarily.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "confession_tape": {
+        "id": "confession_tape",
+        "name": "Confession Tape",
+        "description": "A recorded confession admitting all responsibility.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "morgue_badge": {
+        "id": "morgue_badge",
+        "name": "Morgue Badge",
+        "description": "A staff badge found in the morgue.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "freezer_key": {
+        "id": "freezer_key",
+        "name": "Freezer Key",
+        "description": "A small key for cold storage drawers.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "rusted_clip": {
+        "id": "rusted_clip",
+        "name": "Rusted Clip",
+        "description": "A clipped metal piece from old records.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "rest_note": {
+        "id": "rest_note",
+        "name": "Rest Room Note",
+        "description": "A note recovered from the rest room.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "locker_token": {
+        "id": "locker_token",
+        "name": "Locker Token",
+        "description": "A numbered token from staff lockers.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "radio_chip": {
+        "id": "radio_chip",
+        "name": "Radio Chip",
+        "description": "A damaged chip from a portable radio.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "lab_slide": {
+        "id": "lab_slide",
+        "name": "Lab Slide",
+        "description": "A microscope slide with dried sample.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "reagent_stub": {
+        "id": "reagent_stub",
+        "name": "Reagent Stub",
+        "description": "A reagent label strip and cap.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "catalyst_note": {
+        "id": "catalyst_note",
+        "name": "Catalyst Note",
+        "description": "A note about catalyst handling.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "office_stamp": {
+        "id": "office_stamp",
+        "name": "Office Stamp",
+        "description": "An official stamp from administration.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "file_tab": {
+        "id": "file_tab",
+        "name": "File Tab",
+        "description": "A color tab torn from archived files.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "memo_sheet": {
+        "id": "memo_sheet",
+        "name": "Memo Sheet",
+        "description": "A memo page with red annotations.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "iso_band": {
+        "id": "iso_band",
+        "name": "Isolation Band",
+        "description": "A patient wrist band from isolation.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "vent_screw": {
+        "id": "vent_screw",
+        "name": "Vent Screw",
+        "description": "A screw removed from isolation vent.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "obs_clip": {
+        "id": "obs_clip",
+        "name": "Observation Clip",
+        "description": "A clip from an observation board.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "health_patch": {
+        "id": "health_patch",
+        "name": "Emergency Health Patch",
+        "description": "A rapid coagulant patch that restores physical stability.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "focus_capsule": {
+        "id": "focus_capsule",
+        "name": "Focus Capsule",
+        "description": "A nootropic capsule that clears cognitive fog.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "calming_inhaler": {
+        "id": "calming_inhaler",
+        "name": "Calming Inhaler",
+        "description": "A fast-acting inhaler that reduces panic peaks.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "vitality_kit": {
+        "id": "vitality_kit",
+        "name": "Vitality Kit",
+        "description": "A compact kit restoring body, focus, and calm.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "toe_tag_bundle": {
+        "id": "toe_tag_bundle",
+        "name": "Toe Tag Bundle",
+        "description": "A bundled set of numbered toe tags with cross-out marks.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "embalming_seal": {
+        "id": "embalming_seal",
+        "name": "Embalming Seal",
+        "description": "A tamper seal used on cold-storage containers.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "autopsy_twine": {
+        "id": "autopsy_twine",
+        "name": "Autopsy Twine",
+        "description": "Sterile twine used to secure evidence wraps in the morgue.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "cafeteria_chit": {
+        "id": "cafeteria_chit",
+        "name": "Cafeteria Chit",
+        "description": "A stamped meal chit from the underground canteen.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "bunk_latch": {
+        "id": "bunk_latch",
+        "name": "Bunk Latch",
+        "description": "A replacement latch from a foldable rest bunk.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "shift_whistle": {
+        "id": "shift_whistle",
+        "name": "Shift Whistle",
+        "description": "A metal whistle used for personnel regroup calls.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "assay_marker": {
+        "id": "assay_marker",
+        "name": "Assay Marker",
+        "description": "A marker used to annotate rapid assay batches.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "cryo_label_roll": {
+        "id": "cryo_label_roll",
+        "name": "Cryo Label Roll",
+        "description": "A partially used roll of low-temperature sample labels.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "buffer_cartridge": {
+        "id": "buffer_cartridge",
+        "name": "Buffer Cartridge",
+        "description": "A sealed cartridge containing buffered transport medium.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "audit_ribbon": {
+        "id": "audit_ribbon",
+        "name": "Audit Ribbon",
+        "description": "A printer ribbon strip from administrative audit logs.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "seal_stamp_wax": {
+        "id": "seal_stamp_wax",
+        "name": "Seal Stamp Wax",
+        "description": "A hardened wax pellet used to seal confidential envelopes.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "archive_pin": {
+        "id": "archive_pin",
+        "name": "Archive Pin",
+        "description": "A coded pin used to group archived incident folders.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "restraint_pin": {
+        "id": "restraint_pin",
+        "name": "Restraint Pin",
+        "description": "A locking pin from an isolation restraint harness.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "pressure_gasket": {
+        "id": "pressure_gasket",
+        "name": "Pressure Gasket",
+        "description": "A spare gasket from an isolation pressure door.",
+        "icon": "assets/innexistant.png",
+        "image": "assets/innexistant.png"
+    },
+    "quarantine_tag": {
+        "id": "quarantine_tag",
+        "name": "Quarantine Tag",
+        "description": "A red quarantine tag clipped from a sealed module.",
         "icon": "assets/innexistant.png",
         "image": "assets/innexistant.png"
     }

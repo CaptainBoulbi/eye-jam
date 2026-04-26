@@ -2,31 +2,71 @@
     "morgue": {
         "id": "morgue",
         "name": "Morgue",
-        "links": ["lab", "rest_room"],
-        "items": ["autopsy_doc", "log_d150"]
+        "links": [
+            "lab",
+            "rest_room"
+        ],
+        "items": [
+            "autopsy_doc",
+            "log_d150",
+            "chlorhexidine_bottle"
+        ]
     },
     "rest_room": {
         "id": "rest_room",
         "name": "Rest Room",
-        "links": ["morgue", "isolation"],
-        "items": ["rodriguez_journal", "log_d45"]
+        "links": [
+            "morgue",
+            "isolation"
+        ],
+        "items": [
+            "rodriguez_journal",
+            "log_d45",
+            "recorder_fragment_a",
+            "oxygen_mask"
+        ]
     },
     "lab": {
         "id": "lab",
         "name": "Lab",
-        "links": ["morgue", "office"],
-        "items": ["vaccine_tld_v1", "log_d120", "enzymatic_catalyst"]
+        "links": [
+            "morgue",
+            "office"
+        ],
+        "items": [
+            "vaccine_tld_v1",
+            "log_d120",
+            "enzymatic_catalyst",
+            "neural_extract",
+            "stabilizer_ampoule",
+            "clean_filter"
+        ]
     },
     "office": {
         "id": "office",
         "name": "Office",
-        "links": ["lab", "isolation"],
-        "items": ["final_report", "patient_zero", "elevator_code"]
+        "links": [
+            "lab",
+            "isolation"
+        ],
+        "items": [
+            "final_report",
+            "patient_zero",
+            "elevator_code"
+        ]
     },
     "isolation": {
         "id": "isolation",
         "name": "Isolation",
-        "links": ["office", "rest_room"],
-        "items": ["log_d1", "empty_syringe"]
+        "links": [
+            "office",
+            "rest_room"
+        ],
+        "items": [
+            "log_d1",
+            "empty_syringe",
+            "sedative_ampoule",
+            "bioseal_tube"
+        ]
     }
 }

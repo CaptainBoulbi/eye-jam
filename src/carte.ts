@@ -6,33 +6,49 @@ import stat from "./stat.ts"
 import inventaire from "./inventaire.ts"
 
 let no_carte_left_loser = {
-    id: "no_carte_left_loser",
-    name: "Nothing to see, take that candy",
-    content: "You can't do much, exept staring at the ceiling, and swallow that candy",
-    reference: null,
-    salle: ["morgue", "rest_room", "lab", "office", "isolation"],
-    go: false,
-    stats: {
-        sante: 0,
-        lucide: 0,
-        stress: 0
-    },
-    deal: [
-        {
-            sante: 2,
-            lucide: 1,
-            stress: 1
+    "vitality_regain": {
+        "id": "vitality_regain",
+        "name": "Vitality Regain",
+        "content": "You pause, breathe, and recover enough strength to continue.",
+        "reference": null,
+        "salle": [
+            "morgue",
+            "rest_room",
+            "lab",
+            "office",
+            "isolation"
+        ],
+        "go": false,
+        "stats": {
+            "sante": -999,
+            "lucide": -999,
+            "stress": -999
         },
-        {
-            sante: 1,
-            lucide: 1,
-            stress: 2
-        }
-    ],
-    ingredients: [],
-    craft: [null, null],
-    consume: [null, null],
-    image: "assets/innexistant.png"
+        "deal": [
+            {
+                "sante": 1,
+                "lucide": 1,
+                "stress": 1,
+                "description": "Center yourself"
+            },
+            {
+                "sante": 1,
+                "lucide": 1,
+                "stress": 1,
+                "description": "Take one steady breath"
+            }
+        ],
+        "ingredients": [],
+        "craft": [
+            null,
+            null
+        ],
+        "consume": [
+            null,
+            null
+        ],
+        "image": "assets/innexistant.png"
+    }
 };
 
 let first_carte = {
