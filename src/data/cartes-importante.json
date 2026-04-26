@@ -21,7 +21,7 @@
       },
       {
         "sante": -2,
-        "lucide": -2,
+        "lucide": -1,
         "stress": 0,
         "description": "Panic and scrub blood from your hands"
       }
@@ -38,11 +38,89 @@
     "image": "assets/innexistant.png",
     "go": false
   },
+  "morgue_autopsy": {
+    "id": "morgue_autopsy",
+    "name": "Autopsy report",
+    "content": "You find the last autopsy report on a steel desk.",
+    "reference": "morgue_wake",
+    "salle": [
+      "morgue"
+    ],
+    "stats": {
+      "sante": 0,
+      "lucide": 0,
+      "stress": 1
+    },
+    "deal": [
+      {
+        "sante": 1,
+        "lucide": 0,
+        "stress": -1,
+        "description": "Read the report"
+      },
+      {
+        "sante": -1,
+        "lucide": -1,
+        "stress": 0,
+        "description": "Leave the report on the desk"
+      }
+    ],
+    "ingredients": [],
+    "craft": [
+      null,
+      "autopsy_doc"
+    ],
+    "consume": [
+      null,
+      null
+    ],
+    "image": "assets/innexistant.png",
+    "go": false
+  },
+  "morgue_logd150": {
+    "id": "morgue_logd150",
+    "name": "Morgue log",
+    "content": "A sheet of paper gently falls at your feet.",
+    "reference": "morgue_autopsy",
+    "salle": [
+      "morgue"
+    ],
+    "stats": {
+      "sante": 0,
+      "lucide": 0,
+      "stress": 1
+    },
+    "deal": [
+      {
+        "sante": 0,
+        "lucide": 0,
+        "stress": -1,
+        "description": "Pick it up and read it"
+      },
+      {
+        "sante": -2,
+        "lucide": 0,
+        "stress": 0,
+        "description": "Leave it on the floor"
+      }
+    ],
+    "ingredients": [],
+    "craft": [
+      "log_d150",
+      null
+    ],
+    "consume": [
+      null,
+      null
+    ],
+    "image": "assets/innexistant.png",
+    "go": false
+  },
   "move_morgue": {
     "id": "move_morgue",
     "name": "Morgue Exit",
     "content": "Two paths leave the morgue: the lab wing and the rest room corridor.",
-    "reference": "morgue_wake",
+    "reference": "morgue_logd150",
     "salle": [
       "morgue"
     ],
@@ -54,13 +132,13 @@
     "deal": [
       {
         "sante": 0,
-        "lucide": -2,
+        "lucide": -1,
         "stress": 0,
         "description": "Go toward the lab"
       },
       {
-        "sante": 0,
-        "lucide": -2,
+        "sante": -1,
+        "lucide": 0,
         "stress": 0,
         "description": "Go toward the rest room"
       }
@@ -77,10 +155,127 @@
     "image": "assets/innexistant.png",
     "go": true
   },
+  "rest_logd45": {
+    "id": "rest_logd45",
+    "name": "Vasquez Diary",
+    "content": "You find a page from Dr. Vasquez's diary.",
+    "reference": "move_morgue",
+    "salle": [
+      "rest_room"
+    ],
+    "stats": {
+      "sante": 3,
+      "lucide": 6,
+      "stress": 4
+    },
+    "deal": [
+      {
+        "sante": 1,
+        "lucide": 0,
+        "stress": 0,
+        "description": "Read Dr. Vasquez's privacy policy"
+      },
+      {
+        "sante": -2,
+        "lucide": 0,
+        "stress": 0,
+        "description": "Leave the diary where it is"
+      }
+    ],
+    "ingredients": [],
+    "craft": [
+      "log_d45",
+      null
+    ],
+    "consume": [
+      null,
+      null
+    ],
+    "image": "assets/innexistant.png",
+    "go": false
+  },
+  "rest_fraga": {
+    "id": "rest_fraga",
+    "name": "Radio crackling",
+    "content": "The radio is crackling .",
+    "reference": "rest_logd45",
+    "salle": [
+      "rest_room"
+    ],
+    "stats": {
+      "sante": 3,
+      "lucide": 6,
+      "stress": 4
+    },
+    "deal": [
+      {
+        "sante": 1,
+        "lucide": -1,
+        "stress": 0,
+        "description": "Adjust the frequency"
+      },
+      {
+        "sante": 0,
+        "lucide": 0,
+        "stress": -2,
+        "description": "Turn off the radio"
+      }
+    ],
+    "ingredients": [],
+    "craft": [
+      "recorder_fragment_a",
+      null
+    ],
+    "consume": [
+      null,
+      null
+    ],
+    "image": "assets/innexistant.png",
+    "go": false
+  },
+  "move_rest": {
+    "id": "move_rest",
+    "name": "Rest Junction",
+    "content": "From the rest room, routes lead to morgue and isolation.",
+    "reference": "rest_fraga",
+    "salle": [
+      "rest_room"
+    ],
+    "stats": {
+      "sante": 3,
+      "lucide": 6,
+      "stress": 4
+    },
+    "deal": [
+      {
+        "sante": 0,
+        "lucide": -1,
+        "stress": 0,
+        "description": "Go to morgue"
+      },
+      {
+        "sante": -1,
+        "lucide": 0,
+        "stress": 0,
+        "description": "Go to isolation"
+      }
+    ],
+    "ingredients": [],
+    "craft": [
+      null,
+      null
+    ],
+    "consume": [
+      null,
+      null
+    ],
+    "image": "assets/innexistant.png",
+    "go": false
+  },
   "lab_recipe": {
     "id": "lab_recipe",
     "name": "Recipe File",
-    "content": "You recover TLD-V1 documentation. It explicitly states the vaccine is not feasible.",
+    "content": "You recover TLD-V1 documentation.",
     "reference": "move_morgue",
     "salle": [
       "lab"
@@ -94,14 +289,14 @@
       {
         "sante": 1,
         "lucide": 0,
-        "stress": -3,
-        "description": "Read the full protocol and accept failure"
+        "stress": -2,
+        "description": "Read the full protocol"
       },
       {
         "sante": -1,
         "lucide": -1,
         "stress": 0,
-        "description": "Secure the file and move on"
+        "description": "Pick up the file and move on"
       }
     ],
     "ingredients": [],
@@ -116,10 +311,10 @@
     "image": "assets/innexistant.png",
     "go": false
   },
-  "lab_fragment": {
-    "id": "lab_fragment",
-    "name": "Lab Audio",
-    "content": "Patient Zero blood is lost on the surface. It cannot be retrieved.",
+  "lab_log": {
+    "id": "lab_log",
+    "name": "Lab log",
+    "content": "A page from Dr. Vasquez's journal is pinned to the bulletin board in the lab.",
     "reference": "lab_recipe",
     "salle": [
       "lab"
@@ -134,21 +329,97 @@
         "sante": 0,
         "lucide": 0,
         "stress": -2,
-        "description": "Archive the recording with the recipe"
+        "description": "Take the sheet out and read it"
+      },
+      {
+        "sante": -2,
+        "lucide": 0,
+        "stress": 0,
+        "description": "Ignore the sheet and keep searching the room"
+      }
+    ],
+    "ingredients": [],
+    "craft": [
+      "log_d120",
+      null
+    ],
+    "consume": [
+      null,
+      null
+    ],
+    "image": "assets/innexistant.png",
+    "go": false
+  },
+  "lab_catalyst": {
+    "id": "lab_catalyst",
+    "name": "Lab Desk",
+    "content": "You find an orange bottle on a lab desk.",
+    "reference": "lab_log",
+    "salle": [
+      "lab"
+    ],
+    "stats": {
+      "sante": 4,
+      "lucide": 12,
+      "stress": 6
+    },
+    "deal": [
+      {
+        "sante": -1,
+        "lucide": 0,
+        "stress": 0,
+        "description": "You decide it's too dangerous to handle unfamiliar bottles"
+      },
+      {
+        "sante": 0,
+        "lucide": -2,
+        "stress": 0,
+        "description": "You decide to take him with you"
+      }
+    ],
+    "ingredients": [],
+    "craft": [
+      null,
+      "enzymatic_catalyst"
+    ],
+    "consume": [
+      null,
+      null
+    ],
+    "image": "assets/innexistant.png",
+    "go": false
+  },
+  "lab_brain": {
+    "id": "lab_brain",
+    "name": "Lab Jar",
+    "content": "You find a jar containing a brain preserved in formaldehyde. Various vials are scattered around it.",
+    "reference": "lab_catalyst",
+    "salle": [
+      "lab"
+    ],
+    "stats": {
+      "sante": 4,
+      "lucide": 12,
+      "stress": 6
+    },
+    "deal": [
+      {
+        "sante": 0,
+        "lucide": -2,
+        "stress": 0,
+        "description": "You are disgusted by the jar and quickly move away from it"
       },
       {
         "sante": -1,
-        "lucide": -3,
-        "stress": 0,
-        "description": "Memorize the key line and leave"
+        "lucide": 0,
+        "stress": -2,
+        "description": "You're looking at the vials around the jar"
       }
     ],
-    "ingredients": [
-      "vaccine_tld_v1"
-    ],
+    "ingredients": [],
     "craft": [
-      "recorder_fragment_a",
-      null
+      null,
+      "neural_extract"
     ],
     "consume": [
       null,
@@ -161,7 +432,7 @@
     "id": "move_lab",
     "name": "Lab Junction",
     "content": "From the lab you can return to the morgue or continue to the office.",
-    "reference": "lab_fragment",
+    "reference": "lab_brain",
     "salle": [
       "lab"
     ],
@@ -174,7 +445,7 @@
       {
         "sante": 1,
         "lucide": 0,
-        "stress": 1,
+        "stress": 0,
         "description": "Go to morgue"
       },
       {
@@ -198,10 +469,10 @@
     "image": "assets/innexistant.png",
     "go": true
   },
-  "office_code": {
-    "id": "office_code",
-    "name": "Code Note",
-    "content": "A bloodstained post-it in the office contains elevator code : 5924.",
+  "office_report": {
+    "id": "office_report",
+    "name": "Office log",
+    "content": "The last page of Dr. Vasquez's journal is lying on the desk.",
     "reference": "move_lab",
     "salle": [
       "office"
@@ -213,8 +484,129 @@
     },
     "deal": [
       {
+        "sante": 1,
+        "lucide": 0,
+        "stress": 0,
+        "description": "Pick it and read it"
+      },
+      {
+        "sante": -2,
+        "lucide": -1,
+        "stress": 0,
+        "description": "Leave the page on the desk and continue exploring the room."
+      }
+    ],
+    "ingredients": [],
+    "craft": [
+      "final_report",
+      null
+    ],
+    "consume": [
+      null,
+      null
+    ],
+    "image": "assets/innexistant.png",
+    "go": false
+  },
+  "office_fragment": {
+    "id": "office_fragment",
+    "name": "Office Audio",
+    "content": "A voice recorder catches your eye.",
+    "reference": "office_report",
+    "salle": [
+      "office"
+    ],
+    "stats": {
+      "sante": 3,
+      "lucide": 12,
+      "stress": 9
+    },
+    "deal": [
+      {
+        "sante": -1,
+        "lucide": 0,
+        "stress": 0,
+        "description": "Leave the voice recorder on the desk"
+      },
+      {
         "sante": 0,
-        "lucide": 1,
+        "lucide": -2,
+        "stress": 0,
+        "description": "Listen to the latest recording"
+      }
+    ],
+    "ingredients": [
+      null
+    ],
+    "craft": [
+      null,
+      "recorder_fragment_c"
+    ],
+    "consume": [
+      null,
+      null
+    ],
+    "image": "assets/innexistant.png",
+    "go": false
+  },
+  "office_file": {
+    "id": "office_file",
+    "name": "Top Secret File",
+    "content": "A top-secret file is sitting on the desk.",
+    "reference": "office_fragment",
+    "salle": [
+      "office"
+    ],
+    "stats": {
+      "sante": 1,
+      "lucide": 12,
+      "stress": 12
+    },
+    "deal": [
+      {
+        "sante": -2,
+        "lucide": 0,
+        "stress": 0,
+        "description": "Quickly read the file"
+      },
+      {
+        "sante": 0,
+        "lucide": 0,
+        "stress": -2,
+        "description": "Keep the file confidential"
+      }
+    ],
+    "ingredients": [
+      "final_report"
+    ],
+    "craft": [
+      "patient_zero",
+      null
+    ],
+    "consume": [
+      null,
+      null
+    ],
+    "image": "assets/innexistant.png",
+    "go": false
+  },
+  "office_code": {
+    "id": "office_code",
+    "name": "Code Note",
+    "content": "A bloodstained post-it in the office contains elevator code : 5924.",
+    "reference": "office_file",
+    "salle": [
+      "office"
+    ],
+    "stats": {
+      "sante": 4,
+      "lucide": 12,
+      "stress": 4
+    },
+    "deal": [
+      {
+        "sante": 1,
+        "lucide": -1,
         "stress": 0,
         "description": "Store the elevator code safely"
       },
@@ -237,93 +629,11 @@
     "image": "assets/innexistant.png",
     "go": false
   },
-  "office_fragment": {
-    "id": "office_fragment",
-    "name": "Office Audio",
-    "content": "Security recordings confirm Marcus reached the surface. Multiple civilians were killed.",
-    "reference": "office_code",
-    "salle": [
-      "office"
-    ],
-    "stats": {
-      "sante": 3,
-      "lucide": 12,
-      "stress": 9
-    },
-    "deal": [
-      {
-        "sante": -1,
-        "lucide": -1,
-        "stress": 0,
-        "description": "Review complete incident timestamps"
-      },
-      {
-        "sante": -1,
-        "lucide": -1,
-        "stress": 0,
-        "description": "Read summary and close the file"
-      }
-    ],
-    "ingredients": [
-      "elevator_code"
-    ],
-    "craft": [
-      "recorder_fragment_b",
-      "final_report"
-    ],
-    "consume": [
-      null,
-      null
-    ],
-    "image": "assets/innexistant.png",
-    "go": false
-  },
-  "office_last_words": {
-    "id": "office_last_words",
-    "name": "Last Message",
-    "content": "Elena Vasquez states she chose suicide to avoid transformation.",
-    "reference": "office_fragment",
-    "salle": [
-      "office"
-    ],
-    "stats": {
-      "sante": 1,
-      "lucide": 12,
-      "stress": 12
-    },
-    "deal": [
-      {
-        "sante": -1,
-        "lucide": 0,
-        "stress": 1,
-        "description": "Keep the final recording"
-      },
-      {
-        "sante": 0,
-        "lucide": 0,
-        "stress": -3,
-        "description": "Stop listening and lock the terminal"
-      }
-    ],
-    "ingredients": [
-      "final_report"
-    ],
-    "craft": [
-      "recorder_fragment_c",
-      null
-    ],
-    "consume": [
-      null,
-      null
-    ],
-    "image": "assets/innexistant.png",
-    "go": false
-  },
   "move_office": {
     "id": "move_office",
     "name": "Office Junction",
     "content": "From the office, routes lead to the lab and isolation.",
-    "reference": "office_last_words",
+    "reference": "office_code",
     "salle": [
       "office"
     ],
@@ -334,15 +644,15 @@
     },
     "deal": [
       {
-        "sante": -1,
+        "sante": 0,
         "lucide": -2,
         "stress": 0,
         "description": "Go to lab"
       },
       {
-        "sante": 0,
-        "lucide": -2,
-        "stress": 0,
+        "sante": -1,
+        "lucide": 0,
+        "stress": -1,
         "description": "Go to isolation"
       }
     ],
@@ -361,36 +671,36 @@
     "image": "assets/innexistant.png",
     "go": true
   },
-  "move_rest": {
-    "id": "move_rest",
-    "name": "Rest Junction",
-    "content": "From the rest room, routes lead to morgue and isolation.",
-    "reference": "move_morgue",
+  "isolation_journal": {
+    "id": "isolation_journal",
+    "name": "Isolation journal",
+    "content": "You see a diary in the hand of a dead guard",
+    "reference": "move_office",
     "salle": [
-      "rest_room"
+      "isolation"
     ],
     "stats": {
-      "sante": 3,
+      "sante": 1,
       "lucide": 6,
-      "stress": 4
+      "stress": 10
     },
     "deal": [
       {
-        "sante": 0,
+        "sante": -2,
         "lucide": 0,
-        "stress": 1,
-        "description": "Go to morgue"
+        "stress": 0,
+        "description": "Snatch the diary from the guard"
       },
       {
-        "sante": -1,
+        "sante": 0,
         "lucide": -2,
         "stress": 0,
-        "description": "Go to isolation"
+        "description": "Leave the guard's secrets alone"
       }
     ],
     "ingredients": [],
     "craft": [
-      null,
+      "rodriguez_journal",
       null
     ],
     "consume": [
@@ -398,7 +708,124 @@
       null
     ],
     "image": "assets/innexistant.png",
-    "go": false
+    "go": true
+  },
+  "isolation_talkie": {
+    "id": "isolation_talkie",
+    "name": "Isolation Talkie-Walkie",
+    "content": "A walkie-talkie emits a faint static sound.",
+    "reference": "isolation_journal",
+    "salle": [
+      "isolation"
+    ],
+    "stats": {
+      "sante": 1,
+      "lucide": 6,
+      "stress": 10
+    },
+    "deal": [
+      {
+        "sante": -1,
+        "lucide": -1,
+        "stress": 0,
+        "description": "Ignore the noise"
+      },
+      {
+        "sante": 0,
+        "lucide": 0,
+        "stress": -2,
+        "description": "Listen to the message on repeat"
+      }
+    ],
+    "ingredients": [],
+    "craft": [
+      null,
+      "recorder_fragment_b"
+    ],
+    "consume": [
+      null,
+      null
+    ],
+    "image": "assets/innexistant.png",
+    "go": true
+  },
+  "isolation_log": {
+    "id": "isolation_log",
+    "name": "Isolation log",
+    "content": "A torn diary cover catches your eye.",
+    "reference": "isolation_talkie",
+    "salle": [
+      "isolation"
+    ],
+    "stats": {
+      "sante": 1,
+      "lucide": 6,
+      "stress": 10
+    },
+    "deal": [
+      {
+        "sante": -1,
+        "lucide": -2,
+        "stress": 0,
+        "description": "You think it's too damaged to be readable"
+      },
+      {
+        "sante": -2,
+        "lucide": 0,
+        "stress": 0,
+        "description": "Do you recognize the handwriting. It's Dr. Vasquez's."
+      }
+    ],
+    "ingredients": [],
+    "craft": [
+      null,
+      "log_d1"
+    ],
+    "consume": [
+      null,
+      null
+    ],
+    "image": "assets/innexistant.png",
+    "go": true
+  },
+  "isolation_syringe": {
+    "id": "isolation_syringe",
+    "name": "Isolation shining speck",
+    "content": "There is a shiny speck in the middle of a pool of blood.",
+    "reference": "isolation_log",
+    "salle": [
+      "isolation"
+    ],
+    "stats": {
+      "sante": 1,
+      "lucide": 6,
+      "stress": 10
+    },
+    "deal": [
+      {
+        "sante": -1,
+        "lucide": 0,
+        "stress": -1,
+        "description": "The pool of dried blood makes disguts you. You walk on by."
+      },
+      {
+        "sante": -2,
+        "lucide": -1,
+        "stress": 0,
+        "description": "Curiosity makes you pick up that shiny piece"
+      }
+    ],
+    "ingredients": [],
+    "craft": [
+      null,
+      "empty_syringe"
+    ],
+    "consume": [
+      null,
+      null
+    ],
+    "image": "assets/innexistant.png",
+    "go": true
   },
   "move_isolation": {
     "id": "move_isolation",
@@ -415,7 +842,7 @@
     },
     "deal": [
       {
-        "sante": -1,
+        "sante": 0,
         "lucide": -2,
         "stress": 0,
         "description": "Go to office"
@@ -423,7 +850,7 @@
       {
         "sante": -1,
         "lucide": 0,
-        "stress": 1,
+        "stress": 0,
         "description": "Go to rest room"
       }
     ],
@@ -454,13 +881,13 @@
     },
     "deal": [
       {
-        "sante": -12,
+        "sante": -15,
         "lucide": -2,
         "stress": 0,
         "description": "Write the final note and lie on the slab"
       },
       {
-        "sante": -12,
+        "sante": -15,
         "lucide": -2,
         "stress": 0,
         "description": "Record final words and let go"

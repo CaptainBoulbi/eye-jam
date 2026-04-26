@@ -51,7 +51,7 @@
     "vaccine_tld_v1": {
         "id": "vaccine_tld_v1",
         "name": "EXPERIMENTAL VACCINE TLD-V1",
-        "description": "INCOMPLETE - DO NOT USE\n\nIdentified components:\n- Patient Zero Antibody [REQUIRED]\n- Neural Extract [OBTAINED]\n- Stabilizer [OBTAINED]\n- Catalyst [MISSING]\n- ■■■■■■■■■■■■■■■ [OBTAINED]\n- ■■■■■■■■■■■■■■■■■■■■ [MISSING]\n- ■■■■■■■■■ [MISSING]\n\nPROCEDURE:\n1. Obtain fresh blood from Patient Zero\n2. Isolate specific antibodies\n3. Combine with stabilizer\n4. Add unknown catalyst\n5. Administer intravenously\n\nPROBLEM:\nPatient Zero missing.\nSearches impossible.\n\nSTATUS: ABANDONED",
+        "description": "INCOMPLETE - DO NOT USE\n\nIdentified components:\n- Patient Zero Antibody [REQUIRED]\n- Neural Extract [OBTAINED]\n- Stabilizer [OBTAINED]\n- Catalyst [MISSING]\n- ■■■■■■■■■■■■■■■ [OBTAINED]\n- ■■■■■■■■■■■■■■■■■■■■ [MISSING]\n- ■■■■■■■■■ [MISSING]\n\nPROCEDURE:\n1. Obtain fresh blood from Patient Zero\n2. Isolate specific antibodies\n3. Combine with stabilizer\n4. Add unknown catalyst\n5. Administer intravenously with a syringe\n\nPROBLEM:\nPatient Zero missing.\nSearches impossible.\n\nSTATUS: ABANDONED",
         "icon": "assets/innexistant.png",
         "image": "assets/innexistant.png"
     },
@@ -107,7 +107,7 @@
     "recorder_fragment_c": {
         "id": "recorder_fragment_c",
         "name": "Recorder Fragment C",
-        "description": "AUDIO LOG FRAGMENT C - PERSONAL FILE\nSpeaker: Dr. Elena Vasquez\n\n\"I am recording this before I take my life.\nThe infection progresses too fast. I will not become one of them.\n\nTo the survivors who will come after me: if you are hearing this, you are alone.\nNo guards. No team. No command.\nOnly records, blood, and consequences.\n\nThe elevator code is preserved in the office.\nThe vaccine file is in the lab, but it cannot be completed.\nPatient Zero blood is lost to the surface.\n\nDo not chase hope where none remains.\nLeave the truth. End this in the morgue.\nI am sorry.\"",
+        "description": "AUDIO LOG FRAGMENT C - PERSONAL FILE\nSpeaker: Dr. Elena Vasquez\n\n\"I am recording this before I take my life.\nThe infection progresses too fast. I will not become one of them.\n\nTo the survivors who will come after me: if you are hearing this, you are alone.\nNo guards. No team. No command.\nOnly records, blood, and consequences.\n\nThe elevator code is preserved in the office.\nThe vaccine file is in the lab, but it cannot be completed.\nPatient Zero blood is lost to the surface.\n\nDo not chase hope where none remains.\nLeave the truth.\nI am sorry.\"",
         "icon": "assets/innexistant.png",
         "image": "assets/innexistant.png"
     },

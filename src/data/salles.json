@@ -20,7 +20,6 @@
             "isolation"
         ],
         "items": [
-            "rodriguez_journal",
             "log_d45",
             "recorder_fragment_a",
             "oxygen_mask"
@@ -51,6 +50,7 @@
         ],
         "items": [
             "final_report",
+            "recorder_fragment_c",
             "patient_zero",
             "elevator_code"
         ]
@@ -63,6 +63,8 @@
             "rest_room"
         ],
         "items": [
+            "rodriguez_journal",
+            "recorder_fragment_b",
             "log_d1",
             "empty_syringe",
             "sedative_ampoule",
