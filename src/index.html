@@ -1041,7 +1041,7 @@ a:hover { color: var(--cream); }
                     if (type === 'sante' || type === 'lucide') update_vignette(); //pareil pour la vignette
 
                     if (type == 'sante') {
-                        let n = 4 - parseInt((stat.get('sante') / 15) * 4);
+                        let n = parseInt(stat.get('sante') / 5) + 1;
                         const carte = document.getElementById('card');
                         carte.style.background = `url(./assets/Carte-${n}.PNG)`;
                     }
