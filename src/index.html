@@ -619,8 +619,7 @@ a:hover { color: var(--cream); }
   --x-num: 0;
 
   width: min(340px, 85vw);
-  background: url( https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.annikids.com%2Ffichiers%2Fimages%2Farticles%2FABS00005%2Fcartes_1.jpg&f=1&nofb=1&ipt=5696dc4c3b77a2a8f5ece880c5ffb82d6cb5e1c9f5f5521f2f6e0024f1f4bc5b);
-  border: 1px solid #9a8a5a;
+  background: url('./assets/Carte-1.PNG');
   padding: 28px 28px 24px;
   position: relative;
   cursor: grab;
@@ -1040,6 +1039,12 @@ a:hover { color: var(--cream); }
 
                     if (type === 'stress') update_shake(); //me tape pas dorian stp j'apelle ma fonction ici.
                     if (type === 'sante' || type === 'lucide') update_vignette(); //pareil pour la vignette
+
+                    if (type == 'sante') {
+                        let n = 4 - parseInt((stat.get('sante') / 15) * 4);
+                        const carte = document.getElementById('card');
+                        carte.style.background = `url(./assets/Carte-${n}.PNG)`;
+                    }
                 }
                 stat.onchange(draw_stat);
                 stat.ondeath((type) => {
