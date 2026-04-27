@@ -1,4 +1,5 @@
 import item from "./item.ts"
+import stat from "./stat.ts"
 
 type Coord = {
     x: number,
@@ -113,6 +114,15 @@ function inventaire_clear() {
     onchange_callback();
 }
 
+function consume_item(coord) {
+    let item = get_item(coord);
+    console.log(item);
+    if (!item.id && !item.consomable) return false;
+    stat.types().forEach((type) => {
+        stat.add(type, item.consume[type]);
+    });
+}
+
 export default {
     grid_size,
     get: get_item,
@@ -120,6 +130,7 @@ export default {
     add: add_item,
     remove: remove_item,
     find: find_item,
+    consume: consume_item,
     onchange: set_onchange_callback,
     clear: inventaire_clear,
 }
